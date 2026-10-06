@@ -5,118 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suraka Bucks | Signature Iced Coffee</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #f7f4ef; /* Rich Cream / Beige Aesthetic Background */
+            background-color: #f7f4ef;
             color: #2c221e;
             overflow-x: hidden;
         }
 
-        /* Hero / Opening Animation Section */
+        /* Top VIP Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e6dccf;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #1e3f20, #0b1a0c);
+            color: #f7f4ef;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #2c221e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #61534b;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1e3f20;
+        }
+
+        /* Hero Section */
         header {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #fdfbf7 0%, #f3ede2 100%);
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f0e6d8 100%);
             position: relative;
-            border-bottom: 1px solid #e6dccf;
         }
 
-        .brand-tag {
+        .hero-badge {
             font-family: 'Playfair Display', serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 5px;
             text-transform: uppercase;
-            color: #8c6d53;
+            color: #1e3f20;
             margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
+            background: rgba(30, 63, 32, 0.1);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 900;
             color: #2c221e;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            animation: fadeInUp 1s ease;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         header h1 span {
-            color: #b08968;
+            color: #1e3f20;
             font-style: italic;
         }
 
         header p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: #61534b;
             max-width: 650px;
             margin-bottom: 35px;
             font-weight: 300;
-            animation: fadeInUp 1.2s ease;
+            line-height: 1.6;
         }
 
-        /* Coffee Bean & Cup Reveal Animation Box */
-        .reveal-container {
-            width: 320px;
-            height: 380px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(44, 34, 30, 0.15);
-            margin-bottom: 40px;
-            position: relative;
-            animation: scaleUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            border: 4px solid #ffffff;
-        }
-
-        .reveal-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .reveal-container:hover img {
-            transform: scale(1.06);
-        }
-
-        .btn-luxury {
-            background-color: #2c221e;
+        .btn-gold {
+            background-color: #1e3f20;
             color: #f7f4ef;
-            padding: 16px 40px;
-            border-radius: 40px;
+            padding: 15px 38px;
+            border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             font-size: 0.95rem;
-            box-shadow: 0 10px 25px rgba(44, 34, 30, 0.2);
             transition: all 0.3s ease;
-            animation: fadeInUp 1.5s ease;
+            box-shadow: 0 10px 25px rgba(30, 63, 32, 0.2);
+            display: inline-block;
+            cursor: pointer;
+            border: none;
         }
 
-        .btn-luxury:hover {
-            background-color: #b08968;
+        .btn-gold:hover {
+            background-color: #2c5230;
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(176, 137, 104, 0.3);
+            box-shadow: 0 15px 30px rgba(30, 63, 32, 0.35);
         }
 
         /* Main Container */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 80px 20px;
         }
 
         .section-title {
@@ -128,50 +167,100 @@
             font-weight: 700;
         }
 
-        /* Product Showcase Card */
-        .product-showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        /* Coffee Bean Crush & Reveal Animation Container */
+        .reveal-section {
             background: #ffffff;
             border-radius: 24px;
             padding: 50px;
-            box-shadow: 0 20px 40px rgba(44, 34, 30, 0.06);
+            box-shadow: 0 25px 50px rgba(44, 34, 30, 0.08);
             margin-bottom: 80px;
-            border: 1px solid #eef2f5;
-        }
-
-        .product-img {
-            width: 100%;
-            height: 400px;
-            border-radius: 16px;
+            border: 1px solid #eee5dc;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
         }
 
-        .product-img img {
+        /* Bean Crush Overlay Animation */
+        .bean-crush-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1e3f20;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease;
+        }
+
+        .bean-crush-overlay.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .bean-crush-overlay h3 {
+            color: #f7f4ef;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .bean-crush-overlay p {
+            color: #d4c5b9;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Product Showcase Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .product-image-box {
+            width: 100%;
+            height: 420px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .product-image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .product-details h2 {
+        .product-image-box:hover img {
+            transform: scale(1.04);
+        }
+
+        .product-info h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: #2c221e;
             margin-bottom: 15px;
         }
 
-        .product-details .price {
+        .product-info .price-tag {
             font-size: 1.8rem;
-            color: #b08968;
+            color: #1e3f20;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
             margin-bottom: 25px;
         }
 
-        .product-details p {
+        .product-info p {
             color: #61534b;
             font-size: 1.1rem;
             line-height: 1.8;
@@ -180,22 +269,23 @@
         }
 
         /* About Us Section */
-        .about-section {
+        .about-grid {
             background: #ffffff;
             border-radius: 24px;
-            padding: 70px;
-            box-shadow: 0 20px 40px rgba(44, 34, 30, 0.06);
-            border-left: 6px solid #b08968;
+            padding: 60px;
+            box-shadow: 0 25px 50px rgba(44, 34, 30, 0.08);
+            border-left: 6px solid #1e3f20;
+            margin-top: 40px;
         }
 
-        .about-section h2 {
+        .about-grid h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             color: #2c221e;
             margin-bottom: 25px;
         }
 
-        .about-section p {
+        .about-grid p {
             color: #61534b;
             font-size: 1.15rem;
             line-height: 1.9;
@@ -203,38 +293,29 @@
             font-weight: 300;
         }
 
+        /* Footer */
         footer {
             text-align: center;
-            padding: 50px;
-            background-color: #1f1715;
-            color: #a39690;
+            padding: 50px 20px;
+            background-color: #112413;
+            color: #a3b3a4;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            margin-top: 80px;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes scaleUp {
-            from { opacity: 0; transform: scale(0.85); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .product-showcase {
+            .product-grid {
                 grid-template-columns: 1fr;
-                padding: 30px;
             }
             header h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
-            .about-section {
+            .nav-links {
+                display: none;
+            }
+            .about-grid {
                 padding: 35px;
             }
         }
@@ -242,46 +323,80 @@
 </head>
 <body>
 
-    <header>
-        <div class="brand-tag">Suraka Bucks Reserve</div>
-        <h1>Artisanal <span>Luxury</span> in Every Sip</h1>
-        <p>Experience the finest hand-crafted iced coffee, brewed with precision, passion, and premium ingredients.</p>
-        
-        <!-- Coffee Bean & Coffee Reveal Box -->
-        <div class="reveal-container">
-            <!-- Yahan apni banayi hui coffee ki asli photo ka link ya file name dal dena -->
-            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80" alt="Suraka Signature Iced Coffee">
+    <!-- Top Navigation Bar with Logo -->
+    <nav>
+        <div class="logo-area">
+            <div class="logo-circle">SB</div>
+            <div class="logo-text">Suraka Bucks</div>
         </div>
+        <div class="nav-links">
+            <a href="#menu-section">Menu</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-        <a href="#menu" class="btn-luxury">DISCOVER THE MENU</a>
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-badge">Craft Brews & Coffee Reserve</div>
+        <h1>Artisanal Luxury in <span>Every Sip</span></h1>
+        <p>Experience the finest hand-crafted iced coffee, brewed with precision, passion, and elite global standards right here in Karachi.</p>
+        <a href="#menu-section" class="btn-gold" onclick="triggerAnimation(event)">EXPLORE SIGNATURE MENU</a>
     </header>
 
-    <div class="container" id="menu">
+    <!-- Main Content Container -->
+    <div class="container" id="menu-section">
         <h2 class="section-title">The Signature Collection</h2>
         
-        <div class="product-showcase">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80" alt="Suraka Signature Iced Coffee">
+        <!-- Coffee Bean Crush Animation & Product Reveal Section -->
+        <div class="reveal-section">
+            <!-- Coffee Bean Crush Overlay Effect -->
+            <div class="bean-crush-overlay" id="crushOverlay">
+                <h3>Crushing Fresh Coffee Beans...</h3>
+                <p>Brewing Perfection for You</p>
             </div>
-            <div class="product-details">
-                <h2>Suraka Signature Iced Coffee</h2>
-                <div class="price">PKR 399</div>
-                <p>A masterclass in taste. Hand-selected premium coffee beans, perfectly frothed velvety foam, and rich artisanal chocolate drizzle combined to deliver an unmatched, luxury café experience right at your doorstep.</p>
-                <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Suraka%20Signature%20Iced%20Coffee!" class="btn-luxury" target="_blank">ORDER VIA WHATSAPP</a>
+
+            <div class="product-grid">
+                <div class="product-image-box">
+                    <!-- Yahan teri asli Suraka Bucks logo wali coffee ki image ka file name ya link aayega -->
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80" alt="Suraka Signature Iced Coffee">
+                </div>
+                <div class="product-info">
+                    <h2>Suraka Signature Iced Coffee</h2>
+                    <div class="price-tag">PKR 399</div>
+                    <p>A masterclass in taste. Hand-selected premium coffee beans, perfectly frothed velvety foam, and rich artisanal chocolate drizzle combined to deliver an unmatched, luxury cafe experience featuring our signature craft brew.</p>
+                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Suraka%20Signature%20Iced%20Coffee!" class="btn-gold" target="_blank">ORDER VIA WHATSAPP</a>
+                </div>
             </div>
         </div>
 
-        <div class="about-section">
+        <!-- About Us Section -->
+        <div class="about-grid" id="about">
             <h2>The Vision & The Founder</h2>
-            <p>Founded by <strong>Suraka</strong>, Suraka Bucks is built on an unwavering commitment to excellence, craftsmanship, and pure flavor. What started as an independent pursuit of perfection has evolved into a statement that local vision can match international luxury standards.</p>
-            <p>Every single cup is meticulously crafted using top-tier ingredients, pristine hygiene standards, and a deep passion for coffee culture. Taste the difference. Live the luxury.</p>
+            <p>Founded by <strong>Suraka</strong>, Suraka Bucks stands on an unwavering commitment to excellence, craftsmanship, and pure flavor. What began as a passionate independent pursuit has evolved into a statement that local vision can seamlessly match international luxury standards.</p>
+            <p>Every single cup is meticulously prepared using top-tier ingredients, pristine hygiene standards, and a deep, authentic love for coffee culture. Taste the difference. Live the luxury.</p>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 SURAKA BUCKS RESERVE. ALL RIGHTS RESERVED.</p>
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2026 SURAKA BUCKS CRAFT BREWS. ALL RIGHTS RESERVED.</p>
     </footer>
+
+    <!-- JavaScript for Coffee Bean Crush Animation on Button Click -->
+    <script>
+        function triggerAnimation(event) {
+            // Smoothly scroll to menu section
+            const overlay = document.getElementById('crushOverlay');
+            if (overlay) {
+                // Remove hidden class to show animation if needed, or trigger effect
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 400); // 0.4 seconds crush effect before revealing the coffee cup
+            }
+        }
+    </script>
 
 </body>
 </html>
-
+;
