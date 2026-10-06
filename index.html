@@ -82,7 +82,7 @@
 
         /* Hero Section */
         header {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -90,7 +90,6 @@
             text-align: center;
             padding: 60px 20px;
             background: linear-gradient(135deg, #fdfbf7 0%, #f0e6d8 100%);
-            position: relative;
         }
 
         .hero-badge {
@@ -141,8 +140,6 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 25px rgba(30, 63, 32, 0.2);
             display: inline-block;
-            cursor: pointer;
-            border: none;
         }
 
         .btn-gold:hover {
@@ -167,62 +164,18 @@
             font-weight: 700;
         }
 
-        /* Coffee Bean Crush & Reveal Animation Container */
-        .reveal-section {
+        /* Product Showcase Card */
+        .product-card {
             background: #ffffff;
             border-radius: 24px;
-            padding: 50px;
-            box-shadow: 0 25px 50px rgba(44, 34, 30, 0.08);
-            margin-bottom: 80px;
-            border: 1px solid #eee5dc;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Bean Crush Overlay Animation */
-        .bean-crush-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1e3f20;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease;
-        }
-
-        .bean-crush-overlay.hidden {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .bean-crush-overlay h3 {
-            color: #f7f4ef;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        .bean-crush-overlay p {
-            color: #d4c5b9;
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
-
-        /* Product Showcase Grid */
-        .product-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-            text-align: left;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(44, 34, 30, 0.08);
+            margin-bottom: 80px;
+            border: 1px solid #eee5dc;
         }
 
         .product-image-box {
@@ -231,18 +184,16 @@
             border-radius: 18px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            position: relative;
+            background: #fdfbf7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .product-image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .product-image-box:hover img {
-            transform: scale(1.04);
         }
 
         .product-info h2 {
@@ -306,8 +257,9 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .product-grid {
+            .product-card {
                 grid-template-columns: 1fr;
+                padding: 30px;
             }
             header h1 {
                 font-size: 2.8rem;
@@ -341,32 +293,23 @@
         <div class="hero-badge">Craft Brews & Coffee Reserve</div>
         <h1>Artisanal Luxury in <span>Every Sip</span></h1>
         <p>Experience the finest hand-crafted iced coffee, brewed with precision, passion, and elite global standards right here in Karachi.</p>
-        <a href="#menu-section" class="btn-gold" onclick="triggerAnimation(event)">EXPLORE SIGNATURE MENU</a>
+        <a href="#menu-section" class="btn-gold">EXPLORE SIGNATURE MENU</a>
     </header>
 
     <!-- Main Content Container -->
     <div class="container" id="menu-section">
         <h2 class="section-title">The Signature Collection</h2>
         
-        <!-- Coffee Bean Crush Animation & Product Reveal Section -->
-        <div class="reveal-section">
-            <!-- Coffee Bean Crush Overlay Effect -->
-            <div class="bean-crush-overlay" id="crushOverlay">
-                <h3>Crushing Fresh Coffee Beans...</h3>
-                <p>Brewing Perfection for You</p>
+        <!-- Product Card with Real Suraka Bucks Image -->
+        <div class="product-card">
+            <div class="product-image-box">
+                <img src="1000408788_2.jpg" alt="Suraka Signature Iced Coffee">
             </div>
-
-            <div class="product-grid">
-                <div class="product-image-box">
-                    <!-- Yahan teri asli Suraka Bucks logo wali coffee ki image ka file name ya link aayega -->
-                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80" alt="Suraka Signature Iced Coffee">
-                </div>
-                <div class="product-info">
-                    <h2>Suraka Signature Iced Coffee</h2>
-                    <div class="price-tag">PKR 399</div>
-                    <p>A masterclass in taste. Hand-selected premium coffee beans, perfectly frothed velvety foam, and rich artisanal chocolate drizzle combined to deliver an unmatched, luxury cafe experience featuring our signature craft brew.</p>
-                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Suraka%20Signature%20Iced%20Coffee!" class="btn-gold" target="_blank">ORDER VIA WHATSAPP</a>
-                </div>
+            <div class="product-info">
+                <h2>Suraka Signature Iced Coffee</h2>
+                <div class="price-tag">PKR 399</div>
+                <p>A masterclass in taste. Hand-selected premium coffee beans, perfectly frothed velvety foam, and rich artisanal chocolate drizzle combined to deliver an unmatched, luxury cafe experience featuring our signature craft brew.</p>
+                <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Suraka%20Signature%20Iced%20Coffee!" class="btn-gold" target="_blank">ORDER VIA WHATSAPP</a>
             </div>
         </div>
 
@@ -383,20 +326,5 @@
         <p>&copy; 2026 SURAKA BUCKS CRAFT BREWS. ALL RIGHTS RESERVED.</p>
     </footer>
 
-    <!-- JavaScript for Coffee Bean Crush Animation on Button Click -->
-    <script>
-        function triggerAnimation(event) {
-            // Smoothly scroll to menu section
-            const overlay = document.getElementById('crushOverlay');
-            if (overlay) {
-                // Remove hidden class to show animation if needed, or trigger effect
-                setTimeout(() => {
-                    overlay.classList.add('hidden');
-                }, 400); // 0.4 seconds crush effect before revealing the coffee cup
-            }
-        }
-    </script>
-
 </body>
 </html>
-;
