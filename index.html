@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suraka Bucks | Signature Iced Coffee</title>
+    <title>Suraka Bucks | Artisanal Luxury Iced Coffee in Karachi</title>
+    <!-- Strong SEO Meta Tags for Free Google Ranking without custom domain -->
+    <meta name="description" content="Suraka Bucks by Suraka Raza offers Karachi's finest artisanal iced coffee, Spanish latte, caramel frappe, and luxury craft brews starting at PKR 399. Order now via WhatsApp!">
+    <meta name="keywords" content="Suraka Bucks, Suraka Raza, Iced Coffee Karachi, Spanish Latte Karachi, Best Coffee in Karachi, Craft Brews">
+    <meta name="author" content="Suraka Raza">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Suraka Bucks | Artisanal Luxury Craft Brews">
+    <meta property="og:description" content="Experience the ultimate luxury craft coffee in Karachi crafted by Suraka Raza.">
+    <meta property="og:type" content="website">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
@@ -32,6 +42,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .logo-area {
@@ -80,7 +91,7 @@
             color: #1e3f20;
         }
 
-        /* Hero Section */
+        /* Hero Section with Smooth Motion Animation */
         header {
             min-height: 85vh;
             display: flex;
@@ -90,6 +101,12 @@
             text-align: center;
             padding: 60px 20px;
             background: linear-gradient(135deg, #fdfbf7 0%, #f0e6d8 100%);
+            animation: fadeInHero 1.2s ease-in-out;
+        }
+
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-badge {
@@ -140,6 +157,8 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 25px rgba(30, 63, 32, 0.2);
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-gold:hover {
@@ -150,7 +169,7 @@
 
         /* Main Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 80px 20px;
         }
@@ -164,58 +183,108 @@
             font-weight: 700;
         }
 
-        /* Product Showcase Card */
-        .product-card {
+        /* Menu Grid for Multiple Flavors */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .menu-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(44, 34, 30, 0.06);
+            border: 1px solid #eee5dc;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(44, 34, 30, 0.12);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .menu-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #2c221e;
+            margin-bottom: 10px;
+        }
+
+        .menu-card .price {
+            font-size: 1.3rem;
+            color: #1e3f20;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+
+        .menu-card p {
+            color: #61534b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
             background: #ffffff;
             border-radius: 24px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            padding: 50px;
+            padding: 60px;
             box-shadow: 0 25px 50px rgba(44, 34, 30, 0.08);
             margin-bottom: 80px;
             border: 1px solid #eee5dc;
         }
 
-        .product-image-box {
-            width: 100%;
-            height: 420px;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            background: #fdfbf7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info h2 {
+        .why-us h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: 2.5rem;
+            text-align: center;
             color: #2c221e;
-            margin-bottom: 15px;
+            margin-bottom: 40px;
         }
 
-        .product-info .price-tag {
-            font-size: 1.8rem;
-            color: #1e3f20;
-            font-weight: 700;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-box h4 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            color: #1e3f20;
+            margin-bottom: 10px;
         }
 
-        .product-info p {
+        .feature-box p {
             color: #61534b;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 35px;
+            font-size: 0.95rem;
+            line-height: 1.6;
             font-weight: 300;
         }
 
@@ -226,7 +295,7 @@
             padding: 60px;
             box-shadow: 0 25px 50px rgba(44, 34, 30, 0.08);
             border-left: 6px solid #1e3f20;
-            margin-top: 40px;
+            margin-bottom: 80px;
         }
 
         .about-grid h2 {
@@ -252,22 +321,17 @@
             color: #a3b3a4;
             font-size: 0.9rem;
             letter-spacing: 1px;
-            margin-top: 80px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .product-card {
-                grid-template-columns: 1fr;
-                padding: 30px;
-            }
             header h1 {
                 font-size: 2.8rem;
             }
             .nav-links {
                 display: none;
             }
-            .about-grid {
+            .about-grid, .why-us {
                 padding: 35px;
             }
         }
@@ -283,6 +347,7 @@
         </div>
         <div class="nav-links">
             <a href="#menu-section">Menu</a>
+            <a href="#why-us">Why Us</a>
             <a href="#about">Vision</a>
             <a href="#contact">Contact</a>
         </div>
@@ -292,7 +357,7 @@
     <header>
         <div class="hero-badge">Craft Brews & Coffee Reserve</div>
         <h1>Artisanal Luxury in <span>Every Sip</span></h1>
-        <p>Experience the finest hand-crafted iced coffee, brewed with precision, passion, and elite global standards right here in Karachi.</p>
+        <p>Experience the finest hand-crafted iced coffees, Spanish lattes, and decadent frappes brewed with precision, passion, and elite global standards right here in Karachi.</p>
         <a href="#menu-section" class="btn-gold">EXPLORE SIGNATURE MENU</a>
     </header>
 
@@ -300,16 +365,92 @@
     <div class="container" id="menu-section">
         <h2 class="section-title">The Signature Collection</h2>
         
-        <!-- Product Card with coffee.png -->
-        <div class="product-card">
-            <div class="product-image-box">
+        <!-- Menu Items Grid (5 Flavors) -->
+        <div class="menu-grid">
+            
+            <!-- Item 1 -->
+            <div class="menu-card">
                 <img src="coffee.png" alt="Suraka Signature Iced Coffee">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Suraka Signature Iced Coffee</h3>
+                        <div class="price">PKR 399</div>
+                        <p>Hand-selected premium coffee beans, velvety frothed foam, and rich artisanal chocolate drizzle combined for an unmatched experience.</p>
+                    </div>
+                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Suraka%20Signature%20Iced%20Coffee%20(PKR%20399)!" class="btn-gold" style="text-align: center;" target="_blank">ORDER VIA WHATSAPP</a>
+                </div>
             </div>
-            <div class="product-info">
-                <h2>Suraka Signature Iced Coffee</h2>
-                <div class="price-tag">PKR 399</div>
-                <p>A masterclass in taste. Hand-selected premium coffee beans, perfectly frothed velvety foam, and rich artisanal chocolate drizzle combined to deliver an unmatched, luxury cafe experience featuring our signature craft brew.</p>
-                <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Suraka%20Signature%20Iced%20Coffee!" class="btn-gold" target="_blank">ORDER VIA WHATSAPP</a>
+
+            <!-- Item 2 -->
+            <div class="menu-card">
+                <img src="coffee.png" alt="Ice Spanish Latte">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Ice Spanish Latte</h3>
+                        <div class="price">PKR 449</div>
+                        <p>A harmonious blend of rich espresso, sweetened condensed milk, and chilled milk over crystal clear ice. Smooth & creamy.</p>
+                    </div>
+                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Ice%20Spanish%20Latte%20(PKR%20449)!" class="btn-gold" style="text-align: center;" target="_blank">ORDER VIA WHATSAPP</a>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-card">
+                <img src="coffee.png" alt="Caramel Latte">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Caramel Latte</h3>
+                        <div class="price">PKR 449</div>
+                        <p>Rich espresso poured over milk and ice, heavily drizzled with golden caramel syrup for a sweet, luxurious kick.</p>
+                    </div>
+                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Caramel%20Latte%20(PKR%20449)!" class="btn-gold" style="text-align: center;" target="_blank">ORDER VIA WHATSAPP</a>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-card">
+                <img src="coffee.png" alt="Caramel Frappe">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Caramel Frappe</h3>
+                        <div class="price">PKR 499</div>
+                        <p>A frosty, blended masterpiece topped with whipped cream and thick caramel syrup drizzle. Pure refreshment.</p>
+                    </div>
+                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Caramel%20Frappe%20(PKR%20499)!" class="btn-gold" style="text-align: center;" target="_blank">ORDER VIA WHATSAPP</a>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="menu-card">
+                <img src="coffee.png" alt="Dairy Milk Iced Latte">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Dairy Milk Iced Latte</h3>
+                        <div class="price">PKR 399</div>
+                        <p>A decadent fusion of iconic Dairy Milk chocolate flavor, creamy milk, and espresso over ice. Ultimate comfort drink.</p>
+                    </div>
+                    <a href="https://wa.me/923231224080?text=Hi,%20I%20want%20to%20order%20Dairy%20Milk%20Iced%20Latte%20(PKR%20399)!" class="btn-gold" style="text-align: center;" target="_blank">ORDER VIA WHATSAPP</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Why Choose Suraka Bucks Section -->
+        <div class="why-us" id="why-us">
+            <h2>Why Choose Suraka Bucks?</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h4>Elite Premiumness</h4>
+                    <p>International cafe standards and aesthetics right in your neighborhood, crafted without compromise.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Top-Tier Quality</h4>
+                    <p>Hand-picked beans, pristine hygiene standards, and rich ingredients blended to perfection every single time.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Unbeatable Value</h4>
+                    <p>Luxury cafe taste made accessible at budget-friendly prices starting from just PKR 399.</p>
+                </div>
             </div>
         </div>
 
@@ -323,7 +464,7 @@
 
     <!-- Footer Section -->
     <footer id="contact">
-        <p>&copy; 2026 SURAKA BUCKS CRAFT BREWS. ALL RIGHTS RESERVED.</p>
+        <p>&copy; 2026 SURAKA BUCKS CRAFT BREWS. ALL RIGHTS RESERVED. FOUNDED BY SURAKA RAZA.</p>
     </footer>
 
 </body>
