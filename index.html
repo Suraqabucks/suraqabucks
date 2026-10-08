@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraka Bucks | 5-Star Luxury Artisanal Coffee Karachi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f7f4ef;
+            color: #2c221e;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid #e6dccf;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            background: #1e3f20;
+            color: #f7f4ef;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 900;
+            border: 2px solid #d4af37;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #2c221e;
+        }
+
+        .cart-btn-nav {
+            background: #1e3f20;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        header {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #fdfbf7 0%, #ecdcc5 100%);
+        }
+
+        .hero-3d-logo-container {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 25px;
+            animation: float3D 4s ease-in-out infinite;
+        }
+
+        .hero-3d-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #d4af37;
+            box-shadow: 0 15px 35px rgba(30, 63, 32, 0.3);
+            animation: rotate3D 10s linear infinite;
+        }
+
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes rotate3D {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .hero-badge {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #1e3f20;
+            margin-bottom: 15px;
+            background: rgba(30, 63, 32, 0.08);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #2c221e;
+            margin-bottom: 15px;
+        }
+
+        header h1 span {
+            color: #1e3f20;
+            font-style: italic;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #61534b;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.8rem;
+            color: #2c221e;
+            margin-bottom: 50px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .menu-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(44, 34, 30, 0.06);
+            border: 1px solid #eee5dc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .menu-card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .menu-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #2c221e;
+            margin-bottom: 6px;
+        }
+
+        .menu-card .price {
+            font-size: 1.3rem;
+            color: #1e3f20;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 12px;
+        }
+
+        .menu-card p {
+            color: #61534b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-buttons button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background-color: #1e3f20;
+            color: #f7f4ef;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #1e3f20;
+            border: 2px solid #1e3f20;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(44, 34, 30, 0.04);
+            border: 1px solid #eee5dc;
+        }
+
+        .feature-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1e3f20;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: #61534b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .about-grid {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 50px;
+            border-left: 6px solid #1e3f20;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(44, 34, 30, 0.04);
+        }
+
+        .about-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #2c221e;
+            margin-bottom: 20px;
+        }
+
+        .about-grid p {
+            color: #61534b;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        #cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background: #fff;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+        }
+
+        #cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #61534b;
+        }
+
+        .cart-items {
+            max-height: 150px;
+            overflow-y: auto;
+            margin: 15px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .checkout-form {
+            margin-top: 10px;
+        }
+
+        .checkout-form h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #1e3f20;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .cart-summary {
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #1e3f20;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #112413;
+            color: #a3b3a4;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            #cart-modal { width: 100%; right: -100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+            <div class="logo-circle">SB</div>
+            <div class="logo-text">Suraka Bucks</div>
+        </div>
+        <div class="nav-links">
+            <button class="cart-btn-nav" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-3d-logo-container">
+            <img src="signature.png" alt="Suraka Logo" class="hero-3d-logo" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'">
+        </div>
+        <div class="hero-badge">Craft Brews & Coffee Reserve</div>
+        <h1>Artisanal Luxury in <span>Every Sip</span></h1>
+        <p>Experience hand-crafted iced coffees, Spanish lattes, and decadent craft brews tailored for elite standards in Karachi.</p>
+        <a href="#menu-section" class="btn-gold" style="padding: 14px 35px; border-radius: 30px; font-weight: 600;">EXPLORE MENU</a>
+    </header>
+
+    <div class="container" id="menu-section">
+        <h2 class="section-title">The Signature Collection</h2>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="signature.png" alt="Signature Iced Coffee" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Suraka Signature Iced Coffee</h3>
+                        <div class="price">PKR 499</div>
+                        <p>Our flagship masterpiece featuring the official Suraka Bucks emblem. Hand-selected premium coffee beans and velvety foam.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addItemToCart('Suraka Signature Iced Coffee', 499)">Add to Cart</button>
+                        <button class="btn-gold" onclick="buyItemNow('Suraka Signature Iced Coffee', 499)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Dairy Milk Iced Latte</h3>
+                        <div class="price">PKR 499</div>
+                        <p>Ultra-luxurious fusion stamped with the Suraka Bucks logo. Iconic Dairy Milk chocolate, creamy milk, and double espresso.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addItemToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
+                        <button class="btn-gold" onclick="buyItemNow('Dairy Milk Iced Latte', 499)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="spanish.png" alt="Ice Spanish Latte" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Ice Spanish Latte</h3>
+                        <div class="price">PKR 399</div>
+                        <p>Bearing the signature Suraka Bucks seal, this harmonious blend brings condensed milk and rich espresso over crystal ice.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addItemToCart('Ice Spanish Latte', 399)">Add to Cart</button>
+                        <button class="btn-gold" onclick="buyItemNow('Ice Spanish Latte', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="caramel.png" alt="Caramel Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Caramel Latte</h3>
+                        <div class="price">PKR 399</div>
+                        <p>Adorned with the Suraka Bucks emblem, rich espresso poured over milk, heavily drizzled with golden caramel syrup.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addItemToCart('Caramel Latte', 399)">Add to Cart</button>
+                        <button class="btn-gold" onclick="buyItemNow('Caramel Latte', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="frappe.png" alt="Caramel Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Caramel Frappe</h3>
+                        <div class="price">PKR 399</div>
+                        <p>Branded with the elite Suraka Bucks crest, a frosty, blended masterpiece topped with whipped cream and caramel drizzle.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addItemToCart('Caramel Frappe', 399)">Add to Cart</button>
+                        <button class="btn-gold" onclick="buyItemNow('Caramel Frappe', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="font-size: 2.2rem; margin-top: 40px;">Why Choose Suraka Bucks?</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>24/7 Availability</h4>
+                <p>Always ready to serve your midnight coffee cravings and morning caffeine boosts without fail.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Pristine Premium Quality</h4>
+                <p>Hand-picked ingredients, immaculate hygiene, and rich international flavors crafted fresh to order.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Unmatched Luxury Standards</h4>
+                <p>Bringing high-end cafe luxury directly to your doorstep starting from just PKR 399.</p>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <h2>Vision of Suraka Raza</h2>
+            <p>Founded with a visionary mindset by <strong>Suraka Raza</strong>, Suraka Bucks stands on an unwavering commitment to supreme craftsmanship and elite taste. Proving that independent local innovation can match and exceed global luxury standards.</p>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar & Checkout Portal -->
+    <div id="cart-modal">
+        <div>
+            <div class="cart-header">
+                <h3>Your Order Cart</h3>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            
+            <div class="cart-items" id="cart-items-container">
+                <p style="color: #888; text-align: center; margin-top: 20px;">Your cart is empty.</p>
+            </div>
+
+            <div class="checkout-form">
+                <h4>Customer Details</h4>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="cust-name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="cust-phone" placeholder="03XXXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address</label>
+                    <textarea id="cust-address" rows="2" placeholder="House no, Street, Area"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <div style="font-size: 0.85rem; color: #666; margin-bottom: 3px;">Delivery Charges: <strong>PKR 100</strong></div>
+            <div class="cart-total">
+                <span>Total Amount:</span>
+                <span id="cart-total-price">PKR 100</span>
+            </div>
+            <button class="btn-gold" style="width: 100%; padding: 14px; border-radius: 12px; font-weight: 600; cursor: pointer;" onclick="confirmAndSendWhatsApp()">CONFIRM & PLACE ORDER</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SURAKA BUCKS CRAFT BREWS. VISION BY SURAKA RAZA. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        let globalCart = [];
+        const fixedDeliveryFee = 100;
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            if (modal) {
+                modal.classList.toggle('active');
+            }
+        }
+
+        function addItemToCart(itemName, itemPrice) {
+            globalCart.push({ name: itemName, price: itemPrice });
+            updateCartDisplay();
+            toggleCart();
+        }
+
+       
