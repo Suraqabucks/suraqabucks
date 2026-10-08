@@ -70,6 +70,7 @@
             font-weight: 600;
             cursor: pointer;
             border: none;
+            box-shadow: 0 4px 15px rgba(30, 63, 32, 0.2);
         }
 
         header {
@@ -223,6 +224,7 @@
             font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
+            z-index: 10;
         }
 
         .btn-gold {
@@ -291,6 +293,7 @@
             line-height: 1.8;
         }
 
+        /* Cart Sidebar & Checkout Portal */
         #cart-modal {
             position: fixed;
             top: 0;
@@ -299,7 +302,7 @@
             height: 100%;
             background: #fff;
             box-shadow: -10px 0 40px rgba(0,0,0,0.15);
-            z-index: 2000;
+            z-index: 9999;
             transition: right 0.3s ease;
             padding: 25px;
             display: flex;
@@ -418,7 +421,7 @@
             <div class="logo-text">Suraka Bucks</div>
         </div>
         <div class="nav-links">
-            <button class="cart-btn-nav" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+            <button class="cart-btn-nav" id="open-cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
         </div>
     </nav>
 
@@ -436,77 +439,82 @@
         <h2 class="section-title">The Signature Collection</h2>
         
         <div class="menu-grid">
+            <!-- Item 1 -->
             <div class="menu-card">
                 <img src="signature.png" alt="Signature Iced Coffee" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
                     <div>
                         <h3>Suraka Signature Iced Coffee</h3>
                         <div class="price">PKR 499</div>
-                        <p>Our flagship masterpiece featuring the official Suraka Bucks emblem. Hand-selected premium coffee beans and velvety foam.</p>
+                        <p>Our masterpiece brew crafted with hand-selected premium coffee beans, velvety cold foam, and rich aromatic depth.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addItemToCart('Suraka Signature Iced Coffee', 499)">Add to Cart</button>
-                        <button class="btn-gold" onclick="buyItemNow('Suraka Signature Iced Coffee', 499)">Buy Now</button>
+                        <button class="btn-outline add-cart-btn" data-name="Suraka Signature Iced Coffee" data-price="499">Add to Cart</button>
+                        <button class="btn-gold buy-now-btn" data-name="Suraka Signature Iced Coffee" data-price="499">Buy Now</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Item 2 -->
             <div class="menu-card">
                 <img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
                     <div>
                         <h3>Dairy Milk Iced Latte</h3>
                         <div class="price">PKR 499</div>
-                        <p>Ultra-luxurious fusion stamped with the Suraka Bucks logo. Iconic Dairy Milk chocolate, creamy milk, and double espresso.</p>
+                        <p>An ultra-luxurious fusion combining iconic Dairy Milk chocolate richness with creamy cold milk and a double espresso shot.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addItemToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
-                        <button class="btn-gold" onclick="buyItemNow('Dairy Milk Iced Latte', 499)">Buy Now</button>
+                        <button class="btn-outline add-cart-btn" data-name="Dairy Milk Iced Latte" data-price="499">Add to Cart</button>
+                        <button class="btn-gold buy-now-btn" data-name="Dairy Milk Iced Latte" data-price="499">Buy Now</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Item 3 -->
             <div class="menu-card">
                 <img src="spanish.png" alt="Ice Spanish Latte" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
                     <div>
                         <h3>Ice Spanish Latte</h3>
                         <div class="price">PKR 399</div>
-                        <p>Bearing the signature Suraka Bucks seal, this harmonious blend brings condensed milk and rich espresso over crystal ice.</p>
+                        <p>A harmonious balance of sweet condensed milk and robust espresso poured over crystal-clear ice for a silky-smooth finish.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addItemToCart('Ice Spanish Latte', 399)">Add to Cart</button>
-                        <button class="btn-gold" onclick="buyItemNow('Ice Spanish Latte', 399)">Buy Now</button>
+                        <button class="btn-outline add-cart-btn" data-name="Ice Spanish Latte" data-price="399">Add to Cart</button>
+                        <button class="btn-gold buy-now-btn" data-name="Ice Spanish Latte" data-price="399">Buy Now</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Item 4 -->
             <div class="menu-card">
                 <img src="caramel.png" alt="Caramel Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
                     <div>
                         <h3>Caramel Latte</h3>
                         <div class="price">PKR 399</div>
-                        <p>Adorned with the Suraka Bucks emblem, rich espresso poured over milk, heavily drizzled with golden caramel syrup.</p>
+                        <p>Rich espresso blended with chilled milk and heavily drizzled with golden, buttery caramel syrup for an indulgent sweetness.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addItemToCart('Caramel Latte', 399)">Add to Cart</button>
-                        <button class="btn-gold" onclick="buyItemNow('Caramel Latte', 399)">Buy Now</button>
+                        <button class="btn-outline add-cart-btn" data-name="Caramel Latte" data-price="399">Add to Cart</button>
+                        <button class="btn-gold buy-now-btn" data-name="Caramel Latte" data-price="399">Buy Now</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Item 5 -->
             <div class="menu-card">
                 <img src="frappe.png" alt="Caramel Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
                     <div>
                         <h3>Caramel Frappe</h3>
                         <div class="price">PKR 399</div>
-                        <p>Branded with the elite Suraka Bucks crest, a frosty, blended masterpiece topped with whipped cream and caramel drizzle.</p>
+                        <p>A frosty, expertly blended masterpiece topped with whipped cream and rich caramel drizzle to satisfy your ultimate cravings.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addItemToCart('Caramel Frappe', 399)">Add to Cart</button>
-                        <button class="btn-gold" onclick="buyItemNow('Caramel Frappe', 399)">Buy Now</button>
+                        <button class="btn-outline add-cart-btn" data-name="Caramel Frappe" data-price="399">Add to Cart</button>
+                        <button class="btn-gold buy-now-btn" data-name="Caramel Frappe" data-price="399">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -539,7 +547,7 @@
         <div>
             <div class="cart-header">
                 <h3>Your Order Cart</h3>
-                <button class="close-cart" onclick="toggleCart()">&times;</button>
+                <button class="close-cart" id="close-cart-btn">&times;</button>
             </div>
             
             <div class="cart-items" id="cart-items-container">
@@ -569,7 +577,7 @@
                 <span>Total Amount:</span>
                 <span id="cart-total-price">PKR 100</span>
             </div>
-            <button class="btn-gold" style="width: 100%; padding: 14px; border-radius: 12px; font-weight: 600; cursor: pointer;" onclick="confirmAndSendWhatsApp()">CONFIRM & PLACE ORDER</button>
+            <button class="btn-gold" id="place-order-btn" style="width: 100%; padding: 14px; border-radius: 12px; font-weight: 600; cursor: pointer;">CONFIRM & PLACE ORDER</button>
         </div>
     </div>
 
@@ -581,17 +589,4 @@
         let globalCart = [];
         const fixedDeliveryFee = 100;
 
-        function toggleCart() {
-            const modal = document.getElementById('cart-modal');
-            if (modal) {
-                modal.classList.toggle('active');
-            }
-        }
-
-        function addItemToCart(itemName, itemPrice) {
-            globalCart.push({ name: itemName, price: itemPrice });
-            updateCartDisplay();
-            toggleCart();
-        }
-
-       
+        function toggleCart()
