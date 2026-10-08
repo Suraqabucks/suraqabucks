@@ -32,12 +32,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid #e6dccf;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
 
         .logo-area {
@@ -48,8 +49,8 @@
         }
 
         @keyframes floatLogo {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-4px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
         }
 
         .logo-circle {
@@ -97,18 +98,19 @@
         .cart-btn-nav {
             background: #1e3f20;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 25px;
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             border: none;
-            box-shadow: 0 4px 12px rgba(30, 63, 32, 0.2);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(30, 63, 32, 0.25);
+            transition: all 0.3s ease;
         }
 
         .cart-btn-nav:hover {
             transform: scale(1.05);
+            background: #2c5230;
         }
 
         /* Hero Section with 3D Motion Feel */
@@ -120,8 +122,9 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, #fdfbf7 0%, #f0e6d8 100%);
+            background: linear-gradient(135deg, #fdfbf7 0%, #ede3d2 100%);
             animation: fadeInHero 1.2s ease-in-out;
+            position: relative;
         }
 
         @keyframes fadeInHero {
@@ -136,11 +139,11 @@
             text-transform: uppercase;
             color: #1e3f20;
             margin-bottom: 20px;
-            background: rgba(30, 63, 32, 0.1);
-            padding: 6px 18px;
+            background: rgba(30, 63, 32, 0.08);
+            padding: 8px 20px;
             border-radius: 20px;
             font-weight: 600;
-            border: 1px solid rgba(30, 63, 32, 0.2);
+            border: 1px solid rgba(30, 63, 32, 0.15);
         }
 
         header h1 {
@@ -176,7 +179,7 @@
             letter-spacing: 1px;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(30, 63, 32, 0.2);
+            box-shadow: 0 10px 25px rgba(30, 63, 32, 0.25);
             display: inline-block;
             border: none;
             cursor: pointer;
@@ -227,36 +230,39 @@
             margin-bottom: 80px;
         }
 
+        /* 3D Tilt Card Effect */
         .menu-card {
             background: #ffffff;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(44, 34, 30, 0.06);
             border: 1px solid #eee5dc;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
 
         .menu-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: 0 25px 50px rgba(44, 34, 30, 0.12);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(44, 34, 30, 0.12);
         }
 
         .menu-card img {
             width: 100%;
-            height: 260px;
+            height: 280px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
 
         .menu-card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
         .menu-card-content {
-            padding: 25px;
+            padding: 28px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -271,7 +277,7 @@
         }
 
         .menu-card .price {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: #1e3f20;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
@@ -282,20 +288,20 @@
             color: #61534b;
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             font-weight: 300;
         }
 
         .card-buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .card-buttons button {
             flex: 1;
             padding: 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 600;
             cursor: pointer;
         }
@@ -376,7 +382,7 @@
             width: 400px;
             height: 100%;
             background: #fff;
-            box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
             z-index: 2000;
             transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             padding: 30px;
@@ -488,7 +494,7 @@
         <!-- Menu Grid -->
         <div class="menu-grid">
             
-            <!-- Item 1: Signature Iced Coffee (Top Premium - PKR 499) -->
+            <!-- Item 1: Signature Iced Coffee (PKR 499) -->
             <div class="menu-card">
                 <img src="signature.png" alt="Suraka Signature Iced Coffee" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
@@ -504,7 +510,7 @@
                 </div>
             </div>
 
-            <!-- Item 2: Dairy Milk Iced Latte (Top Premium - PKR 499) -->
+            <!-- Item 2: Dairy Milk Iced Latte (PKR 499) -->
             <div class="menu-card">
                 <img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80'">
                 <div class="menu-card-content">
@@ -575,21 +581,19 @@
             <h2>Why Choose Suraka Bucks?</h2>
             <div class="features-grid">
                 <div class="feature-box">
-                    <h4>Elite Premiumness</h4>
-                    <p>International cafe standards and aesthetics brought directly to your neighborhood without compromise.</p>
+                    <h4>24/7 Availability</h4>
+                    <p>Always ready to serve your midnight coffee cravings and morning caffeine boosts without fail.</p>
                 </div>
                 <div class="feature-box">
-                    <h4>Top-Tier Quality</h4>
-                    <p>Hand-picked beans, pristine hygiene standards, and rich ingredients blended fresh every single time.</p>
+                    <h4>Pristine Premium Quality</h4>
+                    <p>Hand-picked ingredients, immaculate hygiene, and rich international flavors crafted fresh to order.</p>
                 </div>
                 <div class="feature-box">
-                    <h4>Unbeatable Budget Value</h4>
-                    <p>Luxury cafe taste made accessible at pocket-friendly prices starting from just PKR 399.</p>
+                    <h4>Unmatched Luxury Standards</h4>
+                    <p>Bringing high-end cafe luxury directly to your doorstep starting from just PKR 399.</p>
                 </div>
             </div>
         </div>
 
         <!-- Vision Section -->
-        <div class="about-grid" id="about">
-            <h2>Vision of Suraka Raza</h2>
-            <p>Founded with a bold mindset by <strong>Suraka Raza</strong>, Suraka Bucks stands on an unwavering commitment to excellence, craftsmanship, and pure flavor. The core vision is simple: proving that local indep
+        <div cl
