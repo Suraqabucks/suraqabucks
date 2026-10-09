@@ -3,556 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suraka Bucks | 5-Star Luxury Artisanal Coffee in Karachi</title>
-    <meta name="description" content="Suraka Bucks by Suraka Raza - Karachi's elite artisanal craft brews, signature iced coffees, and luxury coffee reserve.">
+    <title>Suraka Bucks | Luxury Iced Coffee Karachi</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
+        :root {
+            --bg-dark: #0a140c;
+            --card-bg: #112214;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #f5f5f5;
+            --text-muted: #aaaaaa;
+            --accent: #1e3822;
         }
-
-        body {
-            background-color: #0b1a0c;
-            color: #f7f4ef;
-            overflow-x: hidden;
-        }
-
-        /* Top VIP Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 6%;
-            background-color: rgba(11, 26, 12, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-circle {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #1e3f20, #0b1a0c);
-            color: #f7f4ef;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 900;
-            border: 2px solid #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .logo-text-box {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #f7f4ef;
-            letter-spacing: 0.5px;
-        }
-
-        .logo-subtext {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            color: #d4af37;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .cart-btn-nav {
-            background: linear-gradient(135deg, #d4af37, #aa8223);
-            color: #0b1a0c;
-            padding: 10px 22px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Clean Premium Hero Section */
-        header {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #0b1a0c 0%, #163018 100%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-        }
-
-        .hero-badge {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #f7f4ef;
-            margin-bottom: 15px;
-            line-height: 1.15;
-            max-width: 800px;
-        }
-
-        header h1 span {
-            color: #d4af37;
-            font-style: italic;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #c5bdae;
-            margin-bottom: 30px;
-            max-width: 650px;
-            line-height: 1.6;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, #d4af37, #aa8223);
-            color: #0b1a0c;
-            padding: 14px 35px;
-            border-radius: 30px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 1rem;
-            display: inline-block;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Container & Grid */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            font-size: 2.8rem;
-            color: #f7f4ef;
-            margin-bottom: 50px;
-            font-weight: 700;
-        }
-
-        .section-title span {
-            color: #d4af37;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-bottom: 80px;
-        }
-
-        .menu-card {
-            background: #122614;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .menu-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .menu-card-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-grow: 1;
-        }
-
-        .menu-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            color: #f7f4ef;
-            margin-bottom: 6px;
-        }
-
-        .menu-card .price {
-            font-size: 1.1rem;
-            color: #d4af37;
-            font-weight: 700;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 10px;
-        }
-
-        .menu-card p {
-            color: #c5bdae;
-            font-size: 0.82rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        .card-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .card-buttons a {
-            flex: 1;
-            padding: 12px 6px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #f7f4ef;
-            border: 1px solid rgba(212, 175, 55, 0.6);
-        }
-
-        .btn-card-gold {
-            background: linear-gradient(135deg, #d4af37, #aa8223);
-            color: #0b1a0c;
-        }
-
-        /* Features */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .feature-box {
-            background: #122614;
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .feature-box h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: #d4af37;
-            margin-bottom: 12px;
-        }
-
-        .feature-box p {
-            color: #c5bdae;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Payment Banner */
-        .payment-banner {
-            background: linear-gradient(135deg, #122614, #0b1a0c);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .payment-banner h3 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .payment-pills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .pill {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            color: #f7f4ef;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Bottom Split Section */
-        .bottom-split-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .cappuccino-card {
-            background: #122614;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .cappuccino-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .cappuccino-content {
-            padding: 25px;
-        }
-
-        .cappuccino-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: #d4af37;
-            margin-bottom: 8px;
-        }
-
-        .cappuccino-content p {
-            color: #c5bdae;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .about-grid {
-            background: #122614;
-            border-radius: 20px;
-            padding: 40px;
-            border-left: 6px solid #d4af37;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .about-grid h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: #f7f4ef;
-            margin-bottom: 20px;
-        }
-
-        .about-grid p {
-            color: #c5bdae;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #071208;
-            color: #8c9c8e;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        @media (max-width: 900px) {
-            header h1 { font-size: 2.5rem; }
-            .bottom-split-section { grid-template-columns: 1fr; }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        header { background: linear-gradient(135deg, #050a06, var(--accent)); border-bottom: 2px solid var(--gold); padding: 2rem 1rem; text-align: center; position: relative; }
+        header h1 { font-size: 2.5rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        header p { color: var(--gold-light); font-size: 1.1rem; font-style: italic; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        .section-title { text-align: center; color: var(--gold); font-size: 2rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--accent); padding-bottom: 0.5rem; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .menu-card { background-color: var(--card-bg); border: 1px solid var(--gold); border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.5); transition: transform 0.3s ease; }
+        .menu-card:hover { transform: translateY(-5px); }
+        .menu-card h3 { color: var(--gold-light); font-size: 1.4rem; margin-bottom: 0.8rem; }
+        .menu-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; }
+        .price { color: var(--gold); font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; }
+        .btn { background: linear-gradient(135deg, var(--gold), #aa820a); color: #000; border: none; padding: 0.7rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 25px; cursor: pointer; transition: opacity 0.2s; width: 100%; text-transform: uppercase; }
+        .btn:hover { opacity: 0.9; }
+        
+        /* Cart Floating Bar & Modal */
+        .cart-bar { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: #000; padding: 1rem 1.5rem; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 5px 20px rgba(212,175,55,0.4); z-index: 100; display: flex; align-items: center; gap: 10px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; }
+        .modal-content { background: var(--card-bg); border: 2px solid var(--gold); width: 100%; max-width: 500px; border-radius: 15px; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-btn { position: absolute; top: 15px; right: 20px; color: var(--gold); font-size: 1.5rem; cursor: pointer; font-weight: bold; }
+        .cart-items-list { margin: 1rem 0; max-height: 150px; overflow-y: auto; border-bottom: 1px solid var(--accent); padding-bottom: 1rem; }
+        .cart-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .form-group { margin-bottom: 1rem; text-align: left; }
+        .form-group label { display: block; color: var(--gold-light); margin-bottom: 0.3rem; font-size: 0.9rem; }
+        .form-group input, .form-group select { width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid var(--gold); background: var(--bg-dark); color: var(--text-main); }
+        .total-box { font-size: 1.2rem; color: var(--gold); font-weight: bold; margin: 1rem 0; text-align: right; }
+        
+        /* Payment Banner & Info */
+        .payment-section { background: var(--card-bg); border: 1px solid var(--gold); border-radius: 12px; padding: 2rem; margin-top: 3rem; text-align: center; }
+        .payment-section h3 { color: var(--gold); margin-bottom: 1rem; }
+        .payment-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1rem; }
+        .badge { background: var(--accent); border: 1px solid var(--gold); color: var(--gold-light); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--accent); margin-top: 3rem; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo-area">
-            <div class="logo-circle">SB</div>
-            <div class="logo-text-box">
-                <div class="logo-text">Suraka Bucks</div>
-                <div class="logo-subtext">Premium Coffee • Karachi</div>
-            </div>
-        </div>
-        <div class="nav-links">
-            <a href="https://wa.me/923231224080?text=Hello%20Suraka%20Bucks,%20I%20want%20to%20order%20coffee!" target="_blank" class="cart-btn-nav">💬 Quick Order WhatsApp</a>
-        </div>
-    </nav>
-
-    <!-- Clean Premium Hero Section -->
     <header>
-        <div class="hero-badge">CRAFTED WITH PASSION</div>
-        <h1>Artisanal Luxury in <span>Every Sip.</span></h1>
-        <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel flavours, made to order exclusively in Karachi.</p>
-        <a href="#menu-section" class="btn-gold">Explore Menu &rarr;</a>
+        <h1>Suraka Bucks</h1>
+        <p>Karachi's Premier Artisanal Iced Coffee & Luxury Brews</p>
     </header>
 
-    <!-- Main Container -->
-    <div class="container" id="menu-section">
-        <h2 class="section-title">OUR SIGNATURE <span>COLLECTION</span></h2>
-        
+    <div class="container">
+        <h2 class="section-title">Signature Menu</h2>
         <div class="menu-grid">
-            <!-- Item 1 -->
             <div class="menu-card">
-                <img src="signature.png" alt="Suraka Signature Iced Coffee" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80'">
-                <div class="menu-card-content">
-                    <div>
-                        <h3>Suraka Signature Iced Coffee</h3>
-                        <div class="price">PKR 499</div>
-                        <p>Signature coffee with velvety cold foam and rich aromatic depth.</p>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20ADD%20TO%20CART:%20Suraka%20Signature%20Iced%20Coffee%20(PKR%20499)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Suraka%20Signature%20Iced%20Coffee%20(PKR%20499)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
-                    </div>
-                </div>
+                <h3>Signature Iced Coffee</h3>
+                <p>Rich, bold espresso blended with cold milk and secret signature sweetness.</p>
+                <div class="price">PKR 499</div>
+                <button class="btn" onclick="addToCart('Signature Iced Coffee', 499)">Add to Cart</button>
             </div>
-
-            <!-- Item 2 -->
             <div class="menu-card">
-                <img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80'">
-                <div class="menu-card-content">
-                    <div>
-                        <h3>Dairy Milk Iced Latte</h3>
-                        <div class="price">PKR 499</div>
-                        <p>Chocolate richness blended with creamy milk and double espresso.</p>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20ADD%20TO%20CART:%20Dairy%20Milk%20Iced%20Latte%20(PKR%20499)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Dairy%20Milk%20Iced%20Latte%20(PKR%20499)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
-                    </div>
-                </div>
+                <h3>Dairy Milk Iced Latte</h3>
+                <p>The ultimate indulgence infused with pure melted Dairy Milk chocolate richness.</p>
+                <div class="price">PKR 499</div>
+                <button class="btn" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
             </div>
-
-            <!-- Item 3 -->
             <div class="menu-card">
-                <img src="spanish.png" alt="Ice Spanish Latte" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80'">
-                <div class="menu-card-content">
-                    <div>
-                        <h3>Ice Spanish Latte</h3>
-                        <div class="price">PKR 399</div>
-                        <p>Condensed milk combined with robust espresso over crystal ice.</p>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20ADD%20TO%20CART:%20Ice%20Spanish%20Latte%20(PKR%20399)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Ice%20Spanish%20Latte%20(PKR%20399)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
-                    </div>
-                </div>
+                <h3>Iced Spanish Latte</h3>
+                <p>Smooth, sweet layers of condensed milk and robust espresso over crystal ice.</p>
+                <div class="price">PKR 399</div>
+                <button class="btn" onclick="addToCart('Iced Spanish Latte', 399)">Add to Cart</button>
             </div>
-
-            <!-- Item 4 -->
             <div class="menu-card">
-                <img src="caramel.png" alt="Caramel Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80'">
-                <div class="menu-card-content">
-                    <div>
-                        <h3>Caramel Latte</h3>
-                        <div class="price">PKR 399</div>
-                        <p>Chilled milk and espresso with heavy golden caramel syrup drizzle.</p>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20ADD%20TO%20CART:%20Caramel%20Latte%20(PKR%20399)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Caramel%20Latte%20(PKR%20399)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
-                    </div>
-                </div>
+                <h3>Caramel Latte</h3>
+                <p>Classically crafted with velvety milk, espresso, and rich gourmet caramel drizzle.</p>
+                <div class="price">PKR 399</div>
+                <button class="btn" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
             </div>
-
-            <!-- Item 5 -->
             <div class="menu-card">
-                <img src="frappe.png" alt="Caramel Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=600&q=80'">
-                <div class="menu-card-content">
-                    <div>
-                        <h3>Caramel Frappe</h3>
-                        <div class="price">PKR 399</div>
-                        <p>A frosty caramel coffee blend topped with whipped cream.</p>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20ADD%20TO%20CART:%20Caramel%20Frappe%20(PKR%20399)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Caramel%20Frappe%20(PKR%20399)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
-                    </div>
-                </div>
+                <h3>Caramel Frappe</h3>
+                <p>Blended ice perfection loaded with intense caramel flavor and creamy texture.</p>
+                <div class="price">PKR 399</div>
+                <button class="btn" onclick="addToCart('Caramel Frappe', 399)">Add to Cart</button>
             </div>
         </div>
 
-        <!-- Features -->
-        <div class="features-grid">
-            <div class="feature-box">
-                <h4>💎 Premium Taste</h4>
-                <p>Carefully selected beans for rich, bold flavor in every single cup.</p>
-            </div>
-            <div class="feature-box">
-                <h4>✨ Clear Prices</h4>
-                <p>Transparent pricing with no hidden charges. Fresh coffee before order.</p>
-            </div>
-            <div class="feature-box">
-                <h4>⚡ Instant Ordering</h4>
-                <p>Clicking buttons instantly generates your order details on WhatsApp.</p>
-            </div>
-            <div class="feature-box">
-                <h4>🚀 Karachi Home-Based Brand</h4>
-                <p>Support a local business & fulfill big dreams.</p>
-            </div>
-        </div>
-
-        <!-- Payment Methods Banner -->
-        <div class="payment-banner">
-            <h3>Accepted Payment Methods</h3>
-            <div class="payment-pills">
-                <div class="pill">Cash on Delivery (COD)</div>
-                <div class="pill">Advance Payment</div>
-                <div class="pill">EasyPaisa</div>
-                <div class="pill">JazzCash</div>
-                <div class="pill">All Meezan Bank Accounts</div>
-                <div class="pill">All Pakistani Banks (IBFT)</div>
-            </div>
-        </div>
-
-        <!-- Bottom Split Section -->
-        <div class="bottom-split-section">
-            <div class="cappuccino-card">
-                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80" alt="Hot Cappuccino Latte Art">
-                <div class="cappuccino-content">
-                    <h3>Artisan Hot Reserve</h3>
-                    <p>Expertly hand-poured latte art over rich espresso and velvety steamed milk, crafted for true coffee connoisseurs.</p>
-                </div>
-            </div>
-            
-            <div class="about-grid">
-                <h2>Vision of Suraka Raza</h2>
-                <p>Suraka Bucks handcrafts elite coffee. Founded by <strong>Suraka Raza</strong>, our dedication is rooted in great taste, quality ingredients, and the joy of simple moments.</p>
+        <div class="payment-section">
+            <h3>Accepted Payment Methods & Delivery Info</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Flat Delivery Fee: <strong>PKR 100</strong> across Karachi. Pay via Cash on Delivery or Advance Online Transfer.</p>
+            <div class="payment-badges">
+                <span class="badge">Cash on Delivery (COD)</span>
+                <span class="badge">EasyPaisa</span>
+                <span class="badge">JazzCash</span>
+                <span class="badge">Meezan Bank</span>
+                <span class="badge">All Pakistani Banks</span>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Floating Cart Button -->
+    <div class="cart-bar" onclick="openCheckoutModal()">
+        🛒 Cart (<span id="cart-count">0</span>) - PKR <span id="cart-total-bar">0</span>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
+            <h2 style="color: var(--gold); margin-bottom: 1rem; text-align: center;">Complete Your Order</h2>
+            
+            <div class="cart-items-list" id="cartItemsList">
+                <p style="text-align: center; color: var(--text-muted);">Your cart is empty.</p>
+            </div>
+
+            <div class="total-box">
+                Items Total: PKR <span id="subTotal">0</span><br>
+                Delivery: PKR <span id="deliveryFee">100</span><br>
+                <span style="color: var(--gold-light);">Grand Total: PKR <span id="grandTotal">100</span></span>
+            </div>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="custName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Delivery Address (Karachi)</label>
+                <input type="text" id="custAddress" placeholder="House no, street, area">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" id="custPhone" placeholder="03XXXXXXXXX">
+            </div>
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select id="custPayment">
+                    <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                    <option value="EasyPaisa">EasyPaisa</option>
+                    <option value="JazzCash">JazzCash</option>
+                    <option value="Meezan Bank / Bank Transfer">Meezan Bank / Bank Transfer</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="sendOrderToWhatsApp()" style="margin-top: 1rem;">Place Order via WhatsApp</button>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Suraka Bucks. Vision by Suraka Raza. All rights reserved. &bull; Made with ❤️ in Karachi</p>
+        &copy; 2026 Suraka Bucks. Crafted for Luxury. All rights reserved.
     </footer>
+
+    <script>
+        let cart = [];
+        const deliveryCharge = 100;
+
+        function addToCart(name, price) {
+            let existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name: name, price: price, qty: 1 });
+            }
+            updateCartUI();
+            alert(name + " added to your cart!");
+        }
+
+        function updateCartUI() {
+            let totalCount = 0;
+            let subtotal = 0;
+            let listHTML = "";
+
+            cart.forEach((item, index) => {
+                totalCount += item.qty;
+                subtotal += item.price * item.qty;
+                listHTML += `
+                    <div class="cart-item">
+                        <span>${item.name} (x${item.qty})</span>
+                        <span>PKR ${item.price * item.qty}</span>
+                    </div>
+                `;
+            });
+
+            if (cart.length === 0) {
+                listHTML = '<p style="text-align: center; color: var(--text-muted);">Your cart is empty.</p>';
+            }
+
+            document.getElementById('cart-count').innerText = totalCount;
+            document.getElementById('cart-total-bar').innerText = subtotal + (cart.length > 0 ? deliveryCharge : 0);
+            document.getElementById('cartItemsList').innerHTML = listHTML;
+            document.getElementById('subTotal').innerText = subtotal;
+            document.getElementById('grandTotal').innerText = cart.length > 0 ? subtotal + deliveryCharge : 0;
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                alert("Your cart is empty! Please add a delicious coffee first.");
+                return;
+            }
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        function sendOrderToWhatsApp() {
+            let name = document.getElementById('custName').value.trim();
+            let address = document.getElementById('custAddress').value.trim();
+            let phone = document.getElementById('custPhone').value.trim();
+            let payment = document.getElementById('custPayment').value;
+
+            if (!name || !address || !phone) {
+                alert("Please fill in all details (Name, Address, and Phone Number) before placing the order.");
+                return;
+            }
+
+            let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            let grandTotal = subtotal + deliveryCharge;
+
+            let message = "☕ *NEW ORDER - SURAKA BUCKS* ☕\n\n";
+            message += `*Customer Name:* ${name}\n`;
+            message += `*Phone:* ${phone}\n`;
+            message += `*Address:* ${address}\n\n`;
+            message += `*Ordered Items:*\n`;
+            
+            cart.forEach(item => {
+                message += `- ${item.name} x ${item.qty} = PKR ${item.price * item.qty}\n`;
+            });
+
+            message += `\n*Subtotal:* PKR ${subtotal}\n`;
+            message += `*Delivery Fee:* PKR ${deliveryCharge}\n`;
+            message += `*Grand Total:* PKR ${grandTotal}\n`;
+            message += `*Payment Method:* ${payment}\n\n`;
+            message += `Please confirm my order!`;
+
+            let encodedMessage = encodeURIComponent(message);
+            // Replace with Suraka's WhatsApp number (e.g., 923XXXXXXXXX)
+            let whatsappNumber = "923000000000"; 
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
 </body>
 </html>
