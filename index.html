@@ -3,450 +3,553 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suraka Bucks | Luxury Artisanal Iced Coffee Karachi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Suraka Bucks | Artisanal Luxury in Every Sip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-light: #f4f7f4;
-            --card-bg: #ffffff;
-            --primary-green: #132e18;
-            --accent-green: #1b3d22;
-            --light-green-bg: #e8f0ea;
-            --gold: #c5a059;
-            --gold-dark: #9e7d3b;
-            --text-main: #1a2e1e;
-            --text-muted: #556b5a;
-            --border-color: #d1ebd5;
-            --shadow: 0 10px 30px rgba(19, 46, 24, 0.08);
+            --bg-dark: #0f1c14;
+            --bg-card: #15291e;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --text-light: #f5f5f5;
+            --text-muted: #b0c4b1;
+            --green-primary: #1b3b2b;
+            --green-light: #2d5a40;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
-        
-        /* Navbar */
-        nav {
-            background-color: var(--primary-green);
-            color: #fff;
-            padding: 1rem 2rem;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        header {
+            background-color: rgba(15, 28, 20, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--gold);
         }
-        .nav-logo {
+
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
-            font-weight: bold;
-        }
-        .nav-logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid var(--gold);
-            object-fit: cover;
-        }
-        .nav-links { display: flex; gap: 20px; font-size: 0.95rem; }
-        .nav-links a { color: #fff; text-decoration: none; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--gold); }
-
-        /* Hero Banner */
-        .hero {
-            background: linear-gradient(135deg, #132e18 0%, #1f4727 100%);
-            color: #fff;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            border-bottom: 4px solid var(--gold);
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        .hero h1 span { color: var(--gold); font-style: italic; }
-        .hero p {
-            color: #d1ebd5;
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
+            gap: 10px;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
-        
-        .section-title { 
-            text-align: center; 
-            color: var(--primary-green); 
+        .logo-container h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; 
-            margin-bottom: 2.5rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-            position: relative;
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
         }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 3px;
-            background: var(--gold);
-            margin: 0.5rem auto 0;
-        }
-        
-        /* Menu Grid - Light & Clean */
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .menu-card { 
-            background-color: var(--card-bg); 
-            border: 1px solid var(--border-color); 
-            border-radius: 16px; 
-            padding: 1.5rem; 
-            text-align: center; 
-            box-shadow: var(--shadow); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(19, 46, 24, 0.15); border-color: var(--gold); }
-        
-        .menu-img-wrapper {
-            width: 100%;
-            height: 190px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            margin-bottom: 1.2rem;
-            background: #fff;
-        }
-        .menu-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .menu-card:hover .menu-img { transform: scale(1.05); }
 
-        .menu-card h3 { color: var(--primary-green); font-size: 1.35rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
-        .menu-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.2rem; min-height: 45px; }
-        .price { color: var(--gold-dark); font-size: 1.3rem; font-weight: 700; margin-bottom: 1.2rem; }
-        
-        .btn { 
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
-            color: #fff; 
-            border: none; 
-            padding: 0.8rem 1.5rem; 
-            font-size: 0.95rem; 
-            font-weight: 700; 
-            border-radius: 25px; 
-            cursor: pointer; 
-            transition: opacity 0.2s, transform 0.1s; 
-            width: 100%; 
-            text-transform: uppercase; 
-            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
-        }
-        .btn:hover { opacity: 0.9; transform: scale(1.02); }
-        
-        /* Story & Vision Section */
-        .story-section {
-            background-color: var(--light-green-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 3.5rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-        .story-section h3 {
-            color: var(--primary-green);
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-        .story-section p {
+        nav a {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            max-width: 900px;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #15291e 0%, #0f1c14 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .hero h2 span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Payment Section */
-        .payment-section { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-top: 3.5rem; text-align: center; box-shadow: var(--shadow); }
-        .payment-section h3 { color: var(--primary-green); margin-bottom: 0.8rem; font-size: 1.35rem; font-family: 'Playfair Display', serif; }
-        .payment-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1.2rem; }
-        .badge { background: var(--light-green-bg); border: 1px solid var(--gold); color: var(--primary-green); padding: 0.5rem 1.1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            text-align: center;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 220px;
+            background-color: #1b3b2b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .btn-add {
+            background-color: var(--accent-gold);
+            color: #0f1c14;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn-add:hover {
+            background-color: var(--accent-gold-light);
+        }
+
+        .btn-add:active {
+            transform: scale(0.95);
+        }
 
         /* Floating Cart Bar */
-        .cart-bar { 
-            position: fixed; 
-            bottom: 25px; 
-            right: 25px; 
-            background: var(--primary-green); 
-            color: var(--gold); 
-            padding: 1rem 1.8rem; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            box-shadow: 0 10px 25px rgba(19, 46, 24, 0.3); 
-            z-index: 100; 
-            display: flex; 
-            align-items: center; 
-            gap: 12px;
-            font-size: 1.05rem;
-            border: 2px solid var(--gold);
+        .cart-bar {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-gold);
+            color: #0f1c14;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            transition: transform 0.2s;
         }
-        
-        /* Modal */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; backdrop-filter: blur(4px); }
-        .modal-content { background: #fff; border: 2px solid var(--gold); width: 100%; max-width: 500px; border-radius: 16px; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .close-btn { position: absolute; top: 15px; right: 20px; color: var(--primary-green); font-size: 1.8rem; cursor: pointer; font-weight: bold; }
-        .cart-items-list { margin: 1rem 0; max-height: 160px; overflow-y: auto; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
-        .cart-item { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-main); }
-        
-        .form-group { margin-bottom: 1.1rem; text-align: left; }
-        .form-group label { display: block; color: var(--primary-green); margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main); font-size: 0.95rem; outline: none; }
-        .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
-        
-        .total-box { font-size: 1.15rem; color: var(--primary-green); font-weight: bold; margin: 1rem 0; text-align: right; background: var(--light-green-bg); padding: 0.8rem; border-radius: 8px; border: 1px dashed var(--gold); }
-        
-        footer { text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 3rem; background: var(--card-bg); font-family: 'Playfair Display', serif; }
+
+        .cart-bar:hover {
+            transform: scale(1.05);
+        }
+
+        /* Checkout Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 450px;
+            padding: 25px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+            padding-bottom: 10px;
+        }
+
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items-list {
+            margin-bottom: 20px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .checkout-total {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            margin: 15px 0;
+            text-align: right;
+        }
+
+        .btn-checkout-wa {
+            width: 100%;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-checkout-wa:hover {
+            background-color: #20ba5a;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-logo">
-            <img src="signature.png" alt="Logo" onerror="this.style.display='none'">
-            Suraka Bucks
+    <header>
+        <div class="logo-container">
+            <h1>Suraka Bucks</h1>
         </div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">Our Story</a>
-        </div>
-    </nav>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
 
-    <div class="hero">
-        <h1>Artisanal Luxury <span>in Every Sip.</span></h1>
-        <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel favourites, made to order in Karachi.</p>
-    </div>
+    <section class="hero" id="home">
+        <h2>Artisanal Luxury <span>in Every Sip.</span></h2>
+        <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel favourites, crafted to order in Karachi.</p>
+    </section>
 
-    <div class="container">
-        
-        <!-- Vision & Story Section -->
-        <div class="story-section">
-            <h3>Vision of Suraka Raza</h3>
-            <p>Crafted with pure passion and elite precision in Karachi, <strong>Suraka Bucks</strong> stands as a testament to uncompromising luxury and bold flavors. Founded by Suraka Raza, our mission is to redefine iced coffee culture by bringing international-grade artisanal brews right to your doorstep.</p>
-        </div>
-
-        <h2 class="section-title">Our Signature Collection</h2>
-        <div class="menu-grid">
-            
-            <!-- Item 1 -->
-            <div class="menu-card">
-                <div class="menu-img-wrapper">
-                    <img src="signature-dot.png" alt="Signature Iced Coffee" class="menu-img" onerror="this.src='signature.png'">
-                </div>
-                <h3>Signature Iced Coffee</h3>
-                <p>Rich, bold espresso blended with cold milk and secret signature sweetness.</p>
-                <div class="price">PKR 499</div>
-                <button class="btn" onclick="addToCart('Signature Iced Coffee', 499)">Add to Cart</button>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="menu-card">
-                <div class="menu-img-wrapper">
-                    <img src="signature.png" alt="Dairy Milk Iced Latte" class="menu-img" onerror="this.src='signature-dot.png'">
-                </div>
-                <h3>Dairy Milk Iced Latte</h3>
-                <p>The ultimate indulgence infused with pure melted Dairy Milk chocolate richness.</p>
-                <div class="price">PKR 499</div>
-                <button class="btn" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="menu-card">
-                <div class="menu-img-wrapper">
-                    <img src="signature3.png" alt="Iced Spanish Latte" class="menu-img" onerror="this.src='signature.png'">
-                </div>
-                <h3>Iced Spanish Latte</h3>
-                <p>Smooth, sweet layers of condensed milk and robust espresso over crystal ice.</p>
-                <div class="price">PKR 399</div>
-                <button class="btn" onclick="addToCart('Iced Spanish Latte', 399)">Add to Cart</button>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="menu-card">
-                <div class="menu-img-wrapper">
-                    <img src="signature4.png" alt="Caramel Latte" class="menu-img" onerror="this.src='signature-dot.png'">
-                </div>
-                <h3>Caramel Latte</h3>
-                <p>Classically crafted with velvety milk, espresso, and rich gourmet caramel drizzle.</p>
-                <div class="price">PKR 399</div>
-                <button class="btn" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="menu-card">
-                <div class="menu-img-wrapper">
-                    <img src="signature5.png" alt="Caramel Frappe" class="menu-img" onerror="this.src='signature.png'">
-                </div>
-                <h3>Caramel Frappe</h3>
-                <p>Blended ice perfection loaded with intense caramel flavor and creamy texture.</p>
-                <div class="price">PKR 399</div>
-                <button class="btn" onclick="addToCart('Caramel Frappe', 399)">Add to Cart</button>
-            </div>
-
-        </div>
-
-        <div class="payment-section">
-            <h3>Accepted Payment Methods & Delivery Info</h3>
-            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Flat Delivery Fee: <strong>PKR 100</strong> across Karachi. Pay via Cash on Delivery or Advance Online Transfer.</p>
-            <div class="payment-badges">
-                <span class="badge">Cash on Delivery (COD)</span>
-                <span class="badge">EasyPaisa</span>
-                <span class="badge">JazzCash</span>
-                <span class="badge">Meezan Bank</span>
-                <span class="badge">All Pakistani Banks</span>
-            </div>
+    <div class="container" id="menu">
+        <h3 class="section-title">OUR SIGNATURE COLLECTION</h3>
+        <div class="menu-grid" id="menuGrid">
+            <!-- Items dynamically loaded via JS to prevent any rendering bugs -->
         </div>
     </div>
 
     <!-- Floating Cart Bar -->
-    <div class="cart-bar" onclick="openCheckoutModal()">
-        🛒 Cart (<span id="cart-count">0</span>) - PKR <span id="cart-total-bar">0</span>
+    <div class="cart-bar" id="cartBar" onclick="openModal()">
+        <span>🛒 Cart (<span id="cartCount">0</span>)</span>
+        <span>- PKR <span id="cartTotal">0</span></span>
     </div>
 
     <!-- Checkout Modal -->
-    <div id="checkoutModal" class="modal">
+    <div class="modal" id="checkoutModal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
-            <h2 style="color: var(--primary-green); margin-bottom: 1rem; text-align: center; font-family: 'Playfair Display', serif;">Complete Your Order</h2>
-            
+            <div class="modal-header">
+                <h3>Complete Your Order</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
             <div class="cart-items-list" id="cartItemsList">
-                <p style="text-align: center; color: var(--text-muted);">Your cart is empty.</p>
+                <!-- Cart items will show here -->
             </div>
-
-            <div class="total-box">
-                Items Total: PKR <span id="subTotal">0</span><br>
-                Delivery: PKR <span id="deliveryFee">100</span><br>
-                <span style="color: var(--primary-green);">Grand Total: PKR <span id="grandTotal">100</span></span>
+            <div class="checkout-total">
+                Total: PKR <span id="modalTotal">0</span> (+$100 Delivery)
             </div>
-
             <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" id="custName" placeholder="Enter your name">
+                <label>Your Name</label>
+                <input type="text" id="custName" placeholder="Enter your full name">
             </div>
             <div class="form-group">
                 <label>Delivery Address (Karachi)</label>
-                <input type="text" id="custAddress" placeholder="House no, street, area">
+                <textarea id="custAddress" rows="2" placeholder="Enter your complete address"></textarea>
             </div>
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input type="text" id="custPhone" placeholder="03XXXXXXXXX">
-            </div>
-            <div class="form-group">
-                <label>Payment Method</label>
-                <select id="custPayment">
-                    <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
-                    <option value="EasyPaisa">EasyPaisa</option>
-                    <option value="JazzCash">JazzCash</option>
-                    <option value="Meezan Bank / Bank Transfer">Meezan Bank / Bank Transfer</option>
-                </select>
-            </div>
-
-            <button class="btn" onclick="sendOrderToWhatsApp()" style="margin-top: 0.5rem;">Place Order via WhatsApp</button>
+            <button class="btn-checkout-wa" onclick="sendToWhatsApp()">Send Order via WhatsApp 🚀</button>
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 Suraka Bucks. Crafted with passion by Suraka Raza. All rights reserved.
-    </footer>
-
     <script>
-        let cart = [];
-        const deliveryCharge = 100;
+        // 5 Core Signature Products
+        const products = [
+            {
+                id: 1,
+                name: "Signature Iced Coffee",
+                desc: "Rich, bold espresso blended with cold milk and secret signature sweetness.",
+                price: 499,
+                img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 2,
+                name: "Dairy Milk Iced Latte",
+                desc: "The ultimate indulgence infused with pure melted Dairy Milk chocolate richness.",
+                price: 499,
+                img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 3,
+                name: "Iced Spanish Latte",
+                desc: "Smooth, sweet layers of condensed milk and robust espresso over crystal ice.",
+                price: 399,
+                img: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 4,
+                name: "Caramel Latte",
+                desc: "Classically crafted with velvety milk, espresso, and rich gourmet caramel drizzle.",
+                price: 399,
+                img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 5,
+                name: "Caramel Frappe",
+                desc: "Blended ice perfection loaded with intense caramel flavor and creamy texture.",
+                price: 499,
+                img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80"
+            }
+        ];
 
-        function addToCart(name, price) {
-            let existingItem = cart.find(item => item.name === name);
+        let cart = [];
+
+        function renderMenu() {
+            const grid = document.getElementById('menuGrid');
+            grid.innerHTML = products.map(product => `
+                <div class="menu-card">
+                    <div class="card-img-wrapper">
+                        <img src="${product.img}" alt="${product.name}" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">${product.name}</h4>
+                        <p class="card-desc">${product.desc}</p>
+                        <div class="card-footer">
+                            <span class="price">PKR ${product.price}</span>
+                            <button class="btn-add" onclick="addToCart(${product.id})">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
             if (existingItem) {
                 existingItem.qty += 1;
             } else {
-                cart.push({ name: name, price: price, qty: 1 });
+                cart.push({ ...product, qty: 1 });
             }
             updateCartUI();
-            alert(name + " added to your cart!");
         }
 
         function updateCartUI() {
-            let totalCount = 0;
-            let subtotal = 0;
-            let listHTML = "";
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-            cart.forEach((item) => {
-                totalCount += item.qty;
-                subtotal += item.price * item.qty;
-                listHTML += `
-                    <div class="cart-item">
-                        <span>${item.name} (x${item.qty})</span>
-                        <span>PKR ${item.price * item.qty}</span>
-                    </div>
-                `;
-            });
+            document.getElementById('cartCount').innerText = totalCount;
+            document.getElementById('cartTotal').innerText = totalPrice;
 
-            if (cart.length === 0) {
-                listHTML = '<p style="text-align: center; color: var(--text-muted);">Your cart is empty.</p>';
+            const cartBar = document.getElementById('cartBar');
+            if (totalCount > 0) {
+                cartBar.style.display = 'flex';
+            } else {
+                cartBar.style.display = 'flex'; // Keep visible or adjust as needed
             }
-
-            document.getElementById('cart-count').innerText = totalCount;
-            document.getElementById('cart-total-bar').innerText = subtotal + (cart.length > 0 ? deliveryCharge : 0);
-            document.getElementById('cartItemsList').innerHTML = listHTML;
-            document.getElementById('subTotal').innerText = subtotal;
-            document.getElementById('grandTotal').innerText = cart.length > 0 ? subtotal + deliveryCharge : 0;
         }
 
-        function openCheckoutModal() {
+        function openModal() {
             if (cart.length === 0) {
                 alert("Your cart is empty! Please add a delicious coffee first.");
                 return;
             }
+            
+            const list = document.getElementById('cartItemsList');
+            let subtotal = 0;
+            
+            list.innerHTML = cart.map(item => {
+                subtotal += item.price * item.qty;
+                return `
+                    <div class="cart-item-row">
+                        <span>${item.name} (x${item.qty})</span>
+                        <span>PKR ${item.price * item.qty}</span>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('modalTotal').innerText = subtotal + 100; // Adding flat 100 delivery
             document.getElementById('checkoutModal').style.display = 'flex';
         }
 
-        function closeCheckoutModal() {
+        function closeModal() {
             document.getElementById('checkoutModal').style.display = 'none';
         }
 
-        function sendOrderToWhatsApp() {
-            let custName = document.getElementById('custName').value.trim();
-            let address = document.getElementById('custAddress').value.trim();
-            let phone = document.getElementById('custPhone').value.trim();
-            let payment = document.getElementById('custPayment').value;
+        function sendToWhatsApp() {
+            const name = document.getElementById('custName').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
 
-            if (!custName || !address || !phone) {
-                alert("Please fill in all details (Name, Address, and Phone Number) before placing the order.");
+            if (!name || !address) {
+                alert("Please fill in your name and delivery address.");
                 return;
             }
 
-            let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            let grandTotal = subtotal + deliveryCharge;
-
-            let message = "☕ *NEW ORDER - SURAKA BUCKS* ☕\n\n";
-            message += `*Customer Name:* ${custName}\n`;
-            message += `*Phone:* ${phone}\n`;
-            message += `*Address:* ${address}\n\n`;
-            message += `*Ordered Items:*\n`;
+            let orderText = `*New Order - Suraka Bucks*%0A`;
+            orderText += `--------------------------------%0A`;
             
+            let subtotal = 0;
             cart.forEach(item => {
-                message += `- ${item.name} x ${item.qty} = PKR ${item.price * item.qty}\n`;
+                orderText += `• ${item.name} x${item.qty} = PKR ${item.price * item.qty}%0A`;
+                subtotal += item.price * item.qty;
             });
 
-            message += `\n*Subtotal:* PKR ${subtotal}\n`;
-            message += `*Delivery Fee:* PKR ${deliveryCharge}\n`;
-            message += `*Grand Total:* PKR ${grandTotal}\n`;
-            message += `*Payment Method:* ${payment}\n\n`;
-            message += `Please confirm my order!`;
+            orderText += `--------------------------------%0A`;
+            orderText += `Delivery Fee: PKR 100%0A`;
+            orderText += `*Total Amount: PKR ${subtotal + 100}*%0A`;
+            orderText += `--------------------------------%0A`;
+            orderText += `*Customer Name:* ${name}%0A`;
+            orderText += `*Delivery Address:* ${address}%0A`;
 
-            let encodedMessage = encodeURIComponent(message);
-            let whatsappNumber = "923000000000";
+            // Replace with your business WhatsApp phone number (with country code, e.g., 923xxxxxxxx)
+            const whatsappNumber = "923231224080"; 
+            
+            const url = `https://wa.me/${whatsappNumber}?text=${orderText}`;
+            window.open(url, '_blank');
+        }
+
+        // Initialize menu on load
+        window.onload = renderMenu;
+    </script>
+</body>
+</html>
