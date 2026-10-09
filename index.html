@@ -3,208 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suraka Bucks | Luxury Iced Coffee Karachi</title>
+    <title>Suraka Bucks | Luxury Artisanal Iced Coffee Karachi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #071109;
-            --card-bg: #0f1f13;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --text-main: #f5f5f5;
-            --text-muted: #b0b0b0;
-            --accent: #152c19;
+            --bg-light: #f4f7f4;
+            --card-bg: #ffffff;
+            --primary-green: #132e18;
+            --accent-green: #1b3d22;
+            --light-green-bg: #e8f0ea;
+            --gold: #c5a059;
+            --gold-dark: #9e7d3b;
+            --text-main: #1a2e1e;
+            --text-muted: #556b5a;
+            --border-color: #d1ebd5;
+            --shadow: 0 10px 30px rgba(19, 46, 24, 0.08);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
         
-        header { 
-            background: linear-gradient(135deg, #030804, var(--accent)); 
-            border-bottom: 2px solid var(--gold); 
-            padding: 3rem 1rem; 
-            text-align: center; 
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        /* Navbar */
+        nav {
+            background-color: var(--primary-green);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
         }
-        .logo-img {
-            width: 100px;
-            height: 100px;
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 2px solid var(--gold);
+            border: 1px solid var(--gold);
             object-fit: cover;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 20px rgba(212,175,55,0.4);
         }
-        header h1 { font-size: 2.8rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        header p { color: var(--gold-light); font-size: 1.1rem; font-style: italic; }
+        .nav-links { display: flex; gap: 20px; font-size: 0.95rem; }
+        .nav-links a { color: #fff; text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #132e18 0%, #1f4727 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid var(--gold);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 span { color: var(--gold); font-style: italic; }
+        .hero p {
+            color: #d1ebd5;
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
         
-        .container { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1rem; }
-        .section-title { text-align: center; color: var(--gold); font-size: 2.2rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--accent); padding-bottom: 0.5rem; }
+        .section-title { 
+            text-align: center; 
+            color: var(--primary-green); 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; 
+            margin-bottom: 2.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0.5rem auto 0;
+        }
+        
+        /* Menu Grid - Light & Clean */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .menu-card { 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 16px; 
+            padding: 1.5rem; 
+            text-align: center; 
+            box-shadow: var(--shadow); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(19, 46, 24, 0.15); border-color: var(--gold); }
+        
+        .menu-img-wrapper {
+            width: 100%;
+            height: 190px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.2rem;
+            background: #fff;
+        }
+        .menu-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .menu-card:hover .menu-img { transform: scale(1.05); }
+
+        .menu-card h3 { color: var(--primary-green); font-size: 1.35rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
+        .menu-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.2rem; min-height: 45px; }
+        .price { color: var(--gold-dark); font-size: 1.3rem; font-weight: 700; margin-bottom: 1.2rem; }
+        
+        .btn { 
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
+            color: #fff; 
+            border: none; 
+            padding: 0.8rem 1.5rem; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            transition: opacity 0.2s, transform 0.1s; 
+            width: 100%; 
+            text-transform: uppercase; 
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+        }
+        .btn:hover { opacity: 0.9; transform: scale(1.02); }
         
         /* Story & Vision Section */
         .story-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--gold);
+            background-color: var(--light-green-bg);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 3.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
             text-align: center;
+            box-shadow: var(--shadow);
         }
         .story-section h3 {
-            color: var(--gold);
+            color: var(--primary-green);
             font-size: 1.6rem;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
         }
         .story-section p {
             color: var(--text-muted);
             font-size: 1.05rem;
             line-height: 1.8;
             max-width: 900px;
-            margin: 0 auto 1.2rem;
+            margin: 0 auto;
         }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .menu-card { 
-            background-color: var(--card-bg); 
-            border: 1px solid var(--gold); 
-            border-radius: 14px; 
-            padding: 1.5rem; 
-            text-align: center; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(212,175,55,0.3); }
-        
-        .menu-img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid rgba(212,175,55,0.4);
-            margin-bottom: 1rem;
-            background: #000;
-        }
+        /* Payment Section */
+        .payment-section { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-top: 3.5rem; text-align: center; box-shadow: var(--shadow); }
+        .payment-section h3 { color: var(--primary-green); margin-bottom: 0.8rem; font-size: 1.35rem; font-family: 'Playfair Display', serif; }
+        .payment-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1.2rem; }
+        .badge { background: var(--light-green-bg); border: 1px solid var(--gold); color: var(--primary-green); padding: 0.5rem 1.1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
 
-        .menu-card h3 { color: var(--gold-light); font-size: 1.4rem; margin-bottom: 0.6rem; }
-        .menu-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; min-height: 45px; }
-        .price { color: var(--gold); font-size: 1.35rem; font-weight: bold; margin-bottom: 1.2rem; }
-        
-        .btn { 
-            background: linear-gradient(135deg, var(--gold), #aa820a); 
-            color: #000; 
-            border: none; 
-            padding: 0.8rem 1.5rem; 
-            font-size: 1rem; 
-            font-weight: bold; 
-            border-radius: 25px; 
-            cursor: pointer; 
-            transition: opacity 0.2s, transform 0.1s; 
-            width: 100%; 
-            text-transform: uppercase; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .btn:hover { opacity: 0.95; transform: scale(1.02); }
-        
-        /* Cart Floating Bar & Modal */
+        /* Floating Cart Bar */
         .cart-bar { 
             position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            background: linear-gradient(135deg, var(--gold), #b89528); 
-            color: #000; 
+            bottom: 25px; 
+            right: 25px; 
+            background: var(--primary-green); 
+            color: var(--gold); 
             padding: 1rem 1.8rem; 
             border-radius: 50px; 
             font-weight: bold; 
             cursor: pointer; 
-            box-shadow: 0 6px 25px rgba(212,175,55,0.5); 
+            box-shadow: 0 10px 25px rgba(19, 46, 24, 0.3); 
             z-index: 100; 
             display: flex; 
             align-items: center; 
             gap: 12px;
             font-size: 1.05rem;
-            border: 1px solid #fff;
+            border: 2px solid var(--gold);
         }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; }
-        .modal-content { background: var(--card-bg); border: 2px solid var(--gold); width: 100%; max-width: 500px; border-radius: 16px; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .close-btn { position: absolute; top: 15px; right: 20px; color: var(--gold); font-size: 1.8rem; cursor: pointer; font-weight: bold; }
-        .cart-items-list { margin: 1rem 0; max-height: 160px; overflow-y: auto; border-bottom: 1px solid var(--accent); padding-bottom: 1rem; }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; backdrop-filter: blur(4px); }
+        .modal-content { background: #fff; border: 2px solid var(--gold); width: 100%; max-width: 500px; border-radius: 16px; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .close-btn { position: absolute; top: 15px; right: 20px; color: var(--primary-green); font-size: 1.8rem; cursor: pointer; font-weight: bold; }
+        .cart-items-list { margin: 1rem 0; max-height: 160px; overflow-y: auto; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
         .cart-item { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-main); }
         
         .form-group { margin-bottom: 1.1rem; text-align: left; }
-        .form-group label { display: block; color: var(--gold-light); margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--gold); background: var(--bg-dark); color: var(--text-main); font-size: 0.95rem; }
+        .form-group label { display: block; color: var(--primary-green); margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main); font-size: 0.95rem; outline: none; }
+        .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
         
-        .total-box { font-size: 1.15rem; color: var(--gold); font-weight: bold; margin: 1rem 0; text-align: right; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 8px; border: 1px dashed var(--accent); }
+        .total-box { font-size: 1.15rem; color: var(--primary-green); font-weight: bold; margin: 1rem 0; text-align: right; background: var(--light-green-bg); padding: 0.8rem; border-radius: 8px; border: 1px dashed var(--gold); }
         
-        /* Payment Section */
-        .payment-section { background: var(--card-bg); border: 1px solid var(--gold); border-radius: 14px; padding: 2rem; margin-top: 3rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
-        .payment-section h3 { color: var(--gold); margin-bottom: 0.8rem; font-size: 1.3rem; }
-        .payment-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1.2rem; }
-        .badge { background: var(--accent); border: 1px solid var(--gold); color: var(--gold-light); padding: 0.5rem 1.1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
-        
-        footer { text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--accent); margin-top: 3rem; }
+        footer { text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 3rem; background: var(--card-bg); font-family: 'Playfair Display', serif; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="signature.png" alt="Suraka Bucks Logo" class="logo-img" onerror="this.style.display='none'">
-        <h1>Suraka Bucks</h1>
-        <p>Karachi's Premier Artisanal Iced Coffee & Luxury Brews</p>
-    </header>
+    <nav>
+        <div class="nav-logo">
+            <img src="signature.png" alt="Logo" onerror="this.style.display='none'">
+            Suraka Bucks
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Our Story</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Artisanal Luxury <span>in Every Sip.</span></h1>
+        <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel favourites, made to order in Karachi.</p>
+    </div>
 
     <div class="container">
         
-        <!-- About / Vision Section -->
+        <!-- Vision & Story Section -->
         <div class="story-section">
             <h3>Vision of Suraka Raza</h3>
             <p>Crafted with pure passion and elite precision in Karachi, <strong>Suraka Bucks</strong> stands as a testament to uncompromising luxury and bold flavors. Founded by Suraka Raza, our mission is to redefine iced coffee culture by bringing international-grade artisanal brews right to your doorstep.</p>
         </div>
 
-        <h2 class="section-title">Signature Menu</h2>
+        <h2 class="section-title">Our Signature Collection</h2>
         <div class="menu-grid">
             
-            <!-- Item 1: Signature Iced Coffee -->
+            <!-- Item 1 -->
             <div class="menu-card">
-                <img src="signature-dot.png" alt="Signature Iced Coffee" class="menu-img">
+                <div class="menu-img-wrapper">
+                    <img src="signature-dot.png" alt="Signature Iced Coffee" class="menu-img" onerror="this.src='signature.png'">
+                </div>
                 <h3>Signature Iced Coffee</h3>
                 <p>Rich, bold espresso blended with cold milk and secret signature sweetness.</p>
                 <div class="price">PKR 499</div>
                 <button class="btn" onclick="addToCart('Signature Iced Coffee', 499)">Add to Cart</button>
             </div>
 
-            <!-- Item 2: Dairy Milk Iced Latte -->
+            <!-- Item 2 -->
             <div class="menu-card">
-                <img src="signature.png" alt="Dairy Milk Iced Latte" class="menu-img">
+                <div class="menu-img-wrapper">
+                    <img src="signature.png" alt="Dairy Milk Iced Latte" class="menu-img" onerror="this.src='signature-dot.png'">
+                </div>
                 <h3>Dairy Milk Iced Latte</h3>
                 <p>The ultimate indulgence infused with pure melted Dairy Milk chocolate richness.</p>
                 <div class="price">PKR 499</div>
                 <button class="btn" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
             </div>
 
-            <!-- Item 3: Iced Spanish Latte -->
+            <!-- Item 3 -->
             <div class="menu-card">
-                <img src="signature3.png" alt="Iced Spanish Latte" class="menu-img">
+                <div class="menu-img-wrapper">
+                    <img src="signature3.png" alt="Iced Spanish Latte" class="menu-img" onerror="this.src='signature.png'">
+                </div>
                 <h3>Iced Spanish Latte</h3>
                 <p>Smooth, sweet layers of condensed milk and robust espresso over crystal ice.</p>
                 <div class="price">PKR 399</div>
                 <button class="btn" onclick="addToCart('Iced Spanish Latte', 399)">Add to Cart</button>
             </div>
 
-            <!-- Item 4: Caramel Latte -->
+            <!-- Item 4 -->
             <div class="menu-card">
-                <img src="signature4.png" alt="Caramel Latte" class="menu-img">
+                <div class="menu-img-wrapper">
+                    <img src="signature4.png" alt="Caramel Latte" class="menu-img" onerror="this.src='signature-dot.png'">
+                </div>
                 <h3>Caramel Latte</h3>
                 <p>Classically crafted with velvety milk, espresso, and rich gourmet caramel drizzle.</p>
                 <div class="price">PKR 399</div>
                 <button class="btn" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
             </div>
 
-            <!-- Item 5: Caramel Frappe -->
+            <!-- Item 5 -->
             <div class="menu-card">
-                <img src="signature5.png" alt="Caramel Frappe" class="menu-img">
+                <div class="menu-img-wrapper">
+                    <img src="signature5.png" alt="Caramel Frappe" class="menu-img" onerror="this.src='signature.png'">
+                </div>
                 <h3>Caramel Frappe</h3>
                 <p>Blended ice perfection loaded with intense caramel flavor and creamy texture.</p>
                 <div class="price">PKR 399</div>
@@ -235,7 +322,7 @@
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
-            <h2 style="color: var(--gold); margin-bottom: 1rem; text-align: center; font-size: 1.5rem;">Complete Your Order</h2>
+            <h2 style="color: var(--primary-green); margin-bottom: 1rem; text-align: center; font-family: 'Playfair Display', serif;">Complete Your Order</h2>
             
             <div class="cart-items-list" id="cartItemsList">
                 <p style="text-align: center; color: var(--text-muted);">Your cart is empty.</p>
@@ -244,7 +331,7 @@
             <div class="total-box">
                 Items Total: PKR <span id="subTotal">0</span><br>
                 Delivery: PKR <span id="deliveryFee">100</span><br>
-                <span style="color: var(--gold-light);">Grand Total: PKR <span id="grandTotal">100</span></span>
+                <span style="color: var(--primary-green);">Grand Total: PKR <span id="grandTotal">100</span></span>
             </div>
 
             <div class="form-group">
@@ -274,7 +361,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Suraka Bucks. Crafted for Luxury by Suraka Raza. All rights reserved.
+        &copy; 2026 Suraka Bucks. Crafted with passion by Suraka Raza. All rights reserved.
     </footer>
 
     <script>
@@ -362,10 +449,4 @@
             message += `Please confirm my order!`;
 
             let encodedMessage = encodeURIComponent(message);
-            let whatsappNumber = "923000000000"; // Yahan apna WhatsApp number dal dena
-            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-        }
-    </script>
-</body>
-                </html>
-                
+            let whatsappNumber = "923000000000";
