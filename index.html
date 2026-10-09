@@ -6,95 +6,216 @@
     <title>Suraka Bucks | Luxury Iced Coffee Karachi</title>
     <style>
         :root {
-            --bg-dark: #0a140c;
-            --card-bg: #112214;
+            --bg-dark: #071109;
+            --card-bg: #0f1f13;
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --text-main: #f5f5f5;
-            --text-muted: #aaaaaa;
-            --accent: #1e3822;
+            --text-muted: #b0b0b0;
+            --accent: #152c19;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
-        header { background: linear-gradient(135deg, #050a06, var(--accent)); border-bottom: 2px solid var(--gold); padding: 2rem 1rem; text-align: center; position: relative; }
-        header h1 { font-size: 2.5rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        
+        header { 
+            background: linear-gradient(135deg, #030804, var(--accent)); 
+            border-bottom: 2px solid var(--gold); 
+            padding: 3rem 1rem; 
+            text-align: center; 
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.4);
+        }
+        header h1 { font-size: 2.8rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         header p { color: var(--gold-light); font-size: 1.1rem; font-style: italic; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-        .section-title { text-align: center; color: var(--gold); font-size: 2rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--accent); padding-bottom: 0.5rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1rem; }
+        .section-title { text-align: center; color: var(--gold); font-size: 2.2rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--accent); padding-bottom: 0.5rem; }
+        
+        /* Story & Vision Section */
+        .story-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--gold);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+        .story-section h3 {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .story-section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.2rem;
+        }
+
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .menu-card { background-color: var(--card-bg); border: 1px solid var(--gold); border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.5); transition: transform 0.3s ease; }
-        .menu-card:hover { transform: translateY(-5px); }
-        .menu-card h3 { color: var(--gold-light); font-size: 1.4rem; margin-bottom: 0.8rem; }
-        .menu-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; }
-        .price { color: var(--gold); font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; }
-        .btn { background: linear-gradient(135deg, var(--gold), #aa820a); color: #000; border: none; padding: 0.7rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 25px; cursor: pointer; transition: opacity 0.2s; width: 100%; text-transform: uppercase; }
-        .btn:hover { opacity: 0.9; }
+        .menu-card { 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--gold); 
+            border-radius: 14px; 
+            padding: 1.5rem; 
+            text-align: center; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(212,175,55,0.3); }
+        
+        .menu-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(212,175,55,0.4);
+            margin-bottom: 1rem;
+            background: #000;
+        }
+
+        .menu-card h3 { color: var(--gold-light); font-size: 1.4rem; margin-bottom: 0.6rem; }
+        .menu-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; min-height: 45px; }
+        .price { color: var(--gold); font-size: 1.35rem; font-weight: bold; margin-bottom: 1.2rem; }
+        
+        .btn { 
+            background: linear-gradient(135deg, var(--gold), #aa820a); 
+            color: #000; 
+            border: none; 
+            padding: 0.8rem 1.5rem; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            transition: opacity 0.2s, transform 0.1s; 
+            width: 100%; 
+            text-transform: uppercase; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .btn:hover { opacity: 0.95; transform: scale(1.02); }
         
         /* Cart Floating Bar & Modal */
-        .cart-bar { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: #000; padding: 1rem 1.5rem; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 5px 20px rgba(212,175,55,0.4); z-index: 100; display: flex; align-items: center; gap: 10px; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; }
-        .modal-content { background: var(--card-bg); border: 2px solid var(--gold); width: 100%; max-width: 500px; border-radius: 15px; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto; }
-        .close-btn { position: absolute; top: 15px; right: 20px; color: var(--gold); font-size: 1.5rem; cursor: pointer; font-weight: bold; }
-        .cart-items-list { margin: 1rem 0; max-height: 150px; overflow-y: auto; border-bottom: 1px solid var(--accent); padding-bottom: 1rem; }
-        .cart-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem; }
-        .form-group { margin-bottom: 1rem; text-align: left; }
-        .form-group label { display: block; color: var(--gold-light); margin-bottom: 0.3rem; font-size: 0.9rem; }
-        .form-group input, .form-group select { width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid var(--gold); background: var(--bg-dark); color: var(--text-main); }
-        .total-box { font-size: 1.2rem; color: var(--gold); font-weight: bold; margin: 1rem 0; text-align: right; }
+        .cart-bar { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: linear-gradient(135deg, var(--gold), #b89528); 
+            color: #000; 
+            padding: 1rem 1.8rem; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 0 6px 25px rgba(212,175,55,0.5); 
+            z-index: 100; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px;
+            font-size: 1.05rem;
+            border: 1px solid #fff;
+        }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; }
+        .modal-content { background: var(--card-bg); border: 2px solid var(--gold); width: 100%; max-width: 500px; border-radius: 16px; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .close-btn { position: absolute; top: 15px; right: 20px; color: var(--gold); font-size: 1.8rem; cursor: pointer; font-weight: bold; }
+        .cart-items-list { margin: 1rem 0; max-height: 160px; overflow-y: auto; border-bottom: 1px solid var(--accent); padding-bottom: 1rem; }
+        .cart-item { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-main); }
         
-        /* Payment Banner & Info */
-        .payment-section { background: var(--card-bg); border: 1px solid var(--gold); border-radius: 12px; padding: 2rem; margin-top: 3rem; text-align: center; }
-        .payment-section h3 { color: var(--gold); margin-bottom: 1rem; }
-        .payment-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1rem; }
-        .badge { background: var(--accent); border: 1px solid var(--gold); color: var(--gold-light); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
-        footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--accent); margin-top: 3rem; }
+        .form-group { margin-bottom: 1.1rem; text-align: left; }
+        .form-group label { display: block; color: var(--gold-light); margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--gold); background: var(--bg-dark); color: var(--text-main); font-size: 0.95rem; }
+        
+        .total-box { font-size: 1.15rem; color: var(--gold); font-weight: bold; margin: 1rem 0; text-align: right; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 8px; border: 1px dashed var(--accent); }
+        
+        /* Payment Section */
+        .payment-section { background: var(--card-bg); border: 1px solid var(--gold); border-radius: 14px; padding: 2rem; margin-top: 3rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+        .payment-section h3 { color: var(--gold); margin-bottom: 0.8rem; font-size: 1.3rem; }
+        .payment-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1.2rem; }
+        .badge { background: var(--accent); border: 1px solid var(--gold); color: var(--gold-light); padding: 0.5rem 1.1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        
+        footer { text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--accent); margin-top: 3rem; }
     </style>
 </head>
 <body>
 
     <header>
+        <img src="signature.png" alt="Suraka Bucks Logo" class="logo-img" onerror="this.style.display='none'">
         <h1>Suraka Bucks</h1>
         <p>Karachi's Premier Artisanal Iced Coffee & Luxury Brews</p>
     </header>
 
     <div class="container">
+        
+        <!-- About / Vision Section -->
+        <div class="story-section">
+            <h3>Vision of Suraka Raza</h3>
+            <p>Crafted with pure passion and elite precision in Karachi, <strong>Suraka Bucks</strong> stands as a testament to uncompromising luxury and bold flavors. Founded by Suraka Raza, our mission is to redefine iced coffee culture by bringing international-grade artisanal brews right to your doorstep.</p>
+        </div>
+
         <h2 class="section-title">Signature Menu</h2>
         <div class="menu-grid">
+            
+            <!-- Item 1: Signature Iced Coffee -->
             <div class="menu-card">
+                <img src="signature-dot.png" alt="Signature Iced Coffee" class="menu-img">
                 <h3>Signature Iced Coffee</h3>
                 <p>Rich, bold espresso blended with cold milk and secret signature sweetness.</p>
                 <div class="price">PKR 499</div>
                 <button class="btn" onclick="addToCart('Signature Iced Coffee', 499)">Add to Cart</button>
             </div>
+
+            <!-- Item 2: Dairy Milk Iced Latte -->
             <div class="menu-card">
+                <img src="signature.png" alt="Dairy Milk Iced Latte" class="menu-img">
                 <h3>Dairy Milk Iced Latte</h3>
                 <p>The ultimate indulgence infused with pure melted Dairy Milk chocolate richness.</p>
                 <div class="price">PKR 499</div>
                 <button class="btn" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
             </div>
+
+            <!-- Item 3: Iced Spanish Latte -->
             <div class="menu-card">
+                <img src="signature3.png" alt="Iced Spanish Latte" class="menu-img">
                 <h3>Iced Spanish Latte</h3>
                 <p>Smooth, sweet layers of condensed milk and robust espresso over crystal ice.</p>
                 <div class="price">PKR 399</div>
                 <button class="btn" onclick="addToCart('Iced Spanish Latte', 399)">Add to Cart</button>
             </div>
+
+            <!-- Item 4: Caramel Latte -->
             <div class="menu-card">
+                <img src="signature4.png" alt="Caramel Latte" class="menu-img">
                 <h3>Caramel Latte</h3>
                 <p>Classically crafted with velvety milk, espresso, and rich gourmet caramel drizzle.</p>
                 <div class="price">PKR 399</div>
                 <button class="btn" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
             </div>
+
+            <!-- Item 5: Caramel Frappe -->
             <div class="menu-card">
+                <img src="signature5.png" alt="Caramel Frappe" class="menu-img">
                 <h3>Caramel Frappe</h3>
                 <p>Blended ice perfection loaded with intense caramel flavor and creamy texture.</p>
                 <div class="price">PKR 399</div>
                 <button class="btn" onclick="addToCart('Caramel Frappe', 399)">Add to Cart</button>
             </div>
+
         </div>
 
         <div class="payment-section">
             <h3>Accepted Payment Methods & Delivery Info</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">Flat Delivery Fee: <strong>PKR 100</strong> across Karachi. Pay via Cash on Delivery or Advance Online Transfer.</p>
+            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Flat Delivery Fee: <strong>PKR 100</strong> across Karachi. Pay via Cash on Delivery or Advance Online Transfer.</p>
             <div class="payment-badges">
                 <span class="badge">Cash on Delivery (COD)</span>
                 <span class="badge">EasyPaisa</span>
@@ -105,7 +226,7 @@
         </div>
     </div>
 
-    <!-- Floating Cart Button -->
+    <!-- Floating Cart Bar -->
     <div class="cart-bar" onclick="openCheckoutModal()">
         🛒 Cart (<span id="cart-count">0</span>) - PKR <span id="cart-total-bar">0</span>
     </div>
@@ -114,7 +235,7 @@
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
-            <h2 style="color: var(--gold); margin-bottom: 1rem; text-align: center;">Complete Your Order</h2>
+            <h2 style="color: var(--gold); margin-bottom: 1rem; text-align: center; font-size: 1.5rem;">Complete Your Order</h2>
             
             <div class="cart-items-list" id="cartItemsList">
                 <p style="text-align: center; color: var(--text-muted);">Your cart is empty.</p>
@@ -148,12 +269,12 @@
                 </select>
             </div>
 
-            <button class="btn" onclick="sendOrderToWhatsApp()" style="margin-top: 1rem;">Place Order via WhatsApp</button>
+            <button class="btn" onclick="sendOrderToWhatsApp()" style="margin-top: 0.5rem;">Place Order via WhatsApp</button>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Suraka Bucks. Crafted for Luxury. All rights reserved.
+        &copy; 2026 Suraka Bucks. Crafted for Luxury by Suraka Raza. All rights reserved.
     </footer>
 
     <script>
@@ -176,7 +297,7 @@
             let subtotal = 0;
             let listHTML = "";
 
-            cart.forEach((item, index) => {
+            cart.forEach((item) => {
                 totalCount += item.qty;
                 subtotal += item.price * item.qty;
                 listHTML += `
@@ -211,12 +332,12 @@
         }
 
         function sendOrderToWhatsApp() {
-            let name = document.getElementById('custName').value.trim();
+            let custName = document.getElementById('custName').value.trim();
             let address = document.getElementById('custAddress').value.trim();
             let phone = document.getElementById('custPhone').value.trim();
             let payment = document.getElementById('custPayment').value;
 
-            if (!name || !address || !phone) {
+            if (!custName || !address || !phone) {
                 alert("Please fill in all details (Name, Address, and Phone Number) before placing the order.");
                 return;
             }
@@ -225,7 +346,7 @@
             let grandTotal = subtotal + deliveryCharge;
 
             let message = "☕ *NEW ORDER - SURAKA BUCKS* ☕\n\n";
-            message += `*Customer Name:* ${name}\n`;
+            message += `*Customer Name:* ${custName}\n`;
             message += `*Phone:* ${phone}\n`;
             message += `*Address:* ${address}\n\n`;
             message += `*Ordered Items:*\n`;
@@ -241,10 +362,10 @@
             message += `Please confirm my order!`;
 
             let encodedMessage = encodeURIComponent(message);
-            // Replace with Suraka's WhatsApp number (e.g., 923XXXXXXXXX)
-            let whatsappNumber = "923000000000"; 
+            let whatsappNumber = "923000000000"; // Yahan apna WhatsApp number dal dena
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
         }
     </script>
 </body>
-</html>
+                </html>
+                
