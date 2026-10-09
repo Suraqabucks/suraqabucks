@@ -86,12 +86,12 @@
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
+            cursor: pointer;
+            border: none;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* Clean Premium Hero Section */
+        /* Hero Section */
         header {
             min-height: 80vh;
             display: flex;
@@ -145,6 +145,8 @@
             text-decoration: none;
             font-size: 1rem;
             display: inline-block;
+            border: none;
+            cursor: pointer;
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
         }
 
@@ -227,21 +229,20 @@
             gap: 8px;
         }
 
-        .card-buttons a {
+        .card-buttons button {
             flex: 1;
             padding: 12px 6px;
             border-radius: 12px;
             font-size: 0.8rem;
             font-weight: 700;
-            text-align: center;
-            text-decoration: none;
             cursor: pointer;
+            border: none;
         }
 
         .btn-outline {
             background-color: transparent;
             color: #f7f4ef;
-            border: 1px solid rgba(212, 175, 55, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.6) !important;
         }
 
         .btn-card-gold {
@@ -249,12 +250,12 @@
             color: #0b1a0c;
         }
 
-        /* Features */
+        /* Features & Payments */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .feature-box {
@@ -276,6 +277,39 @@
             color: #c5bdae;
             font-size: 0.9rem;
             line-height: 1.6;
+        }
+
+        .payment-banner {
+            background: linear-gradient(135deg, #122614, #0b1a0c);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .payment-banner h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .payment-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .pill {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #f7f4ef;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         /* Bottom Split Section */
@@ -341,6 +375,116 @@
             line-height: 1.8;
         }
 
+        /* Cart Sidebar & Checkout Portal */
+        #cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background: #122614;
+            color: #f7f4ef;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+            z-index: 99999;
+            transition: right 0.3s ease;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            border-left: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        #cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #c5bdae;
+        }
+
+        .cart-items {
+            max-height: 150px;
+            overflow-y: auto;
+            margin: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .checkout-form {
+            margin-top: 10px;
+        }
+
+        .checkout-form h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #d4af37;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: #c5bdae;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: #0b1a0c;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            color: #f7f4ef;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .cart-summary {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 12px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -353,6 +497,7 @@
         @media (max-width: 900px) {
             header h1 { font-size: 2.5rem; }
             .bottom-split-section { grid-template-columns: 1fr; }
+            #cart-modal { width: 100%; right: -100%; }
         }
     </style>
 </head>
@@ -368,7 +513,7 @@
             </div>
         </div>
         <div class="nav-links">
-            <a href="https://wa.me/923231224080?text=Hello%20Suraka%20Bucks,%20I%20want%20to%20order%20coffee!" target="_blank" class="cart-btn-nav">💬 Order on WhatsApp</a>
+            <button class="cart-btn-nav" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
         </div>
     </nav>
 
@@ -385,7 +530,6 @@
         <h2 class="section-title">OUR SIGNATURE <span>COLLECTION</span></h2>
         
         <div class="menu-grid">
-            <!-- Item 1 -->
             <div class="menu-card">
                 <img src="signature.png" alt="Suraka Signature Iced Coffee" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80'">
                 <div class="menu-card-content">
@@ -395,13 +539,12 @@
                         <p>Signature coffee with velvety cold foam and rich aromatic depth.</p>
                     </div>
                     <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20order:%20Suraka%20Signature%20Iced%20Coffee%20(PKR%20499)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Suraka%20Signature%20Iced%20Coffee%20(PKR%20499)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
+                        <button class="btn-outline" onclick="addToCart('Suraka Signature Iced Coffee', 499)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Suraka Signature Iced Coffee', 499)">Buy Now</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 2 -->
             <div class="menu-card">
                 <img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80'">
                 <div class="menu-card-content">
@@ -411,13 +554,12 @@
                         <p>Chocolate richness blended with creamy milk and double espresso.</p>
                     </div>
                     <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20order:%20Dairy%20Milk%20Iced%20Latte%20(PKR%20499)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Dairy%20Milk%20Iced%20Latte%20(PKR%20499)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
+                        <button class="btn-outline" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Dairy Milk Iced Latte', 499)">Buy Now</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 3 -->
             <div class="menu-card">
                 <img src="spanish.png" alt="Ice Spanish Latte" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80'">
                 <div class="menu-card-content">
@@ -427,13 +569,12 @@
                         <p>Condensed milk combined with robust espresso over crystal ice.</p>
                     </div>
                     <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20order:%20Ice%20Spanish%20Latte%20(PKR%20399)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Ice%20Spanish%20Latte%20(PKR%20399)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
+                        <button class="btn-outline" onclick="addToCart('Ice Spanish Latte', 399)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Ice Spanish Latte', 399)">Buy Now</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 4 -->
             <div class="menu-card">
                 <img src="caramel.png" alt="Caramel Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80'">
                 <div class="menu-card-content">
@@ -443,13 +584,12 @@
                         <p>Chilled milk and espresso with heavy golden caramel syrup drizzle.</p>
                     </div>
                     <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20order:%20Caramel%20Latte%20(PKR%20399)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Caramel%20Latte%20(PKR%20399)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
+                        <button class="btn-outline" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Caramel Latte', 399)">Buy Now</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 5 -->
             <div class="menu-card">
                 <img src="frappe.png" alt="Caramel Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=600&q=80'">
                 <div class="menu-card-content">
@@ -459,8 +599,8 @@
                         <p>A frosty caramel coffee blend topped with whipped cream.</p>
                     </div>
                     <div class="card-buttons">
-                        <a href="https://wa.me/923231224080?text=I%20want%20to%20order:%20Caramel%20Frappe%20(PKR%20399)" target="_blank" class="btn-outline">Add to Cart</a>
-                        <a href="https://wa.me/923231224080?text=BUY%20NOW%20Order:%20Caramel%20Frappe%20(PKR%20399)%20+%20Delivery%20PKR%20100" target="_blank" class="btn-card-gold">Buy Now</a>
+                        <button class="btn-outline" onclick="addToCart('Caramel Frappe', 399)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Caramel Frappe', 399)">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -486,26 +626,8 @@
             </div>
         </div>
 
-        <!-- Bottom Split Section -->
-        <div class="bottom-split-section">
-            <div class="cappuccino-card">
-                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80" alt="Hot Cappuccino Latte Art">
-                <div class="cappuccino-content">
-                    <h3>Artisan Hot Reserve</h3>
-                    <p>Expertly hand-poured latte art over rich espresso and velvety steamed milk, crafted for true coffee connoisseurs.</p>
-                </div>
-            </div>
-            
-            <div class="about-grid">
-                <h2>Vision of Suraka Raza</h2>
-                <p>Suraka Bucks handcrafts elite coffee. Founded by <strong>Suraka Raza</strong>, our dedication is rooted in great taste, quality ingredients, and the joy of simple moments.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Suraka Bucks. Vision by Suraka Raza. All rights reserved. &bull; Made with ❤️ in Karachi</p>
-    </footer>
-</body>
-</html>
+        <!-- Payment Methods Banner -->
+        <div class="payment-banner">
+            <h3>Accepted Payment Methods</h3>
+            <div class="payment-pills">
+                <div clas
