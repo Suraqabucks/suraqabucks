@@ -1,97 +1,618 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073d2d">
-<meta name="description" content="Discover Suraka Bucks signature coffee, Spanish latte, creamy frappes and hot cappuccino. Order your favourite coffee online.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://suraqabucks.github.io/suraqabucks/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Suraka Bucks | Coffee, Crafted with Love">
-<meta property="og:description" content="Signature coffee, chocolate flavours and creamy favourites from Suraka Bucks.">
-<meta property="og:url" content="https://suraqabucks.github.io/suraqabucks/">
-<title>Suraka Bucks | Signature Coffee, Lattes & Frappes</title>
-<style>
-:root{--green:#073d2d;--deep:#04271e;--gold:#e8c86f;--cream:#f8f3e8;--ink:#19382c;--muted:#6d766e;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.topline{background:#031e17;color:#f3dda0;text-align:center;padding:9px 12px;font-size:11px;letter-spacing:2px}.header{background:var(--green);color:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid #e8c86f55}.nav{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-size:21px;font-weight:bold;letter-spacing:.5px}.logo{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);overflow:hidden;flex-shrink:0}.logo img{width:100%;height:100%;object-fit:contain}.navlinks{display:flex;gap:23px;margin-left:auto;font-size:12px}.navlinks a:hover{color:var(--gold)}.cart-open{border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:30px;padding:10px 15px;font-weight:bold;white-space:nowrap}.hero{min-height:520px;background:linear-gradient(90deg,rgba(2,34,24,.97),rgba(2,34,24,.82) 45%,rgba(2,34,24,.15)),url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:#fff}.hero-content{width:min(1180px,100%);padding:72px 24px;margin:auto}.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c9a848;font-weight:bold}.hero h1{font:normal clamp(42px,7vw,76px)/1.02 Georgia,serif;max-width:660px;margin:18px 0}.hero h1 em{color:var(--gold);font-weight:normal}.hero p{max-width:490px;line-height:1.8;color:#e6e9e4;font-size:14px}.btn{border:0;border-radius:28px;padding:13px 19px;font-weight:bold;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}.btn-gold{background:linear-gradient(135deg,#ffe9a2,#d6ae42);color:#173c2b}.btn-outline{border:1px solid #e8c86f;color:#f4d987;background:transparent;margin-left:8px}.section{max-width:1180px;margin:auto;padding:66px 22px}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font:normal clamp(30px,4vw,43px) Georgia,serif;margin:9px 0;color:var(--green)}.section-head p{color:var(--muted);font-size:13px;line-height:1.7}.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.product{background:#fff;border:1px solid #e9dfc9;border-radius:15px;overflow:hidden;box-shadow:0 8px 24px #1b3b2910;display:flex;flex-direction:column;min-width:0}.product-photo{height:225px;background:#e9dfce;position:relative;overflow:hidden}.product-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .3s;padding:10px}.product:hover .product-photo img{transform:scale(1.035)}.pill{position:absolute;top:13px;left:13px;background:var(--green);color:var(--gold);padding:7px 10px;border-radius:20px;font-size:9px;font-weight:bold;letter-spacing:1px}.product-body{padding:17px;display:flex;flex-direction:column;flex:1}.product h3{font:normal 22px Georgia,serif;margin:0 0 8px;color:var(--green)}.product p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 14px;flex:1}.product-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}.price{font-weight:bold;font-size:17px;color:var(--green)}.small-btn{padding:10px 13px;border:0;border-radius:22px;background:var(--green);color:white;font-size:11px;font-weight:bold}.product-actions{display:flex;gap:8px}.product-actions button{flex:1}.btn-soft{background:#f3e8c8;color:var(--green)}.story{background:#eee4cc}.story-inner{max-width:1180px;margin:auto;padding:55px 22px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}.story-img{height:310px;border-radius:16px;overflow:hidden;background:#d4c4a5}.story-img img{width:100%;height:100%;object-fit:cover}.story h2{font:normal clamp(30px,4vw,44px)/1.1 Georgia,serif;color:var(--green);margin:12px 0}.story p{font-size:13px;line-height:1.9;color:#5d685f}.hot{background:var(--green);color:white}.hot .section-head h2{color:white}.hot .section-head p{color:#d4dfd6}.footer{background:#031e17;color:#dce5dc;text-align:center;padding:30px 18px;font-size:12px}.footer strong{color:var(--gold);font:22px Georgia,serif}.footer p{line-height:1.8;color:#b6c6ba}
-.overlay{position:fixed;inset:0;background:#001a13b8;z-index:50;display:none;align-items:center;justify-content:center;padding:14px}.overlay.show{display:flex}.dialog{background:#fffdf7;width:min(620px,100%);max-height:92vh;overflow:auto;border-radius:17px;box-shadow:0 20px 80px #0005}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:19px 20px;background:var(--green);color:white;position:sticky;top:0;z-index:2}.dialog-head h2{font:normal 23px Georgia,serif;margin:0}.xbtn{border:1px solid #ffffff66;background:transparent;color:white;border-radius:50%;width:35px;height:35px;font-size:21px}.dialog-content{padding:20px}.cart-row{display:grid;grid-template-columns:1fr auto;gap:10px;border-bottom:1px solid #e7dfd0;padding:13px 0}.cart-row h3{font-size:14px;margin:0 0 5px}.cart-row small{color:var(--muted)}.qty{display:flex;align-items:center;gap:9px;margin-top:8px}.qty button{width:27px;height:27px;border:1px solid #c9d0c7;background:#fff;border-radius:50%;color:var(--green)}.remove{border:0;background:transparent;color:#9a3b2f;font-size:11px;margin-left:6px}.totals{margin-top:15px;background:#f3eddf;border-radius:10px;padding:14px}.total-line{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}.total-line.final{border-top:1px solid #d7c9a8;margin-top:5px;padding-top:12px;font-size:17px;font-weight:bold;color:var(--green)}.empty{text-align:center;color:var(--muted);padding:35px 10px}.empty .btn{margin-top:12px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:bold;color:#3c5145}.field input,.field textarea,.field select{width:100%;border:1px solid #d8d8ca;background:white;border-radius:9px;padding:12px;outline:none;color:#243b2e}.field input:focus,.field textarea:focus,.field select:focus{border-color:#9e842e;box-shadow:0 0 0 3px #e8c86f33}.pay-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 16px}.pay-option{border:1px solid #d9d7c8;border-radius:10px;padding:12px;display:flex;gap:8px;align-items:flex-start;font-size:12px}.pay-option:has(input:checked){border-color:var(--green);background:#eef4ee}.form-note{font-size:11px;color:#6c776e;line-height:1.6}.wide{width:100%}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#052b20;color:white;padding:12px 18px;border-radius:30px;box-shadow:0 5px 25px #0003;z-index:100;font-size:13px;display:none;max-width:90vw;text-align:center}.toast.show{display:block}
-@media(max-width:800px){.nav{gap:12px;padding:12px 14px}.navlinks{gap:12px}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:470px}.story-inner{gap:20px}.product-photo{height:190px}}
-@media(max-width:560px){.navlinks{display:none}.brand{font-size:18px}.cart-open{margin-left:auto;padding:9px 11px;font-size:11px}.hero-content{padding:56px 19px}.hero h1{font-size:46px}.section{padding:46px 13px}.products{gap:11px}.product-photo{height:150px}.product-body{padding:12px}.product h3{font-size:18px}.product p{font-size:11px}.product-foot{align-items:flex-start;flex-direction:column}.product-actions{flex-direction:column}.small-btn{width:100%}.story-inner{grid-template-columns:1fr;padding:35px 15px}.story-img{height:220px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.pay-options{grid-template-columns:1fr}.dialog-content{padding:15px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraka Bucks | 5-Star Luxury Artisanal Coffee in Karachi</title>
+    <meta name="description" content="Suraka Bucks by Suraka Raza - Karachi's elite artisanal craft brews, signature iced coffees, and luxury coffee reserve.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b1a0c;
+            color: #f7f4ef;
+            overflow-x: hidden;
+        }
+
+        /* Top VIP Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background-color: rgba(11, 26, 12, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #1e3f20, #0b1a0c);
+            color: #f7f4ef;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            border: 2px solid #d4af37;
+            animation: pulse-glow 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        .logo-text-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #f7f4ef;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-subtext {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: #d4af37;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .cart-btn-nav {
+            background: linear-gradient(135deg, #d4af37, #aa8223);
+            color: #0b1a0c;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 8%;
+            background: linear-gradient(135deg, #0b1a0c 0%, #163018 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero-badge {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #f7f4ef;
+            margin-bottom: 15px;
+            line-height: 1.15;
+        }
+
+        header h1 span {
+            color: #d4af37;
+            font-style: italic;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            color: #c5bdae;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37, #aa8223);
+            color: #0b1a0c;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-showcase {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-showcase img {
+            width: 75px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .hero-showcase img:nth-child(even) {
+            height: 210px;
+        }
+
+        /* Container & Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.8rem;
+            color: #f7f4ef;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: #d4af37;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .menu-card {
+            background: #122614;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .menu-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: #f7f4ef;
+            margin-bottom: 6px;
+        }
+
+        .menu-card .price {
+            font-size: 1.1rem;
+            color: #d4af37;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .menu-card p {
+            color: #c5bdae;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .card-buttons button {
+            flex: 1;
+            padding: 12px 6px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #f7f4ef;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-card-gold {
+            background: linear-gradient(135deg, #d4af37, #aa8223);
+            color: #0b1a0c;
+            border: none;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .feature-box {
+            background: #122614;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .feature-box p {
+            color: #c5bdae;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Bottom Split Section */
+        .bottom-split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .cappuccino-card {
+            background: #122614;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .cappuccino-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .cappuccino-content {
+            padding: 25px;
+        }
+
+        .cappuccino-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        .cappuccino-content p {
+            color: #c5bdae;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .about-grid {
+            background: #122614;
+            border-radius: 20px;
+            padding: 40px;
+            border-left: 6px solid #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #f7f4ef;
+            margin-bottom: 20px;
+        }
+
+        .about-grid p {
+            color: #c5bdae;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Cart Sidebar */
+        #cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background: #122614;
+            color: #f7f4ef;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+            z-index: 99999;
+            transition: right 0.3s ease;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            border-left: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        #cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #c5bdae;
+        }
+
+        .cart-items {
+            max-height: 160px;
+            overflow-y: auto;
+            margin: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .checkout-form {
+            margin-top: 10px;
+        }
+
+        .checkout-form h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #d4af37;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: #c5bdae;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: #0b1a0c;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            color: #f7f4ef;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .cart-summary {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 12px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #071208;
+            color: #8c9c8e;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            header { flex-direction: column; text-align: center; gap: 40px; padding: 40px 20px; }
+            .hero-showcase { justify-content: center; }
+            header h1 { font-size: 2.7rem; }
+            .bottom-split-section { grid-template-columns: 1fr; }
+            #cart-modal { width: 100%; right: -100%; }
+        }
+    </style>
 </head>
 <body>
-<div class="topline">CRAFTED WITH LOVE · FRESH COFFEE · DELIVERY PKR 100</div>
-<header class="header"><nav class="nav">
-<a class="brand" href="#home"><span class="logo"><img src="logo.png" alt="SB" onerror="this.remove();this.parentElement.textContent='SB'"></span><span>SURAKA BUCKS</span></a>
-<div class="navlinks"><a href="#home">Home</a><a href="#menu-section">Our Menu</a><a href="#our-story">Our Story</a><a href="#hot-cappuccino">Hot Coffee</a></div>
-<button type="button" class="cart-open" data-action="open-cart">🛒 Cart (<span id="cart-count">0</span>)</button>
-</nav></header>
-<main>
-<section class="hero" id="home"><div class="hero-content"><div class="eyebrow">A better kind of coffee moment</div><h1>Bold Coffee.<br><em>Beautifully Crafted.</em></h1><p>From signature blends to creamy frappes and warm cappuccinos, find your next favourite sip at Suraka Bucks.</p><button type="button" class="btn btn-gold" data-action="scroll-menu">EXPLORE OUR MENU →</button><button type="button" class="btn btn-outline" data-action="open-cart">VIEW YOUR CART</button></div></section>
-<section class="section" id="menu-section"><div class="section-head"><div class="eyebrow">The coffee collection</div><h2>Made for Your Mood</h2><p>Rich coffee, silky milk and chocolate-inspired favourites. Pick your sip and add it to your bag.</p></div><div class="products" id="product-list"></div></section>
-<section class="story" id="our-story"><div class="story-inner"><div class="story-img"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=85" alt="Freshly prepared coffee beans" loading="lazy"></div><div><div class="eyebrow">Our story</div><h2>Good Coffee.<br>Good Moments.</h2><p>At Suraka Bucks, every cup is a little pause in your day. We bring together rich coffee flavour, creamy textures and thoughtful details to make your everyday coffee moment feel special.</p><button type="button" class="btn btn-gold" data-action="scroll-menu">FIND YOUR FAVOURITE</button></div></div></section>
-<section class="hot section" id="hot-cappuccino"><div class="section-head"><div class="eyebrow">Freshly brewed · served warm</div><h2>Warm Up with a Cappuccino</h2><p>Bold espresso, silky steamed milk and a cloud-soft foam finish.</p></div><div style="text-align:center"><button type="button" class="btn btn-gold" data-action="add" data-id="cappuccino">＋ Add Hot Cappuccino · PKR 349</button></div></section>
-</main>
-<footer class="footer"><strong>SURAKA BUCKS</strong><p>Signature coffee. Sweet moments. Made with love.<br>Orders are confirmed through WhatsApp.</p><small>© <span id="year"></span> Suraka Bucks</small></footer>
 
-<div class="overlay" id="cart-overlay" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-<div class="dialog"><div class="dialog-head"><h2 id="cart-title">Your Coffee Cart</h2><button type="button" class="xbtn" data-action="close" aria-label="Close cart">×</button></div><div class="dialog-content" id="cart-content"></div></div></div>
-<div class="overlay" id="checkout-overlay" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
-<div class="dialog"><div class="dialog-head"><h2 id="checkout-title">Checkout & Delivery</h2><button type="button" class="xbtn" data-action="close" aria-label="Close checkout">×</button></div><div class="dialog-content" id="checkout-content"></div></div></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
-(function(){
-'use strict';
-const WHATSAPP_NUMBER='923231224080'; // Pakistan number, international format without + or spaces
-const DELIVERY_FEE=100;
-const products=[
-{id:'signature',name:'Signature Coffee',price:399,badge:'HOUSE SIGNATURE',desc:'Our rich, smooth signature coffee for your everyday ritual.',image:'Signature.png'},
-{id:'frappe',name:'Creamy Frappe',price:449,badge:'COOL & CREAMY',desc:'A chilled, velvety blended coffee treat.',image:'frappe.png'},
-{id:'latte',name:'Latte Milk',price:399,badge:'SMOOTH & SILKY',desc:'Espresso balanced with creamy steamed milk.',image:'latte milk.png'},
-{id:'spanish',name:'Spanish Latte',price:449,badge:'CUSTOMER FAVOURITE',desc:'Sweet, creamy and full of coffee character.',image:'spanish.png'},
-{id:'caramel',name:'Caramel Coffee',price:449,badge:'CARAMEL NOTES',desc:'A smooth coffee favourite with buttery caramel notes.',image:'caramel.png'},
-{id:'cappuccino',name:'Hot Cappuccino',price:349,badge:'HOT FAVOURITE',desc:'Bold espresso with steamed milk and a soft foam top.',image:'cappuccino.png'}
-];
-let cart={};
-const money=n=>'PKR '+Number(n).toLocaleString('en-PK');
-const $=id=>document.getElementById(id);
-function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2600)}
-function getProduct(id){return products.find(p=>p.id===id)}
-function count(){return Object.values(cart).reduce((a,n)=>a+n,0)}
-function subtotal(){return Object.entries(cart).reduce((sum,[id,q])=>sum+(getProduct(id)?.price||0)*q,0)}
-function updateCount(){$('cart-count').textContent=count()}
-function renderProducts(){
- $('product-list').innerHTML=products.map(p=>`<article class="product"><div class="product-photo"><span class="pill">${p.badge}</span><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80'"></div><div class="product-body"><h3>${p.name}</h3><p>${p.desc}</p><div class="product-foot"><span class="price">${money(p.price)}</span><span style="font-size:10px;color:#778078">Freshly prepared</span></div><div class="product-actions"><button class="small-btn" type="button" data-action="add" data-id="${p.id}">Add to Cart</button><button class="small-btn btn-soft" type="button" data-action="buy" data-id="${p.id}">Buy Now</button></div></div></article>`).join('');
-}
-function open(id){$(id).classList.add('show');document.body.style.overflow='hidden'}
-function close(id){$(id).classList.remove('show');if(!$('cart-overlay').classList.contains('show')&&!$('checkout-overlay').classList.contains('show'))document.body.style.overflow=''}
-function renderCart(){
- const host=$('cart-content');
- if(!count()){host.innerHTML='<div class="empty"><div style="font-size:35px">☕</div><h3>Your cart is waiting for coffee</h3><p>Add a drink from our menu to get started.</p><button type="button" class="btn btn-gold" data-action="close-and-menu">Explore Menu</button></div>';return}
- const rows=Object.entries(cart).map(([id,q])=>{const p=getProduct(id);if(!p)return '';return `<div class="cart-row"><div><h3>${p.name}</h3><small>${money(p.price)} each</small><div class="qty"><button type="button" data-action="minus" data-id="${id}" aria-label="Decrease ${p.name}">−</button><b>${q}</b><button type="button" data-action="plus" data-id="${id}" aria-label="Increase ${p.name}">+</button><button type="button" class="remove" data-action="remove" data-id="${id}">Remove</button></div></div><strong>${money(p.price*q)}</strong></div>`}).join('');
- host.innerHTML=`${rows}<div class="totals"><div class="total-line"><span>Subtotal</span><strong>${money(subtotal())}</strong></div><div class="total-line"><span>Standard delivery</span><strong>${money(DELIVERY_FEE)}</strong></div><div class="total-line final"><span>Total</span><strong>${money(subtotal()+DELIVERY_FEE)}</strong></div></div><button type="button" class="btn btn-gold wide" style="margin-top:16px" data-action="checkout">Continue to Checkout →</button><p class="form-note">Delivery fee of PKR 100 is added to each order.</p>`;
-}
-function add(id,qty=1){if(!getProduct(id)){toast('Sorry, this product was not found.');return}cart[id]=(cart[id]||0)+qty;updateCount();toast(getProduct(id).name+' added to cart');}
-function buy(id){add(id);renderCart();close('checkout-overlay');open('cart-overlay');}
-function renderCheckout(){
- if(!count()){close('checkout-overlay');open('cart-overlay');renderCart();return}
- $('checkout-content').innerHTML=`<form id="order-form"><div class="form-grid">
- <div class="field"><label for="cust-name">Full name *</label><input id="cust-name" name="name" autocomplete="name" required placeholder="Your full name"></div>
- <div class="field"><label for="cust-phone">Phone / WhatsApp *</label><input id="cust-phone" name="phone" type="tel" autocomplete="tel" required placeholder="03xx xxxxxxx"></div>
- <div class="field"><label for="cust-city">City *</label><input id="cust-city" name="city" autocomplete="address-level2" required placeholder="Your city"></div>
- <div class="field"><label for="cust-area">Area / postcode</label><input id="cust-area" name="area" autocomplete="postal-code" placeholder="Area or postcode"></div>
- <div class="field full"><label for="cust-address">Complete delivery address *</label><textarea id="cust-address" name="address" autocomplete="street-address" required rows="3" placeholder="House, street, area and nearby landmark"></textarea></div>
- <div class="field full"><label for="cust-notes">Order notes (optional)</label><textarea id="cust-notes" name="notes" rows="2" placeholder="Any special instructions"></textarea></div>
- </div><div style="font-weight:bold;font-size:13px;margin:12px 0 8px">Choose payment method *</div>
- <div class="pay-options"><label class="pay-option"><input type="radio" name="payment" value="Cash on Delivery" checked> <span><b>Cash on Delivery</b><br><small>Pay when your order arrives.</small></span></label><label class="pay-option"><input type="radio" name="payment" value="Advance Payment"> <span><b>Advance Payment</b><br><small>Payment details to be confirmed on WhatsApp.</small></span></label></div>
- <div class="totals"><div class="total-line"><span>Items subtotal</span><strong>${money(subtotal())}</strong></div><div class="total-line"><span>Delivery</span><strong>${money(DELIVERY_FEE)}</strong></div><div class="total-line final"><span>Order total</span><strong>${money(subtotal()+DELIVERY_FEE)}</strong></div></div>
- <p class="form-note">When you place the order, WhatsApp will open with your order and delivery details filled in. Please press Send in WhatsApp to submit it to Suraka Bucks.</p>
- <button type="submit" class="btn btn-gold wide">Place Order via WhatsApp →</button><button type="button" class="btn wide" style="background:#edf0e8;color:#214333;margin-top:8px" data-action="back-cart">← Back to Cart</button></form>`;
-}
-function placeOrder(form){
- if(!count()){toast('Your cart is empty.');return}
- const data=new FormData(form);
- const name=String(data.get('name')||'').trim(),phone=String(data.get('phone')||'').trim(),city=String(data.get('city')||'').trim(),area=String(data.get('area')||'').trim(),address=String(data.get('address')||'').trim(),notes=String(data.get('notes')||'').trim(),payment=String(data.get('payment')||'Cash on Delivery');
- if(!name||!phone||!city||!address){toast('Please complete all required fields.');return}
- const itemLines=Object.entries(cart).map(([id,q])=>{const p=getProduct(id);return p?`- ${p.name} x ${q} = ${money(p.price*q)}`:''}).filter(Bo
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-area">
+            <div class="logo-circle">SB</div>
+            <div class="logo-text-box">
+                <div class="logo-text">Suraka Bucks</div>
+                <div class="logo-subtext">Premium Coffee • Karachi</div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <button class="cart-btn-nav" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-content">
+            <div class="hero-badge">CRAFTED WITH PASSION</div>
+            <h1>Artisanal Luxury in <span>Every Sip.</span></h1>
+            <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel flavours, made to order exclusively in Karachi.</p>
+            <a href="#menu-section" class="btn-gold">Explore Menu &rarr;</a>
+        </div>
+        
+        <div class="hero-showcase">
+            <img src="signature.png" alt="Signature" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=400&q=80'">
+            <img src="dairymilk.png" alt="Dairy Milk" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=400&q=80'">
+            <img src="spanish.png" alt="Spanish" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=400&q=80'">
+            <img src="caramel.png" alt="Caramel" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80'">
+            <img src="frappe.png" alt="Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=400&q=80'">
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container" id="menu-section">
+        <h2 class="section-title">OUR SIGNATURE <span>COLLECTION</span></h2>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="signature.png" alt="Suraka Signature Iced Coffee" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Suraka Signature Iced Coffee</h3>
+                        <div class="price">PKR 499</div>
+                        <p>Signature coffee with velvety cold foam and rich aromatic depth.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addToCart('Suraka Signature Iced Coffee', 499)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Suraka Signature Iced Coffee', 499)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Dairy Milk Iced Latte</h3>
+                        <div class="price">PKR 499</div>
+                        <p>Chocolate richness blended with creamy milk and double espresso.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Dairy Milk Iced Latte', 499)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="spanish.png" alt="Ice Spanish Latte" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Ice Spanish Latte</h3>
+                        <div class="price">PKR 399</div>
+                        <p>Condensed milk combined with robust espresso over crystal ice.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addToCart('Ice Spanish Latte', 399)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Ice Spanish Latte', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="caramel.png" alt="Caramel Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Caramel Latte</h3>
+                        <div class="price">PKR 399</div>
+                        <p>Chilled milk and espresso with heavy golden caramel syrup drizzle.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Caramel Latte', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="frappe.png" alt="Caramel Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=600&q=80'">
+                <div class="menu-card-content">
+                    <div>
+                        <h3>Caramel Frappe</h3>
+                        <div class="price">PKR 399</div>
+                        <p>A frosty caramel coffee blend topped with whipped cream.</p>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn-outline" onclick="addToCart('Caramel Frappe', 399)">Add to Cart</button>
+                        <button class="btn-card-gold" onclick="buyNow('Caramel Frappe', 399)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>💎 Premium Taste</h4>
+                <p>Carefully selected beans for rich, bold flavor in every single cup.
