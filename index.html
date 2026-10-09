@@ -43,8 +43,8 @@
         }
 
         .logo-circle {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, #1e3f20, #0b1a0c);
             color: #f7f4ef;
             border-radius: 50%;
@@ -52,16 +52,10 @@
             justify-content: center;
             align-items: center;
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 900;
             border: 2px solid #d4af37;
-            animation: pulse-glow 3s infinite;
-        }
-
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .logo-text-box {
@@ -71,7 +65,7 @@
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: #f7f4ef;
             letter-spacing: 0.5px;
@@ -95,21 +89,24 @@
             cursor: pointer;
             border: none;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: transform 0.2s;
         }
 
-        /* Hero Section */
+        .cart-btn-nav:active {
+            transform: scale(0.95);
+        }
+
+        /* Clean Premium Hero Section */
         header {
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 50px 8%;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
             background: linear-gradient(135deg, #0b1a0c 0%, #163018 100%);
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-        }
-
-        .hero-content {
-            max-width: 550px;
         }
 
         .hero-badge {
@@ -128,6 +125,7 @@
             color: #f7f4ef;
             margin-bottom: 15px;
             line-height: 1.15;
+            max-width: 800px;
         }
 
         header h1 span {
@@ -136,44 +134,25 @@
         }
 
         header p {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #c5bdae;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            max-width: 650px;
             line-height: 1.6;
         }
 
         .btn-gold {
             background: linear-gradient(135deg, #d4af37, #aa8223);
             color: #0b1a0c;
-            padding: 14px 32px;
+            padding: 14px 35px;
             border-radius: 30px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
             display: inline-block;
             border: none;
             cursor: pointer;
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .hero-showcase {
-            display: flex;
-            gap: 12px;
-            align-items: flex-end;
-            justify-content: center;
-        }
-
-        .hero-showcase img {
-            width: 75px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid #d4af37;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .hero-showcase img:nth-child(even) {
-            height: 210px;
         }
 
         /* Container & Grid */
@@ -262,18 +241,23 @@
             font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
+            border: none;
+            transition: opacity 0.2s;
+        }
+
+        .card-buttons button:active {
+            opacity: 0.8;
         }
 
         .btn-outline {
             background-color: transparent;
             color: #f7f4ef;
-            border: 1px solid rgba(212, 175, 55, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.6) !important;
         }
 
         .btn-card-gold {
             background: linear-gradient(135deg, #d4af37, #aa8223);
             color: #0b1a0c;
-            border: none;
         }
 
         /* Features */
@@ -488,9 +472,7 @@
         }
 
         @media (max-width: 900px) {
-            header { flex-direction: column; text-align: center; gap: 40px; padding: 40px 20px; }
-            .hero-showcase { justify-content: center; }
-            header h1 { font-size: 2.7rem; }
+            header h1 { font-size: 2.5rem; }
             .bottom-split-section { grid-template-columns: 1fr; }
             #cart-modal { width: 100%; right: -100%; }
         }
@@ -508,26 +490,16 @@
             </div>
         </div>
         <div class="nav-links">
-            <button class="cart-btn-nav" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+            <button class="cart-btn-nav" id="nav-cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Clean Premium Hero Section -->
     <header>
-        <div class="hero-content">
-            <div class="hero-badge">CRAFTED WITH PASSION</div>
-            <h1>Artisanal Luxury in <span>Every Sip.</span></h1>
-            <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel flavours, made to order exclusively in Karachi.</p>
-            <a href="#menu-section" class="btn-gold">Explore Menu &rarr;</a>
-        </div>
-        
-        <div class="hero-showcase">
-            <img src="signature.png" alt="Signature" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=400&q=80'">
-            <img src="dairymilk.png" alt="Dairy Milk" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=400&q=80'">
-            <img src="spanish.png" alt="Spanish" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=400&q=80'">
-            <img src="caramel.png" alt="Caramel" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80'">
-            <img src="frappe.png" alt="Frappe" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=400&q=80'">
-        </div>
+        <div class="hero-badge">CRAFTED WITH PASSION</div>
+        <h1>Artisanal Luxury in <span>Every Sip.</span></h1>
+        <p>Freshly prepared iced coffees, Spanish lattes, and indulgent caramel flavours, made to order exclusively in Karachi.</p>
+        <a href="#menu-section" class="btn-gold">Explore Menu &rarr;</a>
     </header>
 
     <!-- Main Container -->
@@ -544,8 +516,8 @@
                         <p>Signature coffee with velvety cold foam and rich aromatic depth.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addToCart('Suraka Signature Iced Coffee', 499)">Add to Cart</button>
-                        <button class="btn-card-gold" onclick="buyNow('Suraka Signature Iced Coffee', 499)">Buy Now</button>
+                        <button class="btn-outline add-btn" data-name="Suraka Signature Iced Coffee" data-price="499">Add to Cart</button>
+                        <button class="btn-card-gold buy-btn" data-name="Suraka Signature Iced Coffee" data-price="499">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -559,8 +531,8 @@
                         <p>Chocolate richness blended with creamy milk and double espresso.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addToCart('Dairy Milk Iced Latte', 499)">Add to Cart</button>
-                        <button class="btn-card-gold" onclick="buyNow('Dairy Milk Iced Latte', 499)">Buy Now</button>
+                        <button class="btn-outline add-btn" data-name="Dairy Milk Iced Latte" data-price="499">Add to Cart</button>
+                        <button class="btn-card-gold buy-btn" data-name="Dairy Milk Iced Latte" data-price="499">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -574,8 +546,8 @@
                         <p>Condensed milk combined with robust espresso over crystal ice.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addToCart('Ice Spanish Latte', 399)">Add to Cart</button>
-                        <button class="btn-card-gold" onclick="buyNow('Ice Spanish Latte', 399)">Buy Now</button>
+                        <button class="btn-outline add-btn" data-name="Ice Spanish Latte" data-price="399">Add to Cart</button>
+                        <button class="btn-card-gold buy-btn" data-name="Ice Spanish Latte" data-price="399">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -589,8 +561,8 @@
                         <p>Chilled milk and espresso with heavy golden caramel syrup drizzle.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addToCart('Caramel Latte', 399)">Add to Cart</button>
-                        <button class="btn-card-gold" onclick="buyNow('Caramel Latte', 399)">Buy Now</button>
+                        <button class="btn-outline add-btn" data-name="Caramel Latte" data-price="399">Add to Cart</button>
+                        <button class="btn-card-gold buy-btn" data-name="Caramel Latte" data-price="399">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -604,8 +576,8 @@
                         <p>A frosty caramel coffee blend topped with whipped cream.</p>
                     </div>
                     <div class="card-buttons">
-                        <button class="btn-outline" onclick="addToCart('Caramel Frappe', 399)">Add to Cart</button>
-                        <button class="btn-card-gold" onclick="buyNow('Caramel Frappe', 399)">Buy Now</button>
+                        <button class="btn-outline add-btn" data-name="Caramel Frappe" data-price="399">Add to Cart</button>
+                        <button class="btn-card-gold buy-btn" data-name="Caramel Frappe" data-price="399">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -615,4 +587,32 @@
         <div class="features-grid">
             <div class="feature-box">
                 <h4>💎 Premium Taste</h4>
-                <p>Carefully selected beans for rich, bold flavor in every single cup.
+                <p>Carefully selected beans for rich, bold flavor in every single cup.</p>
+            </div>
+            <div class="feature-box">
+                <h4>✨ Clear Prices</h4>
+                <p>Transparent pricing with no hidden charges. Fresh coffee before order.</p>
+            </div>
+            <div class="feature-box">
+                <h4>⚡ Easy WhatsApp Ordering</h4>
+                <p>Choose, customize and order directly on WhatsApp in seconds.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🚀 Karachi Home-Based Brand</h4>
+                <p>Support a local business & fulfill big dreams.</p>
+            </div>
+        </div>
+
+        <!-- Bottom Split Section -->
+        <div class="bottom-split-section">
+            <div class="cappuccino-card">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80" alt="Hot Cappuccino Latte Art">
+                <div class="cappuccino-content">
+                    <h3>Artisan Hot Reserve</h3>
+                    <p>Expertly hand-poured latte art over rich espresso and velvety steamed milk, crafted for true coffee connoisseurs.</p>
+                </div>
+            </div>
+            
+            <div class="about-grid">
+                <h2>Vision of Suraka Raza</h2>
+                <p>Suraka Bucks handcrafts elite coffee. Founded by <strong>Suraka Raza</strong>, our dedication is rooted in great taste, quali
