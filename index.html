@@ -107,7 +107,7 @@ footer small{color:#c8d6cb;font-size:11px}
 <div class="wrap nav">
 <a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a>
 <nav class="links"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#story">Our Story</a></nav>
-<button type="button" class="cart-button" onclick="openCart()">Cart <span id="cartCount" class="cart-count">0</span></button>
+<button type="button" class="cart-button" id="cartTriggerBtn">Cart <span id="cartCount" class="cart-count">0</span></button>
 </div>
 </header>
 
@@ -122,11 +122,11 @@ footer small{color:#c8d6cb;font-size:11px}
 <section class="section" id="menu"><div class="wrap">
 <div class="section-heading"><div class="eyebrow">Your daily indulgence</div><h2>Our Signature Collection</h2><p>HANDCRAFTED · FRESHLY PREPARED · FULL OF FLAVOUR</p></div>
 <div class="products">
-<article class="product"><div class="product-img"><img src="signature.png" alt="Suraka Signature" onerror="this.style.opacity='.2'"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('signature')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('signature')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.style.opacity='.2'"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('dairy')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('dairy')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish Latte" onerror="this.style.opacity='.2'"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('spanish')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('spanish')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel Latte" onerror="this.style.opacity='.2'"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('caramel')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('caramel')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel Frappe" onerror="this.style.opacity='.2'"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('frappe')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('frappe')">Buy Now</button></div></div></article>
+<article class="product"><div class="product-img"><img src="signature.png" alt="Suraka Signature" onerror="this.style.opacity='.2'"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" data-act="add" data-id="signature">＋ Add to Cart</button><button type="button" class="buy-btn" data-act="buy" data-id="signature">Buy Now</button></div></div></article>
+<article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.style.opacity='.2'"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" data-act="add" data-id="dairy">＋ Add to Cart</button><button type="button" class="buy-btn" data-act="buy" data-id="dairy">Buy Now</button></div></div></article>
+<article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish Latte" onerror="this.style.opacity='.2'"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" data-act="add" data-id="spanish">＋ Add to Cart</button><button type="button" class="buy-btn" data-act="buy" data-id="spanish">Buy Now</button></div></div></article>
+<article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel Latte" onerror="this.style.opacity='.2'"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" data-act="add" data-id="caramel">＋ Add to Cart</button><button type="button" class="buy-btn" data-act="buy" data-id="caramel">Buy Now</button></div></div></article>
+<article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel Frappe" onerror="this.style.opacity='.2'"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" data-act="add" data-id="frappe">＋ Add to Cart</button><button type="button" class="buy-btn" data-act="buy" data-id="frappe">Buy Now</button></div></div></article>
 </div></div></section>
 
 <section class="why"><div class="wrap why-grid">
@@ -142,21 +142,21 @@ footer small{color:#c8d6cb;font-size:11px}
 <footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a><small>© 2026 Suraka Bucks. Crafted with care in Karachi.</small><a href="#menu" style="color:#f2e5b7;font-size:12px">Our Menu</a></div></footer>
 
 <!-- Cart Overlay Modal -->
-<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="modal">
-<div class="modal-head"><h2 id="cartTitle">Your Coffee Cart</h2><button type="button" class="close" onclick="closeModal('cartOverlay')" aria-label="Close">×</button></div>
+<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true"><div class="modal">
+<div class="modal-head"><h2>Your Coffee Cart</h2><button type="button" class="close" id="closeCartBtn">×</button></div>
 <div class="modal-content" id="cartView"></div>
 </div></div>
 
 <!-- Checkout Overlay Modal -->
-<div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"><div class="modal">
-<div class="modal-head"><h2 id="checkoutTitle">Delivery & Checkout</h2><button type="button" class="close" onclick="closeModal('checkoutOverlay')" aria-label="Close">×</button></div>
+<div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true"><div class="modal">
+<div class="modal-head"><h2>Delivery & Checkout</h2><button type="button" class="close" id="closeCheckoutBtn">×</button></div>
 <div class="modal-content">
-<form id="checkoutForm" onsubmit="handleCheckout(event)">
+<form id="checkoutForm">
 <div class="checkout-form">
 <div class="field"><label for="customerName">Full name *</label><input id="customerName" name="name" required autocomplete="name" placeholder="Your name"></div>
 <div class="field"><label for="customerPhone">Phone number *</label><input id="customerPhone" name="phone" type="tel" required pattern="[0-9+() -]{7,20}" placeholder="03XX XXXXXXX"></div>
 <div class="field full"><label for="area">Delivery area *</label>
-<select id="area" name="area" required onchange="updateTotals()">
+<select id="area" name="area" required>
 <option value="">Select your Karachi area</option>
 <optgroup label="PKR 100 delivery">
 <option value="Bahadurabad">Bahadurabad</option>
@@ -183,105 +183,110 @@ footer small{color:#c8d6cb;font-size:11px}
 </select><div class="hint">Choose your area to calculate delivery charges.</div></div>
 <div class="field full"><label for="address">Complete delivery address *</label><textarea id="address" name="address" rows="2" required placeholder="House / flat, street, block, nearby landmark"></textarea></div>
 <div class="field full"><label>Payment method *</label><div class="payment-options">
-<label class="payment-choice"><input type="radio" name="payment" value="Cash on Delivery" checked onchange="toggleAdvanceNote(false)"><span><strong>Cash on Delivery</strong><small>Pay cash when your coffee arrives.</small></span></label>
-<label class="payment-choice"><input type="radio" name="payment" value="Advance Payment" onchange="toggleAdvanceNote(true)"><span><strong>Advance Payment</strong><small>Confirm transfer details with the shop.</small></span></label>
-</div><div id="advanceNote" class="payment-note">An online payment gateway is not connected. Please confirm the official payment method with Suraka Bucks before transferring money.</div></div>
+<label class="payment-choice"><input type="radio" name="payment" value="Cash on Delivery" checked id="payCod"><span><strong>Cash on Delivery</strong><small>Pay cash when your coffee arrives.</small></span></label>
+<label class="payment-choice"><input type="radio" name="payment" value="Advance Payment" id="payAdv"><span><strong>Advance Payment</strong><small>Confirm transfer details with the shop.</small></span></label>
+</div><div id="advanceNote" class="payment-note">An online payment gateway is not connected. Please confirm official payment method with Suraka Bucks before transferring money.</div></div>
 </div>
 <div class="totals" id="checkoutTotals"></div>
 <button class="btn submit-btn" type="submit">Confirm Order</button>
 <p class="hint" style="text-align:center">After confirming, send your order details to Suraka Bucks on WhatsApp.</p>
 </form>
 <div class="success" id="orderSuccess"><div style="font-size:40px;color:var(--green)">✓</div><h3>Order summary ready!</h3><p>Tap the WhatsApp button to send your details and confirm the order.</p><pre id="orderSummary"></pre>
-<button type="button" class="btn" onclick="sendWhatsApp()">Send Order on WhatsApp</button> 
-<button type="button" class="btn" onclick="copyOrder()">Copy Order Summary</button>
-<p><button type="button" class="btn-outline" style="color:var(--green);border-color:var(--green)" onclick="closeModal('checkoutOverlay')">Continue Browsing</button></p></div>
+<button type="button" class="btn" id="sendWaBtn">Send Order on WhatsApp</button> 
+<button type="button" class="btn" id="copyOrderBtn">Copy Order Summary</button>
+<p><button type="button" class="btn-outline" style="color:var(--green);border-color:var(--green)" id="continueBtn">Continue Browsing</button></p></div>
 </div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-"use strict";
+document.addEventListener("DOMContentLoaded", function() {
+  const PRODUCTS = {
+   signature:{name:"Suraka Signature",price:499},
+   dairy:{name:"Dairy Milk Iced Latte",price:499},
+   spanish:{name:"Spanish Latte",price:399},
+   caramel:{name:"Caramel Latte",price:399},
+   frappe:{name:"Caramel Frappe",price:499}
+  };
 
-const PRODUCTS = {
- signature:{name:"Suraka Signature",price:499},
- dairy:{name:"Dairy Milk Iced Latte",price:499},
- spanish:{name:"Spanish Latte",price:399},
- caramel:{name:"Caramel Latte",price:399},
- frappe:{name:"Caramel Frappe",price:499}
-};
+  const LOW_DELIVERY = ["Bahadurabad","PCHS","Bahadurabad PCHS","Jamshed Road","Tariq Road","Dhoraji"];
+  const CART_STORAGE_KEY = "surakaBucksCartV3";
+  let cart = {};
+  let latestOrderText = "";
+  let toastTimer;
 
-const LOW_DELIVERY = ["Bahadurabad","PCHS","Bahadurabad PCHS","Jamshed Road","Tariq Road","Dhoraji"];
-const CART_STORAGE_KEY = "surakaBucksCartV2";
-let cart = {};
-let latestOrderText = "";
-let toastTimer;
+  const $ = id => document.getElementById(id);
+  const money = amount => "PKR " + Number(amount).toLocaleString("en-PK");
+  const countCart = () => Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+  const getSubtotal = () => Object.entries(cart).reduce((sum, [id, qty]) => sum + (PRODUCTS[id] ? PRODUCTS[id].price * qty : 0), 0);
 
-const $ = id => document.getElementById(id);
-const money = amount => "PKR " + Number(amount).toLocaleString("en-PK");
-const countCart = () => Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-const getSubtotal = () => Object.entries(cart).reduce((sum, [id, qty]) => sum + (PRODUCTS[id] ? PRODUCTS[id].price * qty : 0), 0);
+  // Storage
+  try {
+   const saved = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || "{}");
+   if (saved && typeof saved === "object" && !Array.isArray(saved)) {
+    Object.entries(saved).forEach(([id, qty]) => {
+     if (PRODUCTS[id] && Number.isInteger(qty) && qty > 0) cart[id] = qty;
+    });
+   }
+  } catch (e) {}
 
-// Load cart on start
-try {
- const saved = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || "{}");
- if (saved && typeof saved === "object" && !Array.isArray(saved)) {
-  Object.entries(saved).forEach(([id, qty]) => {
-   if (PRODUCTS[id] && Number.isInteger(qty) && qty > 0 && qty < 100) cart[id] = qty;
-  });
- }
-} catch (error) {}
+  function saveCart() {
+   try { localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart)); } catch (e) {}
+  }
 
-function saveCart() {
- try { localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart)); } catch (error) {}
-}
+  function deliveryFee() {
+   const area = $("area") ? $("area").value : "";
+   return !area ? 0 : LOW_DELIVERY.includes(area) ? 100 : 200;
+  }
 
-function deliveryFee() {
- const area = $("area") ? $("area").value : "";
- return !area ? 0 : LOW_DELIVERY.includes(area) ? 100 : 200;
-}
+  function updateCount() { 
+   if ($("cartCount")) $("cartCount").textContent = countCart(); 
+  }
 
-function updateCount() { 
- const badge = $("cartCount");
- if (badge) badge.textContent = countCart(); 
-}
+  function toast(msg) {
+   const el = $("toast");
+   if(!el) return;
+   el.textContent = msg;
+   el.classList.add("show");
+   clearTimeout(toastTimer);
+   toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
+  }
 
-function toast(message) {
- const el = $("toast");
- if(!el) return;
- el.textContent = message;
- el.classList.add("show");
- clearTimeout(toastTimer);
- toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
-}
+  function openCart() {
+   if ($("cartOverlay")) $("cartOverlay").classList.add("open");
+   renderCart();
+  }
 
-function openCart() {
- const overlay = $("cartOverlay");
- if(overlay) overlay.classList.add("open");
- renderCart();
-}
+  function closeModal(id) { 
+   if ($(id))$(id).classList.remove("open"); 
+  }
 
-function closeModal(id) { 
- const el = $(id);
- if(el) el.classList.remove("open"); 
-}
+  function addToCart(id) {
+   if (!PRODUCTS[id]) return;
+   cart[id] = (cart[id] || 0) + 1;
+   saveCart();
+   updateCount();
+   openCart();
+   toast(PRODUCTS[id].name + " added to cart");
+  }
 
-function addToCart(id) {
- if (!PRODUCTS[id]) return;
- cart[id] = (cart[id] || 0) + 1;
- saveCart();
- updateCount();
- renderCart();
- openCart();
- toast(PRODUCTS[id].name + " added to cart");
-}
+  function buyNow(id) {
+   if (!PRODUCTS[id]) return;
+   cart[id] = (cart[id] || 0) + 1;
+   saveCart();
+   updateCount();
+   startCheckout();
+  }
 
-function buyNow(id) {
- if (!PRODUCTS[id]) return;
- cart[id] = (cart[id] || 0) + 1;
- saveCart();
- updateCount();
- startCheckout();
-}
+  function changeQty(id, delta) {
+   if (!PRODUCTS[id]) return;
+   cart[id] = (cart[id] || 0) + delta;
+   if (cart[id] <= 0) delete cart[id];
+   saveCart();
+   updateCount();
+   renderCart();
+   updateTotals();
+  }
 
-function changeQty(id, delta) {
- if (!PRODUCTS[id]) return;
- cart[id] = (cart[id] |
+  function renderCart() {
+   const view = $("cartView");
+   if(!view) r
