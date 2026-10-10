@@ -1,281 +1,323 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073d2c">
-<title>Suraka Bucks | Premium Coffee</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--green:#073d2c;--deep:#052b20;--gold:#e8c66d;--cream:#f8f4e8;--ink:#1c2b22;--muted:#6f786e;--line:#e8e5d9}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}
-button,input,select,textarea{font:inherit}
-a,button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.wrap{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#063729f5;color:white;border-bottom:1px solid #ffffff1c}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;color:white;text-decoration:none}
-.logo{width:42px;height:42px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:"Playfair Display",serif;font-size:18px}
-.brand strong{display:block;font-family:"Playfair Display",serif;letter-spacing:.06em;font-size:15px}
-.brand small{display:block;color:#e8c66d;font-size:9px;letter-spacing:.12em;margin-top:3px}
-.links{display:flex;gap:18px}
-.links a{color:white;text-decoration:none;font-size:12px}
-.cart-button,.btn{border:0;border-radius:30px;background:var(--gold);color:var(--green);font-weight:700;padding:12px 17px;text-decoration:none;display:inline-block;text-align:center}
-.cart-count{background:var(--green);color:white;border-radius:50%;padding:2px 7px}
-.hero{background:linear-gradient(90deg,#052b20f5,#063829dc 60%,#073d2c55),url("signature.png") center/cover;min-height:410px;display:flex;align-items:center;color:white}
-.hero-content{padding:55px 0;max-width:620px}
-.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b18b34;font-weight:700}
-.hero .eyebrow{color:var(--gold)}
-h1,h2,h3{font-family:"Playfair Display",serif}
-.hero h1{font-size:clamp(40px,7vw,68px);line-height:1.05;margin:15px 0}
-.hero h1 em{color:var(--gold)}
-.hero p{font-size:14px;line-height:1.8;color:#e4e8dd;max-width:450px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn-outline{border:1px solid #e8c66d;color:white;border-radius:30px;padding:12px 17px;text-decoration:none;background:transparent;font-size:12px;font-weight:700}
-.section{padding:50px 0}
-.section-heading{text-align:center;margin-bottom:28px}
-.section-heading h2{font-size:clamp(27px,4vw,37px);margin:9px 0}
-.section-heading p{font-size:11px;color:var(--muted);letter-spacing:.1em}
-.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.product{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 5px 20px #1b39250a}
-.product-img{height:180px;background:#e8ebd9;position:relative}
-.product-img img{width:100%;height:100%;object-fit:cover;display:block}
-.tag{position:absolute;top:10px;left:8px;background:#073d2ce8;color:white;padding:5px 8px;border-radius:20px;font-size:9px}
-.product-body{padding:14px;display:flex;flex-direction:column;flex:1}
-.product h3{font-size:17px;margin:0 0 7px}
-.product p{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 12px;flex:1}
-.price{font-weight:700;color:var(--green);margin-bottom:12px}
-.product-actions{display:flex;gap:6px}
-.add-btn,.buy-btn{border:0;border-radius:22px;padding:10px 7px;font-size:10px;font-weight:700;flex:1;text-decoration:none;text-align:center;display:block}
-.add-btn{background:var(--green);color:white}
-.buy-btn{background:#f4e6b8;color:#4b3c16}
-.why{background:var(--green);color:white;padding:28px 0}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.why-item{font-size:12px;line-height:1.6}
-.why-item strong{display:block;margin-bottom:4px}
-.why-item small{color:#c8d6cb}
-.story{display:grid;grid-template-columns:1fr 1fr;background:white;border-radius:17px;overflow:hidden}
-.story-photo{min-height:250px;background:url("dairymilk.png") center/cover}
-.story-copy{padding:30px;align-self:center}
-.story-copy h2{font-size:30px;margin:10px 0}
-.story-copy p{font-size:13px;line-height:1.8;color:var(--muted)}
-footer{background:var(--deep);color:white;padding:25px 0}
-.footer-row{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
-footer small{color:#c8d6cb;font-size:11px}
-.overlay{position:fixed;inset:0;background:#031b14b8;z-index:50;display:none;align-items:center;justify-content:center;padding:12px}
-.overlay.open{display:flex}
-.modal{background:var(--cream);border-radius:18px;width:min(680px,100%);max-height:92vh;overflow:auto}
-.modal-head{background:var(--green);color:white;padding:17px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
-.modal-head h2{margin:0;font-size:23px}
-.close{border:0;background:#ffffff20;color:white;border-radius:50%;width:35px;height:35px;font-size:22px;text-decoration:none;display:grid;place-items:center}
-.modal-content{padding:18px}
-.cart-empty{text-align:center;color:var(--muted);padding:28px}
-.cart-empty b{display:block;font-size:22px;color:var(--ink);margin-bottom:8px}
-.cart-line{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
-.cart-line strong{font-size:12px}
-.cart-line small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
-.qty{display:flex;align-items:center;gap:7px}
-.qty a{width:27px;height:27px;border:1px solid var(--line);background:white;border-radius:50%;font-weight:bold;text-decoration:none;display:grid;place-items:center;color:var(--ink)}
-.totals{margin:16px 0;background:white;border-radius:12px;padding:13px}
-.total-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:6px 0}
-.total-row.final{border-top:1px solid var(--line);margin-top:6px;padding-top:12px;font-size:16px;font-weight:700;color:var(--green)}
-.checkout-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field.full{grid-column:1/-1}
-.field label{font-size:11px;font-weight:700}
-.field input,.field select,.field textarea{width:100%;border:1px solid #dcdccf;border-radius:10px;padding:12px;background:white;color:var(--ink)}
-.payment-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.payment-choice{display:flex;gap:8px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px}
-.payment-choice small{display:block;color:var(--muted);margin-top:4px;line-height:1.5}
-.payment-note{display:none;background:#fff4d2;padding:12px;border-radius:10px;font-size:11px;line-height:1.6;margin-top:8px}
-.payment-note.show{display:block}
-.hint{font-size:10px;color:var(--muted);line-height:1.6}
-.submit-btn{width:100%;margin-top:12px}
-.success{display:none;text-align:center;padding:22px}
-.success.show{display:block}
-.success pre{white-space:pre-wrap;text-align:left;background:white;border-radius:10px;padding:13px;font:12px/1.6 "DM Sans",sans-serif}
-.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);background:var(--deep);color:white;padding:12px 18px;border-radius:30px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:100;max-width:90%;text-align:center}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:950px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.why-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.links{display:none}.nav{min-height:65px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img{height:160px}.product-body{padding:11px}.product h3{font-size:15px}.add-btn,.buy-btn{font-size:9px;padding:10px 4px}.hero{min-height:390px}.story{grid-template-columns:1fr}.story-photo{min-height:190px}.story-copy{padding:22px}.checkout-form{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-options{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraka Bucks - Premium Coffee Delivery Karachi</title>
+    
+    <!-- Fonts: DM Sans and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sbGreen: '#073d2c',
+                        sbDarkGreen: '#052b20',
+                        sbGold: '#e8c66d',
+                        sbGoldHover: '#d4af53',
+                        sbCream: '#f8f4e8',
+                        sbSoftWhite: '#faf8f5',
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar and animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f4e8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #073d2c;
+            border-radius: 4px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 198, 109, 0.25);
+        }
+        .gold-glow {
+            box-shadow: 0 4px 20px -2px rgba(232, 198, 109, 0.35);
+        }
+        .modal-active {
+            overflow: hidden;
+        }
+    </style>
 </head>
-<body>
-<header>
-<div class="wrap nav">
-<a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a>
-<nav class="links"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#story">Our Story</a></nav>
-<a href="javascript:void(0)" class="cart-button" onclick="openCart()">Cart <span id="cartCount" class="cart-count">0</span></a>
-</div>
-</header>
+<body class="bg-sbCream text-slate-800 font-sans min-h-screen flex flex-col justify-between selection:bg-sbGold selection:text-sbDarkGreen">
 
-<main>
-<section class="hero" id="home"><div class="wrap"><div class="hero-content">
-<div class="eyebrow">Artisanal luxury in every sip</div>
-<h1>Your Coffee.<br><em>Your Moment.</em></h1>
-<p>Discover handcrafted coffee favourites, rich flavours and refreshing sips made with care. Your next coffee moment starts here.</p>
-<div class="hero-actions"><a class="btn" href="#menu">Explore Our Menu →</a><a class="btn-outline" href="#story">Our Story</a></div>
-</div></div></section>
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-sbDarkGreen text-white border-b border-sbGold/30 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Badge & Name -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="scrollToMenu()">
+                <div class="w-12 h-12 rounded-full bg-sbGold text-sbDarkGreen font-serif font-black flex items-center justify-center text-xl shadow-md border-2 border-white/20 tracking-wider">
+                    SB
+                </div>
+                <div>
+                    <h1 class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-sbGold leading-none">SURAKA BUCKS</h1>
+                    <p class="text-[10px] sm:text-xs text-emerald-200 tracking-widest uppercase font-semibold">Karachi's Luxury Cold Brews</p>
+                </div>
+            </div>
 
-<section class="section" id="menu"><div class="wrap">
-<div class="section-heading"><div class="eyebrow">Your daily indulgence</div><h2>Our Signature Collection</h2><p>HANDCRAFTED · FRESHLY PREPARED · FULL OF FLAVOUR</p></div>
-<div class="products">
-<article class="product"><div class="product-img"><img src="signature.png" alt="Suraka Signature" onerror="this.style.opacity='.2'"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('signature')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('signature')">Buy Now</a></div></div></article>
-<article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.style.opacity='.2'"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('dairy')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('dairy')">Buy Now</a></div></div></article>
-<article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish Latte" onerror="this.style.opacity='.2'"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('spanish')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('spanish')">Buy Now</a></div></div></article>
-<article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel Latte" onerror="this.style.opacity='.2'"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('caramel')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('caramel')">Buy Now</a></div></div></article>
-<article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel Frappe" onerror="this.style.opacity='.2'"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('frappe')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('frappe')">Buy Now</a></div></div></article>
-</div></div></section>
+            <!-- Header Action Right -->
+            <div class="flex items-center gap-4">
+                <button onclick="scrollToMenu()" class="hidden md:inline-flex items-center text-sm font-medium text-sbGold hover:text-white transition">
+                    <i class="fa-solid fa-mug-hot mr-2"></i> Our Menu
+                </button>
+                <button onclick="toggleCartModal(true)" class="relative bg-sbGold hover:bg-sbGoldHover text-sbDarkGreen font-bold px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg transition-transform active:scale-95">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span class="hidden sm:inline text-sm uppercase tracking-wider font-extrabold">Cart</span>
+                    <span id="cartBadge" class="bg-sbDarkGreen text-sbGold text-xs font-black px-2 py-0.5 rounded-full border border-sbGold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<section class="why"><div class="wrap why-grid">
-<div class="why-item"><strong>♨ Premium Taste</strong><small>Carefully selected flavours for a richer coffee experience.</small></div>
-<div class="why-item"><strong>✧ Fair Prices</strong><small>Everyday coffee moments made special.</small></div>
-<div class="why-item"><strong>♡ Easy Ordering</strong><small>Add to cart and check out in a few steps.</small></div>
-<div class="why-item"><strong>⌖ Karachi Delivery</strong><small>Delivery charges shown before you order.</small></div>
-</div></section>
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section class="relative bg-gradient-to-b from-sbDarkGreen via-sbGreen to-sbDarkGreen text-white py-16 sm:py-24 px-4 overflow-hidden">
+            <!-- Decorative Subtle Shapes -->
+            <div class="absolute -right-20 -top-20 w-80 h-80 bg-sbGold/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-<section class="section" id="story"><div class="wrap"><div class="story"><div class="story-photo" role="img" aria-label="Coffee"></div><div class="story-copy"><div class="eyebrow">Small business, big dreams</div><h2>Our Story</h2><p>Suraka Bucks brings handcrafted coffee favourites to your day. From a creamy latte to a refreshing frappe, every cup is prepared with care to make your everyday moments feel special.</p><a class="btn" href="#menu">Find Your Favourite →</a></div></div></div></section>
-</main>
+            <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6">
+                <span class="inline-block bg-sbGold/20 text-sbGold border border-sbGold/40 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                    ✨ Handcrafted Fresh Daily • Fast Karachi Delivery
+                </span>
+                <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold text-white leading-tight">
+                    Rich, Creamy & <br><span class="text-sbGold italic">Unapologetically Thick.</span>
+                </h2>
+                <p class="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Brewed with premium beans, pure MilkPak milk, condensed milk richness, and signature flavors delivered straight to your door step in Karachi.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="scrollToMenu()" class="w-full sm:w-auto bg-sbGold hover:bg-sbGoldHover text-sbDarkGreen font-extrabold px-8 py-4 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-mug-saucer"></i> Explore Menu & Order
+                    </button>
+                    <a href="https://wa.me/?text=Hi%20Suraka%20Bucks!%20I%20have%20a%20question%20about%20your%20coffee." target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-4 rounded-xl text-base transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a><small>© 2026 Suraka Bucks. Crafted with care in Karachi.</small><a href="#menu" style="color:#f2e5b7;font-size:12px">Our Menu</a></div></footer>
+        <!-- MENU SECTION -->
+        <section id="menuSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-12">
+                <p class="text-sbGreen font-bold text-sm tracking-widest uppercase mb-1">Karachi's Cold Brew Collection</p>
+                <h3 class="font-serif text-3xl sm:text-5xl font-extrabold text-sbDarkGreen">Our Signature Lineup</h3>
+                <div class="w-24 h-1 bg-sbGold mx-auto mt-4 rounded-full"></div>
+            </div>
 
-<!-- Cart Overlay Modal -->
-<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true"><div class="modal">
-<div class="modal-head"><h2>Your Coffee Cart</h2><a href="javascript:void(0)" class="close" onclick="closeModal('cartOverlay')">×</a></div>
-<div class="modal-content" id="cartView"></div>
-</div></div>
+            <!-- Products Grid -->
+            <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Products dynamically rendered by JS -->
+            </div>
+        </section>
 
-<!-- Checkout Overlay Modal -->
-<div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true"><div class="modal">
-<div class="modal-head"><h2>Delivery & Checkout</h2><a href="javascript:void(0)" class="close" onclick="closeModal('checkoutOverlay')">×</a></div>
-<div class="modal-content">
-<form id="checkoutForm" onsubmit="handleCheckout(event)">
-<div class="checkout-form">
-<div class="field"><label for="customerName">Full name *</label><input id="customerName" name="name" required placeholder="Your name"></div>
-<div class="field"><label for="customerPhone">Phone number *</label><input id="customerPhone" name="phone" type="tel" required placeholder="03XX XXXXXXX"></div>
-<div class="field full"><label for="area">Delivery area *</label>
-<select id="area" name="area" required onchange="updateTotals()">
-<option value="">Select your Karachi area</option>
-<optgroup label="PKR 100 delivery">
-<option value="Bahadurabad">Bahadurabad</option>
-<option value="PCHS">PCHS</option>
-<option value="Bahadurabad PCHS">Bahadurabad PCHS</option>
-<option value="Jamshed Road">Jamshed Road</option>
-<option value="Tariq Road">Tariq Road</option>
-<option value="Dhoraji">Dhoraji</option>
-</optgroup>
-<optgroup label="PKR 200 delivery">
-<option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
-<option value="Gulistan-e-Johar">Gulistan-e-Johar</option>
-<option value="Nazimabad">Nazimabad</option>
-<option value="North Nazimabad">North Nazimabad</option>
-<option value="PECHS (other block)">PECHS (other block)</option>
-<option value="Clifton">Clifton</option>
-<option value="DHA">DHA</option>
-<option value="Federal B Area">Federal B Area</option>
-<option value="North Karachi">North Karachi</option>
-<option value="Malir">Malir</option>
-<option value="Korangi">Korangi</option>
-<option value="Other Karachi area">Other Karachi area</option>
-</optgroup>
-</select><div class="hint">Choose your area to calculate delivery charges.</div></div>
-<div class="field full"><label for="address">Complete delivery address *</label><textarea id="address" name="address" rows="2" required placeholder="House / flat, street, block, nearby landmark"></textarea></div>
-<div class="field full"><label>Payment method *</label><div class="payment-options">
-<label class="payment-choice"><input type="radio" name="payment" value="Cash on Delivery" checked onchange="toggleAdvance(false)"><span><strong>Cash on Delivery</strong><small>Pay cash when your coffee arrives.</small></span></label>
-<label class="payment-choice"><input type="radio" name="payment" value="Advance Payment" onchange="toggleAdvance(true)"><span><strong>Advance Payment</strong><small>Confirm transfer details with the shop.</small></span></label>
-</div><div id="advanceNote" class="payment-note">An online payment gateway is not connected. Please confirm official payment method with Suraka Bucks before transferring money.</div></div>
-</div>
-<div class="totals" id="checkoutTotals"></div>
-<button class="btn submit-btn" type="submit">Confirm Order</button>
-<p class="hint" style="text-align:center">After confirming, send your order details to Suraka Bucks on WhatsApp.</p>
-</form>
-<div class="success" id="orderSuccess"><div style="font-size:40px;color:var(--green)">✓</div><h3>Order summary ready!</h3><p>Tap the WhatsApp button to send your details and confirm the order.</p><pre id="orderSummary"></pre>
-<button type="button" class="btn" onclick="sendWhatsApp()">Send Order on WhatsApp</button> 
-<button type="button" class="btn" onclick="copyOrder()">Copy Order Summary</button>
-<p><a href="javascript:void(0)" class="btn-outline" style="color:var(--green);border-color:var(--green);margin-top:10px" onclick="closeModal('checkoutOverlay')">Continue Browsing</a></p></div>
-</div></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <!-- TRUST BADGES / FEATURES -->
+        <section class="bg-sbDarkGreen text-white py-12 border-t border-sbGold/20">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4 space-y-2">
+                    <i class="fa-solid fa-cubes-stacked text-3xl text-sbGold"></i>
+                    <h4 class="font-serif text-xl font-bold text-sbGold">Ice Sphere Technology</h4>
+                    <p class="text-xs text-slate-300">Slow-melting solid ice spheres so your coffee stays chilled without diluting or turning watery.</p>
+                </div>
+                <div class="p-4 space-y-2">
+                    <i class="fa-solid fa-whiskey-glass text-3xl text-sbGold"></i>
+                    <h4 class="font-serif text-xl font-bold text-sbGold">Velvety Thick Body</h4>
+                    <p class="text-xs text-slate-300">Enriched with condensed milk & premium milk base for that authentic café thickness on every sip.</p>
+                </div>
+                <div class="p-4 space-y-2">
+                    <i class="fa-solid fa-motorcycle text-3xl text-sbGold"></i>
+                    <h4 class="font-serif text-xl font-bold text-sbGold">Express Doorstep Delivery</h4>
+                    <p class="text-xs text-slate-300">Delivered sealed and chilled directly to your house or gym anywhere across Karachi.</p>
+                </div>
+            </div>
+        </section>
 
-<script>
-window.PRODUCTS = {
- signature:{name:"Suraka Signature",price:499},
- dairy:{name:"Dairy Milk Iced Latte",price:499},
- spanish:{name:"Spanish Latte",price:399},
- caramel:{name:"Caramel Latte",price:399},
- frappe:{name:"Caramel Frappe",price:499}
-};
+    </main>
 
-window.LOW_DELIVERY = ["Bahadurabad","PCHS","Bahadurabad PCHS","Jamshed Road","Tariq Road","Dhoraji"];
-window.cart = {};
-window.latestOrderText = "";
-window.toastTimer = null;
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p class="font-serif text-sbGold text-lg font-bold">SURAKA BUCKS KARACHI</p>
+            <p>© 2026 Suraka Bucks. Premium Craft Cold Coffees. All rights reserved.</p>
+        </div>
+    </footer>
 
-window.money = function(amount) {
- return "PKR " + Number(amount).toLocaleString("en-PK");
-};
+    <!-- CART MODAL -->
+    <div id="cartModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex justify-end transition-opacity">
+        <div class="bg-sbCream w-full max-w-md h-full flex flex-col shadow-2xl border-l border-sbGold/40 animate-slide-left">
+            <!-- Modal Header -->
+            <div class="bg-sbDarkGreen text-white p-5 flex items-center justify-between border-b border-sbGold/30">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bag-shopping text-sbGold text-2xl"></i>
+                    <h3 class="font-serif text-xl font-bold text-sbGold">Your Coffee Order</h3>
+                </div>
+                <button onclick="toggleCartModal(false)" class="text-slate-300 hover:text-white text-2xl p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
 
-window.countCart = function() {
- return Object.values(window.cart).reduce((sum, qty) => sum + qty, 0);
-};
+            <!-- Cart Items Container -->
+            <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-5 space-y-4">
+                <!-- Cart items rendered dynamically -->
+            </div>
 
-window.getSubtotal = function() {
- return Object.entries(window.cart).reduce((sum, [id, qty]) => sum + (window.PRODUCTS[id] ? window.PRODUCTS[id].price * qty : 0), 0);
-};
+            <!-- Cart Footer -->
+            <div class="bg-white p-5 border-t border-slate-200 space-y-4 shadow-lg">
+                <div class="flex justify-between items-center text-lg font-bold text-sbDarkGreen">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal" class="font-serif text-xl text-sbGreen">PKR 0</span>
+                </div>
+                <p class="text-xs text-slate-500 italic">* Delivery fee calculated at final checkout based on area.</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="toggleCartModal(false)" class="w-full py-3 px-4 rounded-xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition">
+                        Keep Shopping
+                    </button>
+                    <button id="checkoutBtn" onclick="openCheckoutModal()" class="w-full py-3 px-4 rounded-xl bg-sbGold hover:bg-sbGoldHover text-sbDarkGreen font-extrabold shadow-md transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        Checkout <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-window.updateCount = function() {
- const badge = document.getElementById("cartCount");
- if (badge) badge.textContent = window.countCart();
-};
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-sbGold/40 overflow-hidden my-8">
+            <!-- Header -->
+            <div class="bg-sbDarkGreen text-white p-5 flex justify-between items-center">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-sbGold">Karachi Delivery Details</h3>
+                    <p class="text-xs text-emerald-200">Provide your information for fast doorstep delivery</p>
+                </div>
+                <button onclick="toggleCheckoutModal(false)" class="text-slate-300 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
 
-window.toast = function(message) {
- const el = document.getElementById("toast");
- if (!el) return;
- el.textContent = message;
- el.classList.add("show");
- clearTimeout(window.toastTimer);
- window.toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
-};
+            <!-- Form -->
+            <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
+                    <input type="text" id="custName" required placeholder="e.g. Ali Ahmed" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sbGreen focus:outline-none text-sm">
+                </div>
 
-window.openCart = function() {
- const overlay = document.getElementById("cartOverlay");
- if (overlay) overlay.classList.add("open");
- window.renderCart();
-};
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">WhatsApp Phone Number *</label>
+                    <input type="tel" id="custPhone" required placeholder="03XX-XXXXXXX" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sbGreen focus:outline-none text-sm">
+                </div>
 
-window.closeModal = function(id) {
- const el = document.getElementById(id);
- if (el) el.classList.remove("open");
-};
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Karachi Area *</label>
+                    <select id="custArea" required onchange="calculateDeliveryFee()" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sbGreen focus:outline-none text-sm bg-white">
+                        <option value="">-- Select Your Area --</option>
+                        <optgroup label="Local Areas (PKR 100 Fee)">
+                            <option value="Bahadurabad" data-fee="100">Bahadurabad</option>
+                            <option value="PECHS" data-fee="100">PECHS / PCHS</option>
+                            <option value="Jamshed Road" data-fee="100">Jamshed Road</option>
+                            <option value="Tariq Road" data-fee="100">Tariq Road</option>
+                            <option value="Dhoraji" data-fee="100">Dhoraji</option>
+                        </optgroup>
+                        <optgroup label="Standard Karachi Areas (PKR 200 Fee)">
+                            <option value="Gulshan-e-Iqbal" data-fee="200">Gulshan-e-Iqbal</option>
+                            <option value="Gulistan-e-Johar" data-fee="200">Gulistan-e-Johar</option>
+                            <option value="Clifton" data-fee="200">Clifton</option>
+                            <option value="DHA Phase 1-8" data-fee="200">DHA (Phase 1 to 8)</option>
+                            <option value="North Nazimabad" data-fee="200">North Nazimabad</option>
+                            <option value="Federal B Area" data-fee="200">Federal B Area</option>
+                            <option value="Malir Cantt" data-fee="200">Malir Cantt</option>
+                            <option value="Saddar" data-fee="200">Saddar / Garden</option>
+                            <option value="Other Karachi Area" data-fee="200">Other Karachi Area</option>
+                        </optgroup>
+                    </select>
+                </div>
 
-window.addToCart = function(id) {
- if (!window.PRODUCTS[id]) return;
- window.cart[id] = (window.cart[id] || 0) + 1;
- window.updateCount();
- window.renderCart();
- window.openCart();
- window.toast(window.PRODUCTS[id].name + " added to cart");
-};
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Complete Address / Landmark *</label>
+                    <textarea id="custAddress" required rows="2" placeholder="House/Flat No, Street Name, Landmark" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sbGreen focus:outline-none text-sm"></textarea>
+                </div>
 
-window.buyNow = function(id) {
- if (!window.PRODUCTS[id]) return;
- window.cart[id] = (window.cart[id] || 0) + 1;
- window.updateCount();
- window.startCheckout();
-};
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Payment Method</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center gap-2 border border-slate-300 rounded-lg p-3 cursor-pointer bg-slate-50 hover:bg-slate-100">
+                            <input type="radio" name="paymentMethod" value="Cash on Delivery" checked class="text-sbGreen focus:ring-sbGreen">
+                            <span class="text-xs font-bold text-slate-800">Cash on Delivery</span>
+                        </label>
+                        <label class="flex items-center gap-2 border border-slate-300 rounded-lg p-3 cursor-pointer bg-slate-50 hover:bg-slate-100">
+                            <input type="radio" name="paymentMethod" value="JazzCash / EasyPaisa / Bank" class="text-sbGreen focus:ring-sbGreen">
+                            <span class="text-xs font-bold text-slate-800">Online Transfer</span>
+                        </label>
+                    </div>
+                </div>
 
-window.changeQty = function(id, delta) {
- if (!window.PRODUCTS[id]) return;
- window.cart[id] = (window.cart[id] || 0) + delta;
- if (window.cart[id] <= 0) delete window.cart[id];
- window.updateCount();
- window.renderCart();
- window.updateTotals();
-};
+                <!-- Summary Breakdown -->
+                <div class="bg-sbCream p-4 rounded-xl border border-sbGold/30 space-y-1.5 text-sm">
+                    <div class="flex justify-between text-slate-600">
+                        <span>Items Subtotal:</span>
+                        <span id="summarySubtotal" class="font-bold text-slate-800">PKR 0</span>
+                    </div>
+                    <div class="flex justify-between text-slate-600">
+                        <span>Delivery Fee:</span>
+                        <span id="summaryDeliveryFee" class="font-bold text-slate-800">PKR 0</span>
+                    </div>
+                    <div class="flex justify-between text-base font-extrabold text-sbDarkGreen pt-2 border-t border-slate-300">
+                        <span>Total Payable:</span>
+                        <span id="summaryTotal" class="text-sbGreen font-serif text-lg">PKR 0</span>
+                    </div>
+                </div>
 
-window.renderCart = function() {
- const view = document.getElementById("cartView");
- if (!view) return;
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-sbGold hover:bg-sbGoldHover text-sbDarkGreen font-extrabold py-3.5 rounded-xl shadow-lg transition text-base uppercase tracking-wider flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Confirm & Send Order
+                </button>
+            </form>
+        </div>
+    </div>
 
- if (!window.countCart()
+    <!-- CONFIRMATION / SUMMARY MODAL -->
+    <div id="confirmationModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border-2 border-sbGold overflow-hidden p-6 text-center space-y-5">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <h3 class="font-serif text-3xl font-extrabold text-sbDarkGreen">Order Generated!</h3>
+                <p class="text-sm text-slate-600 mt-1">Send this order summary directly to Suraka Bucks on WhatsApp to start preparation.</p>
+            </div>
+
+            <!-- Formatted Text Area -->
+            <div class="text-left bg-slate-900 text-emerald-400 p-4 rounded-xl text-xs font-mono overflow-x-auto max-h-60 border border-slate-700 leading-relaxed" id="formattedSummaryBox">
+                <!-- Text populated dynamically -->
+            </div>
+
+            <div class="space-y-3">
+                <a id="whatsappDirectBtn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Open WhatsApp & Send Now
+                </a>
+                <button onclick="copyOrderText()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-copy"></i> Copy Su
