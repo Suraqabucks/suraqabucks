@@ -54,50 +54,17 @@
 
 <section class="section" id="menu-section">
   <div class="section-head"><div class="eyebrow">Made for your mood</div><h2>Our Signature Collection</h2><p>Your favourite coffee moments, freshly made and beautifully served.</p></div>
-  <div class="product-grid" id="productGrid"></div>
+  <div class="product-grid" id="productGrid">
+    <!-- Static cards are included so all five coffees remain visible even if JavaScript fails to load. -->
+    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="signature.png" alt="Suraka Signature Iced Coffee" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Best Seller</span></div><div class="product-info"><h3>Suraka Signature Iced Coffee</h3><p>Our signature chilled coffee, silky-smooth, creamy and crafted for a premium first sip.</p><div class="price">Rs. 499 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('signature')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('signature')">Buy Now</button></div></div></article>
+    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="dairymilk.png" alt="Dairy Milk Iced Latte" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Chocolate Indulgence</span></div><div class="product-info"><h3>Dairy Milk Iced Latte</h3><p>A rich chocolate-inspired latte with a mellow coffee finish and dessert-like indulgence.</p><div class="price">Rs. 499 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('dairy-milk')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('dairy-milk')">Buy Now</button></div></div></article>
+    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="spanish.png" alt="Spanish Latte" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Customer Favourite</span></div><div class="product-info"><h3>Spanish Latte</h3><p>Velvety, gently sweet and beautifully balanced for a smooth café-style coffee moment.</p><div class="price">Rs. 399 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('spanish')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('spanish')">Buy Now</button></div></div></article>
+    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="caramel.png" alt="Caramel Latte" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Golden Classic</span></div><div class="product-info"><h3>Caramel Latte</h3><p>Comforting coffee layered with buttery caramel notes for a rich, polished finish.</p><div class="price">Rs. 399 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('caramel-latte')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('caramel-latte')">Buy Now</button></div></div></article>
+    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="frappe.png" alt="Caramel Frappe" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Signature Treat</span></div><div class="product-info"><h3>Caramel Frappe</h3><p>Chilled, creamy and delightfully caramel-rich — a luxurious treat for your coffee break.</p><div class="price">Rs. 499 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('frappe')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('frappe')">Buy Now</button></div></div></article>
+  </div>
   <div class="section-cta">Handcrafted in Karachi · Freshly prepared when you order</div>
 </section>
 
 <section class="benefits" id="why-us">
   <div class="benefits-inner">
-    <div class="section-head"><div class="eyebrow">The Suraka difference</div><h2>Why Choose Suraka Bucks?</h2><p>A little more care in every cup, from our kitchen to your doorstep.</p></div>
-    <div class="benefit-grid">
-      <div class="benefit"><div class="benefit-icon">♨</div><h3>Premium Taste</h3><p>Rich, creamy flavours crafted for a memorable coffee moment.</p></div>
-      <div class="benefit"><div class="benefit-icon">✧</div><h3>Fresh Ingredients</h3><p>Prepared fresh to order with care and attention to detail.</p></div>
-      <div class="benefit"><div class="benefit-icon">₨</div><h3>Fair Prices</h3><p>Everyday coffee luxury at prices that feel just right.</p></div>
-      <div class="benefit"><div class="benefit-icon">☏</div><h3>Easy WhatsApp Ordering</h3><p>Place your order simply and confirm details directly with us.</p></div>
-      <div class="benefit"><div class="benefit-icon">♡</div><h3>Karachi Home-Based Brand</h3><p>Small-business passion, personal service and big coffee dreams.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="our-story">
-  <div class="story">
-    <div class="story-image"><img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=1200&q=85" alt="Cappuccino with heart-shaped latte art" loading="lazy" onerror="this.onerror=null;this.src='signature.png';this.alt='Suraka Bucks coffee'"></div>
-    <div class="story-copy"><div class="eyebrow">A little story in every cup</div><h2>Our Story</h2>
-      <p>Suraka Bucks was created with one simple idea: everyone deserves a special coffee moment. We bring together comforting flavours, a little creativity and the joy of freshly prepared drinks.</p>
-      <p>As a Karachi home-based brand, we believe that great coffee is about more than a drink — it is about the small pauses, the good conversations and the moments that make your day better.</p>
-      <div class="story-points"><span>Made with passion</span><span>Locally loved</span><span>Every cup matters</span></div>
-      <a href="#menu-section" class="btn btn-gold">Find Your Favourite →</a>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="order-banner"><div class="order-banner-inner"><div><h2>Your next favourite sip is waiting.</h2><p>Choose your coffee, fill in your details and send your order directly on WhatsApp.</p></div><a class="btn" href="#menu-section">Order Now →</a></div></section>
-</main>
-
-<footer class="footer" id="contact">
-  <div class="footer-inner">
-    <div><a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a><p>Artisanal luxury in every sip. Made with passion, served with love. Thank you for supporting our small business.</p></div>
-    <div><h4>Explore</h4><div class="footer-links"><a href="#home">Home</a><a href="#menu-section">Our Menu</a><a href="#why-us">Why Choose Us</a><a href="#our-story">Our Story</a></div></div>
-    <div><h4>Ordering</h4><div class="footer-links"><a href="#menu-section">Add to Cart</a><a href="#menu-section" onclick="openCart()">Checkout</a><span>Cash on Delivery</span><span>Advance Payment</span><span>Delivery fee: Rs. 100</span></div></div>
-    <div><h4>Say Hello</h4><div class="footer-links"><a href="#" onclick="openWhatsAppEnquiry();return false">Order on WhatsApp ↗</a><span>Karachi, Pakistan</span><span>Freshly prepared for you</span></div></div>
-  </div>
-  <div class="footer-bottom"><span>© <span id="year"></span> Suraka Bucks. All rights reserved.</span><span>Crafted with ☕ and care in Karachi.</span></div>
-</footer>
-
-<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-label="Your shopping cart">
-  <aside class="drawer">
-    <div class="drawer-head"><h2>Your Cart</h2><button class="close-btn" onclick="
+    <div class="section-head"><div class="eyebrow">The Suraka
