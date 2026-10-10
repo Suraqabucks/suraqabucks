@@ -3,201 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#073d2c">
-<meta name="description" content="Suraka Bucks — artisanal coffee, made fresh in Karachi.">
 <title>Suraka Bucks | Artisanal Luxury in Every Sip</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#073d2c;--green2:#0c513a;--green3:#174f3b;--gold:#d9b96e;--gold2:#f0d99a;--cream:#f7f3e8;--ink:#1d2a22;--muted:#6f786f;--white:#fffdf7;--line:#e7e0d0;--shadow:0 16px 45px #123a2812}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.announcement{background:#052e22;color:#f6e7b7;text-align:center;font-size:11px;letter-spacing:1.5px;padding:9px 12px}.navbar{position:sticky;top:0;z-index:20;background:#073d2cf5;color:white;border-bottom:1px solid #ffffff18;backdrop-filter:blur(12px)}.nav-inner{max-width:1200px;margin:auto;padding:13px 24px;display:flex;align-items:center;gap:25px}.brand{display:flex;align-items:center;gap:10px;min-width:220px}.logo{width:42px;height:42px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:"Playfair Display",serif;font-weight:700;font-size:18px}.brand strong{display:block;font-family:"Playfair Display",serif;font-size:16px;letter-spacing:.6px}.brand small{display:block;color:#d5c99f;font-size:8px;letter-spacing:2px;margin-top:3px}.nav-links{display:flex;align-items:center;gap:25px;margin:auto;font-size:12px;color:#f3f0e7}.nav-links a:hover{color:var(--gold2)}.cart-button,.btn{border:0;border-radius:30px;padding:12px 19px;font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.cart-button{background:var(--gold);color:#173324;white-space:nowrap}.cart-button:hover,.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}.menu-toggle{display:none;background:none;border:1px solid #ffffff44;color:white;border-radius:10px;padding:8px 10px}
-.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 76% 40%,#1b6849 0,#0b4933 32%,#062f23 75%);color:white;min-height:490px}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#052e22 0%,#052e22ee 34%,#052e2240 73%,#052e2260),url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1800&q=85") center/cover;opacity:.45}.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 15%,#d5bd6d13,transparent 28%),linear-gradient(0deg,#062f2390,transparent 30%)}.hero-inner{position:relative;z-index:1;max-width:1200px;margin:auto;min-height:490px;padding:70px 24px 55px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:35px}.eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold2);font-weight:700;text-transform:uppercase}.hero h1{font-family:"Playfair Display",serif;font-size:clamp(42px,5.4vw,70px);line-height:1.03;letter-spacing:-1.7px;margin:17px 0 18px;max-width:600px}.hero h1 em{color:var(--gold2);font-weight:500}.hero p{font-size:14px;line-height:1.8;color:#e3e8df;max-width:430px;margin:0 0 25px}.btn-gold{background:var(--gold);color:#143525}.btn-outline{border:1px solid #ffffff70;background:#ffffff08;color:white}.btn-outline:hover{background:#ffffff15}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-art{min-height:330px;display:flex;align-items:center;justify-content:center;position:relative}.hero-art img{width:min(100%,510px);max-height:370px;object-fit:contain;filter:drop-shadow(0 25px 28px #0008);position:relative;z-index:1}.hero-stamp{position:absolute;right:2%;top:4%;transform:rotate(8deg);font-family:"Playfair Display",serif;font-style:italic;font-size:21px;color:var(--gold2);line-height:1.2;text-align:center}.hero-stamp span{display:block;font-size:12px;letter-spacing:2px;font-style:normal;margin-top:5px}.hero-perks{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#e7e5d8;font-size:10px}.hero-perks span:before{content:"✦";color:var(--gold);margin-right:7px}
-.section{max-width:1200px;margin:auto;padding:68px 24px}.section-head{text-align:center;margin-bottom:30px}.section-head .eyebrow{color:#8c7338}.section h2{font:600 clamp(30px,4vw,43px)/1.15 "Playfair Display",serif;margin:9px 0 10px;color:var(--green)}.section-head p{color:var(--muted);font-size:12px;line-height:1.7;margin:0}.product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;align-items:stretch}.product-card{background:var(--white);border:1px solid #e9e2d3;border-radius:15px;overflow:hidden;box-shadow:0 6px 18px #173d2b08;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;min-width:0;height:100%}.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.product-photo{height:190px;background:linear-gradient(145deg,#e4e9d7,#f5ead4);position:relative;overflow:hidden;display:grid;place-items:center}.product-photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s;display:block}.product-card:hover .product-photo img{transform:scale(1.04)}.product-photo .fallback-cup{display:none;position:absolute;inset:0;place-items:center;font-size:65px;background:linear-gradient(145deg,#e4e9d7,#f5ead4);filter:drop-shadow(0 10px 7px #5d351b35)}.tag{position:absolute;top:10px;left:10px;background:var(--green);color:#fff8e6;border-radius:20px;padding:5px 8px;font-size:8px;letter-spacing:.7px;text-transform:uppercase;z-index:2}.product-info{padding:14px 13px 13px;display:flex;flex-direction:column;flex:1}.product-info h3{font:600 16px/1.25 "Playfair Display",serif;margin:0 0 7px;color:#173c2c}.product-info p{font-size:10px;line-height:1.6;color:#7a8076;margin:0 0 12px;min-height:32px}.price{font-weight:700;color:var(--green);font-size:14px;margin-top:auto;padding-top:12px;margin-bottom:12px}.price small{font-size:9px;color:#81877d;font-weight:500}.card-actions{display:flex;gap:6px;margin-top:10px}.btn-small{border-radius:22px;padding:9px 10px;font-size:10px;font-weight:700;border:0;flex:1;min-height:38px;white-space:normal;cursor:pointer}.add-btn{background:var(--green);color:white}.add-btn:hover{background:var(--green2)}.buy-btn{background:#f1dfaa;color:#3b3a25}
-.benefits{background:var(--green);color:white;position:relative;overflow:hidden}.benefits:before,.benefits:after{content:"✦";position:absolute;color:#d9b96e18;font-size:180px}.benefits:before{left:-25px;top:-55px}.benefits:after{right:-20px;bottom:-95px}.benefits-inner{max-width:1200px;margin:auto;padding:44px 24px;position:relative;z-index:1}.benefits .section-head{margin-bottom:28px}.benefits .section-head .eyebrow{color:var(--gold)}.benefits h2{color:white}.benefit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.benefit{text-align:center;padding:12px}.benefit-icon{width:48px;height:48px;border:1px solid #d9b96e8a;color:var(--gold2);border-radius:50%;display:grid;place-items:center;font-size:21px;margin:0 auto 13px}.benefit h3{font:600 14px "Playfair Display",serif;margin:0 0 7px}.benefit p{font-size:10px;line-height:1.65;color:#d5e0d7;margin:0}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}.story-image{min-height:340px;border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0b4b34,#c9a45c)}.story-image img{width:100%;height:100%;min-height:340px;object-fit:cover;position:absolute;inset:0}.story-image:after{content:"Small Business. Big Dreams.";position:absolute;bottom:18px;left:18px;background:#073d2ce8;color:#f0d99a;padding:12px 15px;border-radius:8px;font:italic 18px "Playfair Display",serif}.story-copy .eyebrow{color:#8c7338}.story-copy h2{margin:10px 0 18px}.story-copy p{font-size:13px;line-height:1.9;color:#68736a}.story-points{display:flex;gap:16px;margin:22px 0;flex-wrap:wrap}.story-points span{font-size:11px;color:var(--green);font-weight:700}.story-points span:before{content:"✓";color:#9c7d36;margin-right:7px}
-.footer{background:#052f23;color:#e7e9dd;padding:40px 24px 18px}.footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}.footer .brand{margin-bottom:12px}.footer p{font-size:11px;line-height:1.8;color:#c1cfc2;max-width:290px}.footer h4{font:600 14px "Playfair Display",serif;color:var(--gold2);margin:5px 0 14px}.footer-links{display:grid;gap:10px;font-size:11px;color:#d1dbd0}.footer-links a:hover{color:var(--gold2)}.footer-bottom{max-width:1200px;margin:25px auto 0;border-top:1px solid #ffffff1b;padding-top:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#aab9ac;font-size:9px}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.drawer{background:var(--white);width:min(550px,100%);max-height:90vh;overflow-y:auto;padding:25px;border-radius:20px;box-shadow:var(--shadow)}.drawer-head{display:flex;align-items:center;justify-content:between;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:15px}.drawer-head h2{font:600 22px "Playfair Display",serif;color:var(--green);margin:0}.close-btn{border:0;background:#e9e2d3;border-radius:50%;width:34px;height:34px;font-size:18px;cursor:pointer}.cart-line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.cart-line strong{font:600 14px "Playfair Display",serif;color:var(--green)}.qty{display:flex;align-items:center;gap:8px}.qty button{border:1px solid #d6cebc;background:white;border-radius:50%;width:25px;height:25px;font-weight:bold}.qty span{font-size:12px;font-weight:700}.cart-totals{margin-top:15px;display:grid;gap:8px;font-size:12px}.total-row{display:flex;justify-content:space-between}.total-row.grand{border-top:1px solid #d9d0bd;padding-top:10px;font-size:15px;font-weight:700;color:var(--green)}.checkout-form{margin-top:20px}.checkout-form h3{font:600 18px "Playfair Display",serif;color:var(--green);margin:0 0 10px}.field{display:grid;gap:5px;margin-bottom:10px}.field label{font-size:10px;font-weight:700;color:#4b5c4e}.field input,.field textarea{width:100%;padding:10px;border:1px solid #ded7c7;border-radius:8px;background:#fffdf7;outline:none;font-size:12px}.field textarea{min-height:60px}.checkout-submit{width:100%;padding:12px;background:#16834b;color:white;border:0;border-radius:30px;font-weight:700;font-size:13px;cursor:pointer}
-@media(max-width:900px){.nav-inner{gap:12px}.brand{min-width:auto}.nav-links{gap:13px}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.benefit-grid{grid-template-columns:repeat(3,1fr)}.hero-inner{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.nav-inner{padding:10px 15px}.brand strong{font-size:13px}.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#073d2c;padding:18px 22px 22px;flex-direction:column;align-items:flex-start;gap:19px;border-top:1px solid #ffffff20}.nav-links.open{display:flex}.hero-inner{grid-template-columns:1fr;padding:48px 22px 30px}.hero h1{font-size:47px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.benefit-grid{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
-@media(max-width:400px){.product-grid{grid-template-columns:1fr}}
+:root{--green:#073d2c;--green2:#0c513a;--gold:#d9b96e;--gold2:#f0d99a;--cream:#f7f3e8;--ink:#1d2a22;--muted:#6f786f;--white:#fffdf7;--line:#e7e0d0;--shadow:0 16px 45px #123a2812}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}
+.announcement{background:#052e22;color:#f6e7b7;text-align:center;font-size:11px;letter-spacing:1.5px;padding:9px 12px}
+.navbar{position:sticky;top:0;z-index:20;background:#073d2cf5;color:white;border-bottom:1px solid #ffffff18;backdrop-filter:blur(12px)}
+.nav-inner{max-width:1200px;margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:"Playfair Display",serif;font-weight:700;font-size:16px}
+.brand strong{display:block;font-family:"Playfair Display",serif;font-size:15px;letter-spacing:.5px}.brand small{display:block;color:#d5c99f;font-size:8px;letter-spacing:2px}
+.cart-button{background:var(--gold);color:#173324;border:0;border-radius:30px;padding:10px 18px;font-weight:700;font-size:12px;cursor:pointer}
+.hero{background:radial-gradient(ellipse at 76% 40%,#1b6849 0,#0b4933 32%,#062f23 75%);color:white;padding:60px 24px;text-align:center}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(36px,5vw,56px);margin:10px 0;color:white}.hero h1 em{color:var(--gold2);font-style:normal}
+.hero p{color:#d3dcd4;font-size:13px;max-width:500px;margin:0 auto 20px}
+.section{max-width:1200px;margin:auto;padding:50px 24px}
+.section-head{text-align:center;margin-bottom:30px}.section-head h2{font:600 32px "Playfair Display",serif;color:var(--green);margin:5px 0}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.product-card{background:var(--white);border:1px solid #e9e2d3;border-radius:15px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 5px 15px rgba(0,0,0,0.03)}
+.product-photo{height:180px;background:#e4e9d7;position:relative;display:grid;place-items:center}
+.product-photo img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:var(--green);color:#fff8e6;border-radius:20px;padding:4px 8px;font-size:8px;text-transform:uppercase}
+.product-info{padding:15px;display:flex;flex-direction:column;flex:1}
+.product-info h3{font:600 15px "Playfair Display",serif;margin:0 0 5px;color:var(--green)}
+.product-info p{font-size:10px;color:#7a8076;margin:0 0 10px;line-height:1.5}
+.price{font-weight:700;color:var(--green);font-size:14px;margin-top:auto;margin-bottom:10px}
+.card-actions{display:flex;gap:6px}
+.btn-small{border-radius:20px;padding:8px 12px;font-size:10px;font-weight:700;border:0;flex:1;cursor:pointer}
+.add-btn{background:var(--green);color:white}.buy-btn{background:var(--gold2);color:#2b2a1a}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.drawer{background:var(--white);width:min(450px,100%);max-height:90vh;overflow-y:auto;padding:25px;border-radius:20px}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:15px}
+.drawer-head h2{font:600 20px "Playfair Display",serif;color:var(--green);margin:0}
+.close-btn{background:#e9e2d3;border:0;border-radius:50%;width:30px;height:30px;font-size:16px;cursor:pointer}
+.cart-line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}
+.cart-totals{margin-top:15px;display:grid;gap:6px;font-size:12px}
+.total-row{display:flex;justify-content:space-between}.total-row.grand{border-top:1px solid #d9d0bd;padding-top:8px;font-weight:700;color:var(--green);font-size:14px}
+.field{display:grid;gap:4px;margin-top:10px}.field label{font-size:10px;font-weight:700;color:#4b5c4e}.field input,.field textarea{width:100%;padding:10px;border:1px solid #ded7c7;border-radius:8px;font-size:11px;background:#fffdf7}
+.checkout-submit{width:100%;margin-top:15px;padding:12px;background:#16834b;color:white;border:0;border-radius:25px;font-weight:700;font-size:12px;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="announcement">FRESHLY MADE WITH LOVE · KARACHI DELIVERY · EVERY SIP, A LITTLE LUXURY</div>
+
+<div class="announcement">FRESHLY MADE WITH LOVE · KARACHI DELIVERY · SURAKA BUCKS</div>
+
 <header class="navbar">
   <div class="nav-inner">
-    <a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a>
-    <button class="menu-toggle" id="menuToggle" onclick="toggleNav()">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#menu-section">Menu</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#our-story">Our Story</a>
-    </nav>
-    <button class="cart-button" onclick="openCart()">🛒 <span>Cart (<b id="cartCount">0</b>)</span></button>
+    <div class="brand"><span class="logo">SB</span><div><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE</small></div></div>
+    <button class="cart-button" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
   </div>
 </header>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <div>
-      <div class="eyebrow">Crafted with passion</div>
-      <h1>Artisanal Luxury<br>in <em>Every Sip.</em></h1>
-      <p>Freshly prepared iced coffees, creamy lattes and indulgent caramel favourites — made to order and delivered with love in Karachi.</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="#menu-section">Explore Menu <span>→</span></a>
-        <a class="btn btn-outline" href="#our-story">Our Story</a>
-      </div>
-      <div class="hero-perks"><span>Fresh ingredients</span><span>Made to order</span><span>Karachi delivery</span></div>
-    </div>
-    <div class="hero-art">
-      <div class="hero-stamp">Good Coffee<br>Better Mood <span>✦ SURAKA BUCKS ✦</span></div>
-      <img src="signature.png" alt="Suraka Bucks signature iced coffee" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80'">
-    </div>
-  </div>
+<section class="hero">
+  <h1>Artisanal Luxury in <em>Every Sip.</em></h1>
+  <p>Freshly prepared iced coffees and lattes, crafted with precision in Karachi.</p>
 </section>
 
-<section class="section" id="menu-section">
+<section class="section">
   <div class="section-head">
-    <div class="eyebrow">Made for your mood</div>
     <h2>Our Signature Collection</h2>
-    <p>Your favourite coffee moments, freshly made and beautifully served.</p>
+    <p>Choose your favourite blend and order directly via WhatsApp.</p>
   </div>
-  <div class="product-grid" id="productGrid">
-    <!-- Dynamic Products Rendered via JS -->
-  </div>
+  <div class="product-grid" id="productGrid"></div>
 </section>
 
-<section class="section benefits" id="why-us">
-  <div class="benefits-inner">
-    <div class="section-head">
-      <div class="eyebrow">The Suraka Experience</div>
-      <h2>Why Choose Suraka Bucks?</h2>
-    </div>
-    <div class="benefit-grid">
-      <div class="benefit"><div class="benefit-icon">☕</div><h3>Artisanal Quality</h3><p>Every cup is meticulously brewed using premium beans and rich ingredients.</p></div>
-      <div class="benefit"><div class="benefit-icon">🧊</div><h3>Chilled Perfection</h3><p>Crafted ice-cold to beat Karachi’s heat with rich, creamy textures.</p></div>
-      <div class="benefit"><div class="benefit-icon">🛵</div><h3>Fast Delivery</h3><p>Safely packed and delivered right to your doorstep across Karachi.</p></div>
-      <div class="benefit"><div class="benefit-icon">✨</div><h3>VVIP Aesthetic</h3><p>Designed to match luxury cafe standards right in your hands.</p></div>
-      <div class="benefit"><div class="benefit-icon">❤️</div><h3>Made with Love</h3><p>Crafted personally with passion to give you the ultimate coffee fix.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="our-story">
-  <div class="story">
-    <div class="story-image">
-      <img src="dairymilk.png" alt="Suraka Bucks Story" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80'">
-    </div>
-    <div class="story-copy">
-      <div class="eyebrow">The Vision of Suraka Raza</div>
-      <h2>Crafted with pure passion and elite precision in Karachi.</h2>
-      <p>Suraka Bucks stands as a testament to uncompromising luxury and bold flavors. Founded by Suraka Raza, our mission is to redefine iced coffee culture by bringing international-grade artisanal brews right to your doorstep.</p>
-      <div class="story-points"><span>100% Fresh Brew</span><span>Premium Syrups</span><span>Karachi Wide Delivery</span></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <div class="brand"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></div>
-      <p>Crafting artisanal iced coffees and unforgettable luxury sip experiences across Karachi.</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <div class="footer-links"><a href="#home">Home</a><a href="#menu-section">Menu</a><a href="#why-us">Why Us</a><a href="#our-story">Our Story</a></div>
-    </div>
-    <div>
-      <h4>Our Menu</h4>
-      <div class="footer-links"><a href="#menu-section">Signature Iced Coffee</a><a href="#menu-section">Dairy Milk Latte</a><a href="#menu-section">Spanish Latte</a><a href="#menu-section">Caramel Frappe</a></div>
-    </div>
-    <div>
-      <h4>Contact & Delivery</h4>
-      <div class="footer-links"><p>Karachi, Pakistan</p><p>Delivery: Flat Rs. 100</p><p>WhatsApp Orders Available</p></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© 2026 Suraka Bucks. All rights reserved.</div>
-    <div>Crafted for Suraka Raza</div>
-  </div>
-</footer>
-
-<!-- Cart & Checkout Modal Drawer -->
 <div class="overlay" id="cartOverlay">
   <div class="drawer">
     <div class="drawer-head">
       <h2>Your Cart 🛒</h2>
       <button class="close-btn" onclick="closeCart()">×</button>
     </div>
-    <div id="cartItemsContainer">
-      <!-- Cart items will load here -->
-    </div>
-    <div class="cart-totals" id="cartTotalsSection">
-      <div class="total-row"><span>Subtotal</span><span>Rs. <span id="subtotalAmount">0</span></span></div>
+    <div id="cartItems"></div>
+    <div class="cart-totals">
+      <div class="total-row"><span>Subtotal</span><span>Rs. <span id="subTotal">0</span></span></div>
       <div class="total-row"><span>Delivery Fee</span><span>Rs. 100</span></div>
-      <div class="total-row grand"><span>Total</span><span>Rs. <span id="grandTotalAmount">100</span></span></div>
+      <div class="total-row grand"><span>Total Amount</span><span>Rs. <span id="grandTotal">100</span></span></div>
     </div>
-    
-    <div class="checkout-form" id="checkoutFormSection">
-      <h3>Delivery Details</h3>
-      <div class="field">
-        <label>Your Full Name</label>
-        <input type="text" id="custName" placeholder="Enter your name">
-      </div>
-      <div class="field">
-        <label>Complete Address (Karachi)</label>
-        <textarea id="custAddress" placeholder="Enter house no, street, area in Karachi"></textarea>
-      </div>
-      <button class="checkout-submit" onclick="sendToWhatsApp()">Send Order via WhatsApp 🚀</button>
-    </div>
+    <div class="field"><label>Your Name</label><input type="text" id="custName" placeholder="Enter your name"></div>
+    <div class="field"><label>Delivery Address (Karachi)</label><textarea id="custAddress" placeholder="Complete address"></textarea></div>
+    <button class="checkout-submit" onclick="sendToWhatsApp()">Send Order via WhatsApp 🚀</button>
   </div>
 </div>
 
 <script>
-  // 5 Signature Products with correct image assets
   const products = [
-    {
-      id: "signature",
-      name: "Suraka Signature Iced Coffee",
-      desc: "Rich, bold espresso blended with cold milk and secret signature sweetness.",
-      price: 499,
-      tag: "Best Seller",
-      img: "signature.png",
-      fallback: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: "dairy-milk",
-      name: "Dairy Milk Iced Latte",
-      desc: "The ultimate indulgence infused with pure melted Dairy Milk chocolate richness.",
-      price: 499,
-      tag: "Chocolate",
-      img: "dairymilk.png",
-      fallback: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: "spanish",
-      name: "Iced Spanish Latte",
-      desc: "Smooth, sweet layers of condensed milk and robust espresso over crystal ice.",
-      price: 399,
-      tag: "Favourite",
-      img: "spanish.png",
-      fallback: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: "caramel-latte",
-      name: "Caramel Latte",
-      desc: "Classically crafted with velvety milk, espresso, and rich gourmet caramel drizzle.",
-      price: 399,
-      tag: "Classic",
-      img: "caramellatte.png",
-      fallback: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: "caramel-frappe",
-      name: "Caramel Frappe",
-      desc: "Blended ice perfection loaded with intense caramel flavor and creamy texture.",
-      price: 499,
+    { id: "sig", name: "Suraka Signature Iced Coffee", desc: "Rich bold espresso with cold milk and signature sweetness.", price: 499, tag: "Best Seller", img: "signature.png" },
+    { id: "dairy", name: "Dairy Milk Iced Latte", desc: "Infused with pure melted Dairy Milk chocolate richness.", price: 499, tag: "Chocolate", img: "dairymilk.png" },
+    { id: "span", name: "Iced Spanish Latte", desc: "Smooth sweet layers of condensed milk and robust espresso.", price: 399, tag: "Favourite", img: "spanish.png" },
+    { id: "carm", name: "Caramel Latte", desc: "Velvety milk, espresso, and rich gourmet caramel drizzle.", price: 399, tag: "Classic", img: "caramellatte.png" },
+    { id: "frappe", name: "Caramel Frappe", desc: "Blended ice perfection with intense caramel and creamy texture.", price: 499, tag: "Frappe", img: "caramelfrappe.png" }
+  ];
+
+  let cart = {};
+
+  function renderMenu() {
+    document.getElementById('productGrid').innerHTML = products.map(p => `
+      <div class="product-card">
+        <div class="product-photo">
+          <img src="${p.img}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=400&q=80'">
+          <span class="tag">${p.tag}</span>
+        </div>
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="price">Rs. ${p.price}</div>
+          <div class="card-actions">
+            <button class="btn-small add-btn" onclick="addToCart('${p.id}')">＋ Add</button>
+            <button class="btn-small buy-btn" onclick="buyNow('${p.id}')">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function addToCart(id) {
+    if (!cart[id]) cart[id] = { ...products.find(p => p.id === id), qty: 1 };
+    else cart[id].qty++;
+    updateBadge();
+  }
+
+  function buyNow(id) {
+    cart = {};
+    cart[id] = { ...products.find(p => p.id === id), qty: 1 };
+    updateBadge();
+    openCart();
+  }
+
+  function updateBadge() {
+    const total = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('cartCount').innerText = total;
+  }
+
+  function openCart() {
+    const container = document.getElementById('cartItems');
+    const keys = Object.keys(cart);
+    if (keys.length === 0) {
+      container.innerHTML = `<p style="text-align:center;color:#7a8177;font-size:12px;padding:20px;">Your cart is empty!</p>`;
+      document.querySelector('.cart-totals').style.display = 'none';
+      document.querySelector('.checkout-submit').style.display = 'none';
+    } else {
+      document.querySelector('.cart-totals').style.display = 'grid';
+      document.querySelector('.checkout-submit').style.display = 'block';
+      let sub = 0;
+      container.innerHTML = keys.map(k => {
+        sub += cart[k].price * cart[k].qty;
+        return `<div class="cart-line"><div><strong>${cart[k].name}</strong><br><small>Rs. ${cart[k].price} × ${cart[k].qty}</small></div><span>Rs. ${cart[k].price * cart[k].qty}</span></div>`;
+      }).join('');
+      document.getElementById('subTotal').innerText = sub;
+      document.getElementById('grandTotal').innerText = sub + 100;
+    }
+    document.getElementById('cartOverlay').classList.add('open');
+  }
+
+  function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); }
+
+  function sendToWhatsApp() {
+    const name = document.getElementById('custName').value.trim();
+    const addr = document.getElementById('custAddress').value.trim();
+    if (!name || !addr) { alert("Please enter your name and address!"); return; }
+    
+    let text = `*New Order - Suraka Bucks*%0A--------------------------------%0A`;
+    let sub = 0;
+    Object.values(cart).forEach(i => {
+      text += `• ${i.name} x${i.qty} = Rs. ${i.price * i.qty}%0A`;
+      sub += i.price * i.qty;
+    });
+    text += `--------------------------------%0A` + `Delivery: Rs. 100%0A` + `*Total: Rs. ${sub + 100}*%0A--------------------------------%0A` + `*Name:* ${name}%0A` + `*Address:* ${addr}%0A`;
+    
+    window.open(`https://wa.me/923000000000?text=${text}`, '_blank');
+  }
+
+  window.onload = renderMenu;
+</script>
+</body>
+</html>
