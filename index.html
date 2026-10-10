@@ -26,6 +26,28 @@
 /* Inline cart and checkout page */
 .checkout-intro{color:var(--muted);font-size:12px;line-height:1.7;margin:10px 0 20px}.checkout-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}.continue-shopping{border:1px solid #d6cebc;background:transparent;color:var(--green);padding:11px 16px;border-radius:24px;font-size:12px;font-weight:700}.checkout-form[hidden]{display:none!important}
 
+
+/* Final reliability fixes: preserve theme and keep checkout hidden until cart has items. */
+#checkoutForm[hidden]{display:none!important}
+#checkoutForm:not([hidden]){display:block}
+.product-grid{align-items:stretch}
+.product-card{min-width:0;height:100%}
+.product-info{display:flex;flex:1;flex-direction:column}
+.product-info .price{margin-top:auto;padding-top:12px}
+.card-actions{display:flex;gap:8px;margin-top:10px}
+.card-actions button{min-height:38px;cursor:pointer;white-space:normal}
+.product-photo img{display:block}
+.product-photo .fallback-cup{position:absolute;inset:0;place-items:center;background:linear-gradient(145deg,#e4e9d7,#f5ead4)}
+.overlay{scroll-margin-top:18px}
+#why-us,#our-story{scroll-margin-top:18px}
+@media(max-width:650px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .product-photo{height:165px}
+  .product-info{padding:12px}
+  .card-actions{gap:6px}
+  .card-actions button{padding:9px 7px;font-size:10px}
+}
+
 </style>
 </head>
 <body>
@@ -63,5 +85,4 @@
     <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="signature.png" alt="Suraka Signature Iced Coffee" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Best Seller</span></div><div class="product-info"><h3>Suraka Signature Iced Coffee</h3><p>Our signature chilled coffee, silky-smooth, creamy and crafted for a premium first sip.</p><div class="price">Rs. 499 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('signature')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('signature')">Buy Now</button></div></div></article>
     <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="dairymilk.png" alt="Dairy Milk Iced Latte" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Chocolate Indulgence</span></div><div class="product-info"><h3>Dairy Milk Iced Latte</h3><p>A rich chocolate-inspired latte with a mellow coffee finish and dessert-like indulgence.</p><div class="price">Rs. 499 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('dairy-milk')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('dairy-milk')">Buy Now</button></div></div></article>
     <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="spanish.png" alt="Spanish Latte" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Customer Favourite</span></div><div class="product-info"><h3>Spanish Latte</h3><p>Velvety, gently sweet and beautifully balanced for a smooth café-style coffee moment.</p><div class="price">Rs. 399 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('spanish')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('spanish')">Buy Now</button></div></div></article>
-    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="caramel.png" alt="Caramel Latte" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Golden Classic</span></div><div class="product-info"><h3>Caramel Latte</h3><p>Comforting coffee layered with buttery caramel notes for a rich, polished finish.</p><div class="price">Rs. 399 <small>/ cup</small></div><div class="card-actions"><button class="btn-small add-btn" onclick="addToCart('caramel-latte')">＋ Add to Cart</button><button class="btn-small buy-btn" onclick="buyNow('caramel-latte')">Buy Now</button></div></div></article>
-    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img src="frappe.png" alt="Caramel Frappe" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"><span class="tag">Signature Treat</span></div><div class="product-info"><h3>Caramel Frappe</h3><p>Chilled, cream
+    <article class="product-card"><div class="product-photo"><span class="fallback-cup" aria-hidden="true">🥤</span><img
