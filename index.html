@@ -78,7 +78,6 @@ footer small{color:#c8d6cb;font-size:11px}
 .cart-line small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
 .qty{display:flex;align-items:center;gap:7px}
 .qty button{width:27px;height:27px;border:1px solid var(--line);background:white;border-radius:50%;font-weight:bold}
-.remove{border:0;background:none;color:#9b4a3c;font-size:10px}
 .totals{margin:16px 0;background:white;border-radius:12px;padding:13px}
 .total-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:6px 0}
 .total-row.final{border-top:1px solid var(--line);margin-top:6px;padding-top:12px;font-size:16px;font-weight:700;color:var(--green)}
@@ -100,7 +99,7 @@ footer small{color:#c8d6cb;font-size:11px}
 .toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);background:var(--deep);color:white;padding:12px 18px;border-radius:30px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:100;max-width:90%;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:950px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.why-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.links{display:none}.nav{min-height:65px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img{height:160px}.product-body{padding:11px}.product h3{font-size:15px}.add-btn,.buy-btn{font-size:9px;padding:10px 4px}.hero{min-height:390px}.story{grid-template-columns:1fr}.story-photo{min-height:190px}.story-copy{padding:22px}.checkout-form{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-options{grid-template-columns:1fr}.cart-line{grid-template-columns:1fr auto}.line-price{grid-column:1}.remove{justify-self:start}}
+@media(max-width:620px){.links{display:none}.nav{min-height:65px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img{height:160px}.product-body{padding:11px}.product h3{font-size:15px}.add-btn,.buy-btn{font-size:9px;padding:10px 4px}.hero{min-height:390px}.story{grid-template-columns:1fr}.story-photo{min-height:190px}.story-copy{padding:22px}.checkout-form{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-options{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -211,7 +210,7 @@ const PRODUCTS = {
 };
 
 const LOW_DELIVERY = ["Bahadurabad","PCHS","Bahadurabad PCHS","Jamshed Road","Tariq Road","Dhoraji"];
-const CART_STORAGE_KEY = "surakaBucksCartV1";
+const CART_STORAGE_KEY = "surakaBucksCartV2";
 let cart = {};
 let latestOrderText = "";
 let toastTimer;
@@ -241,11 +240,13 @@ function deliveryFee() {
 }
 
 function updateCount() { 
- $("cartCount").textContent = countCart(); 
+ const badge = $("cartCount");
+ if (badge) badge.textContent = countCart(); 
 }
 
 function toast(message) {
  const el = $("toast");
+ if(!el) return;
  el.textContent = message;
  el.classList.add("show");
  clearTimeout(toastTimer);
@@ -253,12 +254,14 @@ function toast(message) {
 }
 
 function openCart() {
- $("cartOverlay").classList.add("open");
+ const overlay = $("cartOverlay");
+ if(overlay) overlay.classList.add("open");
  renderCart();
 }
 
 function closeModal(id) { 
- $(id).classList.remove("open"); 
+ const el = $(id);
+ if(el) el.classList.remove("open"); 
 }
 
 function addToCart(id) {
@@ -280,4 +283,5 @@ function buyNow(id) {
 }
 
 function changeQty(id, delta) {
- if 
+ if (!PRODUCTS[id]) return;
+ cart[id] = (cart[id] |
