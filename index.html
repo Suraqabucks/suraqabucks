@@ -12,7 +12,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}
 button,input,select,textarea{font:inherit}
-button{cursor:pointer;touch-action:manipulation}
+a,button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .wrap{width:min(1160px,92%);margin:auto}
 header{position:sticky;top:0;z-index:10;background:#063729f5;color:white;border-bottom:1px solid #ffffff1c}
 .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -22,7 +22,7 @@ header{position:sticky;top:0;z-index:10;background:#063729f5;color:white;border-
 .brand small{display:block;color:#e8c66d;font-size:9px;letter-spacing:.12em;margin-top:3px}
 .links{display:flex;gap:18px}
 .links a{color:white;text-decoration:none;font-size:12px}
-.cart-button,.btn{border:0;border-radius:30px;background:var(--gold);color:var(--green);font-weight:700;padding:12px 17px}
+.cart-button,.btn{border:0;border-radius:30px;background:var(--gold);color:var(--green);font-weight:700;padding:12px 17px;text-decoration:none;display:inline-block;text-align:center}
 .cart-count{background:var(--green);color:white;border-radius:50%;padding:2px 7px}
 .hero{background:linear-gradient(90deg,#052b20f5,#063829dc 60%,#073d2c55),url("signature.png") center/cover;min-height:410px;display:flex;align-items:center;color:white}
 .hero-content{padding:55px 0;max-width:620px}
@@ -48,7 +48,7 @@ h1,h2,h3{font-family:"Playfair Display",serif}
 .product p{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 12px;flex:1}
 .price{font-weight:700;color:var(--green);margin-bottom:12px}
 .product-actions{display:flex;gap:6px}
-.add-btn,.buy-btn{border:0;border-radius:22px;padding:10px 7px;font-size:10px;font-weight:700;flex:1}
+.add-btn,.buy-btn{border:0;border-radius:22px;padding:10px 7px;font-size:10px;font-weight:700;flex:1;text-decoration:none;text-align:center;display:block}
 .add-btn{background:var(--green);color:white}
 .buy-btn{background:#f4e6b8;color:#4b3c16}
 .why{background:var(--green);color:white;padding:28px 0}
@@ -69,7 +69,7 @@ footer small{color:#c8d6cb;font-size:11px}
 .modal{background:var(--cream);border-radius:18px;width:min(680px,100%);max-height:92vh;overflow:auto}
 .modal-head{background:var(--green);color:white;padding:17px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
 .modal-head h2{margin:0;font-size:23px}
-.close{border:0;background:#ffffff20;color:white;border-radius:50%;width:35px;height:35px;font-size:22px}
+.close{border:0;background:#ffffff20;color:white;border-radius:50%;width:35px;height:35px;font-size:22px;text-decoration:none;display:grid;place-items:center}
 .modal-content{padding:18px}
 .cart-empty{text-align:center;color:var(--muted);padding:28px}
 .cart-empty b{display:block;font-size:22px;color:var(--ink);margin-bottom:8px}
@@ -77,7 +77,7 @@ footer small{color:#c8d6cb;font-size:11px}
 .cart-line strong{font-size:12px}
 .cart-line small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
 .qty{display:flex;align-items:center;gap:7px}
-.qty button{width:27px;height:27px;border:1px solid var(--line);background:white;border-radius:50%;font-weight:bold}
+.qty a{width:27px;height:27px;border:1px solid var(--line);background:white;border-radius:50%;font-weight:bold;text-decoration:none;display:grid;place-items:center;color:var(--ink)}
 .totals{margin:16px 0;background:white;border-radius:12px;padding:13px}
 .total-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:6px 0}
 .total-row.final{border-top:1px solid var(--line);margin-top:6px;padding-top:12px;font-size:16px;font-weight:700;color:var(--green)}
@@ -107,7 +107,7 @@ footer small{color:#c8d6cb;font-size:11px}
 <div class="wrap nav">
 <a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a>
 <nav class="links"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#story">Our Story</a></nav>
-<button type="button" class="cart-button" onclick="openCart()">Cart <span id="cartCount" class="cart-count">0</span></button>
+<a href="javascript:void(0)" class="cart-button" onclick="openCart()">Cart <span id="cartCount" class="cart-count">0</span></a>
 </div>
 </header>
 
@@ -116,17 +116,17 @@ footer small{color:#c8d6cb;font-size:11px}
 <div class="eyebrow">Artisanal luxury in every sip</div>
 <h1>Your Coffee.<br><em>Your Moment.</em></h1>
 <p>Discover handcrafted coffee favourites, rich flavours and refreshing sips made with care. Your next coffee moment starts here.</p>
-<div class="hero-actions"><a class="btn" href="#menu" style="text-decoration:none">Explore Our Menu →</a><a class="btn-outline" href="#story">Our Story</a></div>
+<div class="hero-actions"><a class="btn" href="#menu">Explore Our Menu →</a><a class="btn-outline" href="#story">Our Story</a></div>
 </div></div></section>
 
 <section class="section" id="menu"><div class="wrap">
 <div class="section-heading"><div class="eyebrow">Your daily indulgence</div><h2>Our Signature Collection</h2><p>HANDCRAFTED · FRESHLY PREPARED · FULL OF FLAVOUR</p></div>
 <div class="products">
-<article class="product"><div class="product-img"><img src="signature.png" alt="Suraka Signature" onerror="this.style.opacity='.2'"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('signature')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('signature')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.style.opacity='.2'"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('dairy')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('dairy')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish Latte" onerror="this.style.opacity='.2'"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('spanish')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('spanish')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel Latte" onerror="this.style.opacity='.2'"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('caramel')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('caramel')">Buy Now</button></div></div></article>
-<article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel Frappe" onerror="this.style.opacity='.2'"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('frappe')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('frappe')">Buy Now</button></div></div></article>
+<article class="product"><div class="product-img"><img src="signature.png" alt="Suraka Signature" onerror="this.style.opacity='.2'"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('signature')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('signature')">Buy Now</a></div></div></article>
+<article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy Milk Iced Latte" onerror="this.style.opacity='.2'"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('dairy')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('dairy')">Buy Now</a></div></div></article>
+<article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish Latte" onerror="this.style.opacity='.2'"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('spanish')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('spanish')">Buy Now</a></div></div></article>
+<article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel Latte" onerror="this.style.opacity='.2'"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('caramel')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('caramel')">Buy Now</a></div></div></article>
+<article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel Frappe" onerror="this.style.opacity='.2'"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><a href="javascript:void(0)" class="add-btn" onclick="addToCart('frappe')">＋ Add to Cart</a><a href="javascript:void(0)" class="buy-btn" onclick="buyNow('frappe')">Buy Now</a></div></div></article>
 </div></div></section>
 
 <section class="why"><div class="wrap why-grid">
@@ -136,20 +136,20 @@ footer small{color:#c8d6cb;font-size:11px}
 <div class="why-item"><strong>⌖ Karachi Delivery</strong><small>Delivery charges shown before you order.</small></div>
 </div></section>
 
-<section class="section" id="story"><div class="wrap"><div class="story"><div class="story-photo" role="img" aria-label="Coffee"></div><div class="story-copy"><div class="eyebrow">Small business, big dreams</div><h2>Our Story</h2><p>Suraka Bucks brings handcrafted coffee favourites to your day. From a creamy latte to a refreshing frappe, every cup is prepared with care to make your everyday moments feel special.</p><a class="btn" href="#menu" style="display:inline-block;text-decoration:none">Find Your Favourite →</a></div></div></div></section>
+<section class="section" id="story"><div class="wrap"><div class="story"><div class="story-photo" role="img" aria-label="Coffee"></div><div class="story-copy"><div class="eyebrow">Small business, big dreams</div><h2>Our Story</h2><p>Suraka Bucks brings handcrafted coffee favourites to your day. From a creamy latte to a refreshing frappe, every cup is prepared with care to make your everyday moments feel special.</p><a class="btn" href="#menu">Find Your Favourite →</a></div></div></div></section>
 </main>
 
 <footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a><small>© 2026 Suraka Bucks. Crafted with care in Karachi.</small><a href="#menu" style="color:#f2e5b7;font-size:12px">Our Menu</a></div></footer>
 
 <!-- Cart Overlay Modal -->
 <div class="overlay" id="cartOverlay" role="dialog" aria-modal="true"><div class="modal">
-<div class="modal-head"><h2>Your Coffee Cart</h2><button type="button" class="close" onclick="closeModal('cartOverlay')">×</button></div>
+<div class="modal-head"><h2>Your Coffee Cart</h2><a href="javascript:void(0)" class="close" onclick="closeModal('cartOverlay')">×</a></div>
 <div class="modal-content" id="cartView"></div>
 </div></div>
 
 <!-- Checkout Overlay Modal -->
 <div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true"><div class="modal">
-<div class="modal-head"><h2>Delivery & Checkout</h2><button type="button" class="close" onclick="closeModal('checkoutOverlay')">×</button></div>
+<div class="modal-head"><h2>Delivery & Checkout</h2><a href="javascript:void(0)" class="close" onclick="closeModal('checkoutOverlay')">×</a></div>
 <div class="modal-content">
 <form id="checkoutForm" onsubmit="handleCheckout(event)">
 <div class="checkout-form">
@@ -194,13 +194,12 @@ footer small{color:#c8d6cb;font-size:11px}
 <div class="success" id="orderSuccess"><div style="font-size:40px;color:var(--green)">✓</div><h3>Order summary ready!</h3><p>Tap the WhatsApp button to send your details and confirm the order.</p><pre id="orderSummary"></pre>
 <button type="button" class="btn" onclick="sendWhatsApp()">Send Order on WhatsApp</button> 
 <button type="button" class="btn" onclick="copyOrder()">Copy Order Summary</button>
-<p><button type="button" class="btn-outline" style="color:var(--green);border-color:var(--green)" onclick="closeModal('checkoutOverlay')">Continue Browsing</button></p></div>
+<p><a href="javascript:void(0)" class="btn-outline" style="color:var(--green);border-color:var(--green);margin-top:10px" onclick="closeModal('checkoutOverlay')">Continue Browsing</a></p></div>
 </div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-// Global Scope Functions so HTML inline onclick can never fail
-const PRODUCTS = {
+window.PRODUCTS = {
  signature:{name:"Suraka Signature",price:499},
  dairy:{name:"Dairy Milk Iced Latte",price:499},
  spanish:{name:"Spanish Latte",price:399},
@@ -208,87 +207,75 @@ const PRODUCTS = {
  frappe:{name:"Caramel Frappe",price:499}
 };
 
-const LOW_DELIVERY = ["Bahadurabad","PCHS","Bahadurabad PCHS","Jamshed Road","Tariq Road","Dhoraji"];
-let cart = {};
-let latestOrderText = "";
-let toastTimer;
+window.LOW_DELIVERY = ["Bahadurabad","PCHS","Bahadurabad PCHS","Jamshed Road","Tariq Road","Dhoraji"];
+window.cart = {};
+window.latestOrderText = "";
+window.toastTimer = null;
 
-function money(amount) {
+window.money = function(amount) {
  return "PKR " + Number(amount).toLocaleString("en-PK");
-}
+};
 
-function countCart() {
- return Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-}
+window.countCart = function() {
+ return Object.values(window.cart).reduce((sum, qty) => sum + qty, 0);
+};
 
-function getSubtotal() {
- return Object.entries(cart).reduce((sum, [id, qty]) => sum + (PRODUCTS[id] ? PRODUCTS[id].price * qty : 0), 0);
-}
+window.getSubtotal = function() {
+ return Object.entries(window.cart).reduce((sum, [id, qty]) => sum + (window.PRODUCTS[id] ? window.PRODUCTS[id].price * qty : 0), 0);
+};
 
-function updateCount() {
+window.updateCount = function() {
  const badge = document.getElementById("cartCount");
- if (badge) badge.textContent = countCart();
-}
+ if (badge) badge.textContent = window.countCart();
+};
 
-function toast(message) {
+window.toast = function(message) {
  const el = document.getElementById("toast");
  if (!el) return;
  el.textContent = message;
  el.classList.add("show");
- clearTimeout(toastTimer);
- toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
-}
+ clearTimeout(window.toastTimer);
+ window.toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
+};
 
-function openCart() {
+window.openCart = function() {
  const overlay = document.getElementById("cartOverlay");
  if (overlay) overlay.classList.add("open");
- renderCart();
-}
+ window.renderCart();
+};
 
-function closeModal(id) {
+window.closeModal = function(id) {
  const el = document.getElementById(id);
  if (el) el.classList.remove("open");
-}
+};
 
-function addToCart(id) {
- if (!PRODUCTS[id]) return;
- cart[id] = (cart[id] || 0) + 1;
- updateCount();
- renderCart();
- openCart();
- toast(PRODUCTS[id].name + " added to cart");
-}
+window.addToCart = function(id) {
+ if (!window.PRODUCTS[id]) return;
+ window.cart[id] = (window.cart[id] || 0) + 1;
+ window.updateCount();
+ window.renderCart();
+ window.openCart();
+ window.toast(window.PRODUCTS[id].name + " added to cart");
+};
 
-function buyNow(id) {
- if (!PRODUCTS[id]) return;
- cart[id] = (cart[id] || 0) + 1;
- updateCount();
- startCheckout();
-}
+window.buyNow = function(id) {
+ if (!window.PRODUCTS[id]) return;
+ window.cart[id] = (window.cart[id] || 0) + 1;
+ window.updateCount();
+ window.startCheckout();
+};
 
-function changeQty(id, delta) {
- if (!PRODUCTS[id]) return;
- cart[id] = (cart[id] || 0) + delta;
- if (cart[id] <= 0) delete cart[id];
- updateCount();
- renderCart();
- updateTotals();
-}
+window.changeQty = function(id, delta) {
+ if (!window.PRODUCTS[id]) return;
+ window.cart[id] = (window.cart[id] || 0) + delta;
+ if (window.cart[id] <= 0) delete window.cart[id];
+ window.updateCount();
+ window.renderCart();
+ window.updateTotals();
+};
 
-function renderCart() {
+window.renderCart = function() {
  const view = document.getElementById("cartView");
  if (!view) return;
 
- if (!countCart()) {
-  view.innerHTML = '<div class="cart-empty"><b>Your cart is waiting</b>Your next favourite coffee is just a click away.<br><br><button type="button" class="btn" onclick="closeModal(\'cartOverlay\')">Explore the Menu</button></div>';
-  return;
- }
-
- let lines = Object.entries(cart).map(([id, qty]) => `
- <div class="cart-line">
- <div>
-   <strong>${PRODUCTS[id].name}</strong>
-   <small>${money(PRODUCTS[id].price)} × ${qty}</small>
- </div>
- <div class="qty">
-   <button type="button" onclick="changeQty('${id
+ if (!window.countCart()
