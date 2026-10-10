@@ -31,7 +31,7 @@ footer{background:#052b20;color:white;padding:28px 0}.footer-row{display:flex;ju
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Suraka Bucks home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a>
     <nav class="links" aria-label="Main navigation"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#why">Why Us</a><a href="#story">Our Story</a></nav>
-    <button type="button" class="cart-button" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+    <button type="button" class="cart-button" data-action="open-cart">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
   </div>
 </header>
 <main>
@@ -39,18 +39,18 @@ footer{background:#052b20;color:white;padding:28px 0}.footer-row{display:flex;ju
   <div class="eyebrow">Crafted with passion</div>
   <h1>Artisanal Luxury<br>in <em>Every Sip.</em></h1>
   <p>Freshly prepared iced coffees, Spanish lattes and indulgent caramel favourites. Your coffee moment, delivered across Karachi.</p>
-  <div class="hero-actions"><a class="btn" href="#menu" style="text-decoration:none">Explore Menu&nbsp; →</a><button class="btn-outline" onclick="openCart()">View Your Cart</button></div>
+  <div class="hero-actions"><a class="btn" href="#menu" style="text-decoration:none">Explore Menu&nbsp; →</a><button type="button" class="btn-outline" data-action="open-cart">View Your Cart</button></div>
   <div class="trust-row"><span>Fresh Ingredients</span><span>Made to Order</span><span>Karachi Delivery</span></div>
 </div></div></section>
 
 <section class="section" id="menu"><div class="wrap">
   <div class="section-heading"><div class="eyebrow">Your daily indulgence</div><h2>Our Signature Collection</h2><p>Handcrafted · Freshly Prepared · Full of Flavour</p></div>
   <div class="products">
-    <article class="product"><div class="product-img"><img src="signature.png" alt="Suraka signature iced coffee" onerror="this.style.display='none'"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('signature')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('signature')">Buy Now</button></div></div></article>
-    <article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy milk iced latte" onerror="this.style.display='none'"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('dairy')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('dairy')">Buy Now</button></div></div></article>
-    <article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish latte" onerror="this.style.display='none'"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('spanish')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('spanish')">Buy Now</button></div></div></article>
-    <article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel latte" onerror="this.style.display='none'"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('caramel')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('caramel')">Buy Now</button></div></div></article>
-    <article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel frappe" onerror="this.style.display='none'"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" onclick="addToCart('frappe')">＋ Add to Cart</button><button type="button" class="buy-btn" onclick="buyNow('frappe')">Buy Now</button></div></div></article>
+    <article class="product"><div class="product-img"><img src="signature.png" alt="Suraka signature iced coffee"><span class="tag">BEST SELLER</span></div><div class="product-body"><h3>Suraka Signature</h3><p>Our signature coffee, smooth, rich and refreshing.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" data-action="add" data-product="signature">＋ Add to Cart</button><button type="button" class="buy-btn" data-action="buy" data-product="signature">Buy Now</button></div></div></article>
+    <article class="product"><div class="product-img"><img src="dairymilk.png" alt="Dairy milk iced latte"><span class="tag">CREAMY FAVOURITE</span></div><div class="product-body"><h3>Dairy Milk Iced Latte</h3><p>Creamy chocolate notes blended with chilled coffee.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" data-action="add" data-product="dairy">＋ Add to Cart</button><button type="button" class="buy-btn" data-action="buy" data-product="dairy">Buy Now</button></div></div></article>
+    <article class="product"><div class="product-img"><img src="spanish.png" alt="Spanish latte"><span class="tag">CUSTOMER PICK</span></div><div class="product-body"><h3>Spanish Latte</h3><p>Silky espresso with sweet milk for a luxurious finish.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" data-action="add" data-product="spanish">＋ Add to Cart</button><button type="button" class="buy-btn" data-action="buy" data-product="spanish">Buy Now</button></div></div></article>
+    <article class="product"><div class="product-img"><img src="caramel.png" alt="Caramel latte"><span class="tag">GOLDEN CLASSIC</span></div><div class="product-body"><h3>Caramel Latte</h3><p>Espresso and smooth milk finished with caramel.</p><div class="price">PKR 399</div><div class="product-actions"><button type="button" class="add-btn" data-action="add" data-product="caramel">＋ Add to Cart</button><button type="button" class="buy-btn" data-action="buy" data-product="caramel">Buy Now</button></div></div></article>
+    <article class="product"><div class="product-img"><img src="frappe.png" alt="Caramel frappe"><span class="tag">INDULGENT</span></div><div class="product-body"><h3>Caramel Frappe</h3><p>A chilled, creamy frappe with a caramel finish.</p><div class="price">PKR 499</div><div class="product-actions"><button type="button" class="add-btn" data-action="add" data-product="frappe">＋ Add to Cart</button><button type="button" class="buy-btn" data-action="buy" data-product="frappe">Buy Now</button></div></div></article>
   </div>
 </div></section>
 <section class="why" id="why"><div class="wrap why-grid">
@@ -61,14 +61,14 @@ footer{background:#052b20;color:white;padding:28px 0}.footer-row{display:flex;ju
 </div></section>
 <section class="section" id="story"><div class="wrap"><div class="story"><div class="story-photo" role="img" aria-label="Coffee beans and a freshly prepared latte"></div><div class="story-copy"><div class="eyebrow">Small business, big dreams</div><h2>Our Story</h2><p>Suraka Bucks brings handcrafted coffee favourites to your day. From a creamy latte to a refreshing frappe, every cup is prepared with care and made to make your everyday moments feel special.</p><a class="btn" href="#menu" style="display:inline-block;text-decoration:none">Find Your Favourite →</a></div></div></div></section>
 </main>
-<footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a><small>© 2026 Suraka Bucks. Crafted with care in Karachi.</small><div class="footer-links"><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#" onclick="openCart();return false">Checkout</a></div></div></footer>
+<footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="logo">SB</span><span><strong>SURAKA BUCKS</strong><small>PREMIUM COFFEE · KARACHI</small></span></a><small>© 2026 Suraka Bucks. Crafted with care in Karachi.</small><div class="footer-links"><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#" data-action="open-cart">Checkout</a></div></div></footer>
 
-<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle" onclick="outsideClose(event,'cartOverlay')"><div class="modal">
-  <div class="modal-head"><h2 id="cartTitle">Your Coffee Cart</h2><button class="close" onclick="closeModal('cartOverlay')" aria-label="Close">×</button></div>
+<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle" data-overlay="cartOverlay"><div class="modal">
+  <div class="modal-head"><h2 id="cartTitle">Your Coffee Cart</h2><button class="close" data-action="close-cart" aria-label="Close">×</button></div>
   <div class="modal-content" id="cartView"></div>
 </div></div>
-<div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" onclick="outsideClose(event,'checkoutOverlay')"><div class="modal">
-  <div class="modal-head"><h2 id="checkoutTitle">Delivery & Checkout</h2><button class="close" onclick="closeModal('checkoutOverlay')" aria-label="Close">×</button></div>
+<div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" data-overlay="checkoutOverlay"><div class="modal">
+  <div class="modal-head"><h2 id="checkoutTitle">Delivery & Checkout</h2><button class="close" data-action="close-checkout" aria-label="Close">×</button></div>
   <div class="modal-content" id="checkoutView">
     <form id="checkoutForm">
       <div class="checkout-form">
@@ -78,4 +78,5 @@ footer{background:#052b20;color:white;padding:28px 0}.footer-row{display:flex;ju
         <div class="field full"><label for="address">Complete delivery address *</label><textarea id="address" name="address" rows="2" required placeholder="House / flat, street, block, nearby landmark"></textarea></div>
         <div class="field full"><label>Payment method *</label><div class="payment-options">
           <label class="payment-choice"><input type="radio" name="payment" value="Cash on Delivery" checked><span><strong>Cash on Delivery</strong><small>Pay cash when your coffee arrives.</small></span></label>
-          <label class="payment-choice"><input type="radio" name="payment" value="Advance Payment"><span><strong>Advance Payment</strong><small>Prepay option. Confirm t
+          <label class="payment-choice"><input type="radio" name="payment" value="Advance Payment"><span><strong>Advance Payment</strong><small>Prepay option. Confirm transfer details with the shop.</small></span></label>
+        </div><div id="advanceNote" class="payment-note">
