@@ -201,6 +201,7 @@ footer small{color:#c8d6cb;font-size:11px}
 
 <script>
 /* ====== SETTINGS ====== */
+// Apna WhatsApp number yahan likho: country code ke sath, bina + ya space ke (e.g. 923001234567)
 window.WHATSAPP_NUMBER = "923231224080";
 
 window.PRODUCTS = {
@@ -272,8 +273,164 @@ window.buyNow = function(id) {
  window.cart[id] = (window.cart[id] || 0) + 1;
  window.updateCount();
  window.startCheckout();
+}
+ window.changeQty = function(id, delta) {
+ if (!window.PRODUCTS[id]) return;
+ window.cart[id] = (window.cart[id] || 0) + delta;
+ if (window.cart[id] <= 0) delete window.cart[id];
+ window.updateCount();
+ window.renderCart();
+ window.updateTotals();
 };
 
-window.changeQty = function(id, delta) {
- if (!window.PRODUCTS[id]) return;
- window.cart[id] = 
+window.renderCart = function() {
+ const view = document.getElementById("cartView");
+ if (!view) return;
+
+ if (!window.countCart()) {
+  view.innerHTML = '<div class="cart-empty"><b>Your cart is empty</b>Add your favourite coffee to get started.<p><button type="button" class="btn" onclick="closeModal(\'cartOverlay\')">Browse Menu</button></p></div>';
+  return;
+ }
+
+ let html = "";
+ Object.keys(window.cart).forEach(function(id) {
+  const p = window.PRODUCTS[id];
+  const qty = window.cart[id];
+  if (!p) return;
+  html += '<div class="cart-line">' +
+   '<div><strong>' + p.name + '</strong><small>' + window.money(p.price) + ' each</small></div>' +
+   '<div class="qty"><button type="button" onclick="changeQty(\'' + id + '\',-1)">−</button><span>' + qty + '</span><button type="button" onclick="changeQty(\'' + id + '\',1)">+</button></div>' +
+   '<strong>' + window.money(p.price * qty) + '</strong>' +
+   '</div>';
+ });
+
+ html += '<div class="totals">' +
+  '<div class="total-row"><span>Subtotal</span><strong>' + window.money(window.getSubtotal()) + '</strong></div>' +
+  '<div class="total-row"><span>Delivery</span><span>Calculated at checkout</span></div>' +
+  '</div>' +
+  '<button type="button" class="btn submit-btn" onclick="startCheckout()">Proceed to Checkout</button>';
+
+ view.innerHTML = html;
+};
+
+window.startCheckout = function() {
+ if (!window.countCart()) {
+  window.toast("Your cart is empty");
+  return;
+ }
+ window.closeModal("cartOverlay");
+ const form = document.getElementById("checkoutForm");
+ const success = document.getElementById("orderSuccess");
+ if (form) form.style.display = "";
+ if (success) success.classList.remove("show");
+ const overlay = document.getElementById("checkoutOverlay");
+ if (overlay) overlay.classList.add("open");
+ window.updateTotals();
+};
+
+window.updateTotals = function() {
+ const box = document.getElementById("checkoutTotals");
+ if (!box) return;
+ const subtotal = window.getSubtotal();
+ const delivery = window.getDelivery();
+ let html = "";
+ Object.keys(window.cart).forEach(function(id) {
+  const p = window.PRODUCTS[id];
+  if (!p) return;
+  html += '<div class="total-row"><span>' + window.cart[id] + ' × ' + p.name + '</span><span>' + window.money(p.price * window.cart[id]) + '</span></div>';
+ });
+ html += '<div class="total-row"><span>Subtotal</span><span>' + window.money(subtotal) + '</span></div>';
+ html += '<div class="total-row"><span>Delivery</span><span>' + (delivery === null ? "Select area" : window.money(delivery)) + '</span></div>';
+ html += '<div class="total-row final"><span>Total</span><span>' + window.money(subtotal + (delivery || 0)) + '</span></div>';
+ box.innerHTML = html;
+};
+
+window.toggleAdvance = function(show) {
+ const note = document.getElementById("advanceNote");
+ if (note) note.classList.toggle("show", !!show);
+};
+
+window.handleCheckout = function(e) {
+ if (e) e.preventDefault();
+ if (!window.countCart()) {
+  window.toast("Your cart is empty");
+  return false;
+ }
+ const delivery = window.getDelivery();
+ if (delivery === null) {
+  window.toast("Please select your delivery area");
+  return false;
+ }
+ const name = document.getElementById("customerName").value.trim();
+ const phone = document.getElementById("customerPhone").value.trim();
+ const area = document.getElementById("area").value;
+ const address = document.getElementById("address").value.trim();
+ const payChecked = document.querySelector('input[name="payment"]:checked');
+ const payment = payChecked ? payChecked.value : "Cash on Delivery";
+ const subtotal = window.getSubtotal();
+
+ let lines = "";
+ Object.keys(window.cart).forEach(function(id) {
+  const p = window.PRODUCTS[id];
+  if (!p) return;
+  lines += "- " + window.cart[id] + " x " + p.name + " = " + window.money(p.price * window.cart[id]) + "\n";
+ });
+
+ window.latestOrderText =
+  "*New Order - Suraka Bucks*\n\n" +
+  "Name: " + name + "\n" +
+  "Phone: " + phone + "\n" +
+  "Area: " + area + "\n" +
+  "Address: " + address + "\n\n" +
+  "*Items*\n" + lines + "\n" +
+  "Subtotal: " + window.money(subtotal) + "\n" +
+  "Delivery: " + window.money(delivery) + "\n" +
+  "*Total: " + window.money(subtotal + delivery) + "*\n\n" +
+  "Payment: " + payment;
+
+ document.getElementById("orderSummary").textContent = window.latestOrderText;
+ document.getElementById("checkoutForm").style.display = "none";
+ document.getElementById("orderSuccess").classList.add("show");
+
+ window.cart = {};
+ window.updateCount();
+ window.renderCart();
+ return false;
+};
+
+window.sendWhatsApp = function() {
+ if (!window.latestOrderText) return;
+ const url = "https://wa.me/" + window.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(window.latestOrderText);
+ window.open(url, "_blank");
+};
+
+window.copyOrder = function() {
+ const text = window.latestOrderText;
+ if (!text) return;
+ const fallback = function() {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); window.toast("Order copied"); }
+  catch (err) { window.toast("Copy failed, please copy manually"); }
+  document.body.removeChild(ta);
+ };
+ if (navigator.clipboard && navigator.clipboard.writeText) {
+  navigator.clipboard.writeText(text).then(function() { window.toast("Order copied"); }, fallback);
+ } else {
+  fallback();
+ }
+};
+
+["cartOverlay","checkoutOverlay"].forEach(function(id) {
+ const el = document.getElementById(id);
+ if (el) el.addEventListener("click", function(e) { if (e.target === el) window.closeModal(id); });
+});
+
+window.updateCount();
+</script>
+</body>
+</html>
