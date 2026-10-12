@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#073d2c">
 <title>Suraka Bucks | Premium Coffee</title>
+<meta name="google-site-verification" content="JbweSd3whM2Vx9wYt3CfRoiRB9OrZ62A8kjVK4WcOz8" />
+<meta name="description" content="Suraka Bucks - handcrafted premium coffee in Karachi. Order iced lattes, Spanish latte, caramel frappe and more with easy delivery.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--green:#073d2c;--deep:#052b20;--gold:#e8c66d;--cream:#f8f4e8;--ink:#1c2b22;--muted:#6f786e;--line:#e8e5d9}
@@ -103,7 +105,6 @@ footer small{color:#c8d6cb;font-size:11px}
 @media(max-width:620px){.links{display:none}.nav{min-height:65px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img{height:160px}.product-body{padding:11px}.product h3{font-size:15px}.add-btn,.buy-btn{font-size:9px;padding:10px 4px}.hero{min-height:390px}.story{grid-template-columns:1fr}.story-photo{min-height:190px}.story-copy{padding:22px}.checkout-form{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-options{grid-template-columns:1fr}}
 </style>
 </head>
- google-site-verification: google681de215cbf00e84.html
 <body>
 <header>
 <div class="wrap nav">
@@ -112,6 +113,7 @@ footer small{color:#c8d6cb;font-size:11px}
 <button type="button" class="cart-button" onclick="openCart()">Cart <span id="cartCount" class="cart-count">0</span></button>
 </div>
 </header>
+
 <main>
 <section class="hero" id="home"><div class="wrap"><div class="hero-content">
 <div class="eyebrow">Artisanal luxury in every sip</div>
@@ -263,6 +265,7 @@ window.closeModal = function(id) {
 window.addToCart = function(id) {
  if (!window.PRODUCTS[id]) return;
  window.cart[id] = (window.cart[id] || 0) + 1;
+ windo
  window.updateCount();
  window.openCart();
  window.toast(window.PRODUCTS[id].name + " added to cart");
@@ -273,8 +276,9 @@ window.buyNow = function(id) {
  window.cart[id] = (window.cart[id] || 0) + 1;
  window.updateCount();
  window.startCheckout();
-}
- window.changeQty = function(id, delta) {
+};
+
+window.changeQty = function(id, delta) {
  if (!window.PRODUCTS[id]) return;
  window.cart[id] = (window.cart[id] || 0) + delta;
  if (window.cart[id] <= 0) delete window.cart[id];
